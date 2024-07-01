@@ -69,25 +69,5 @@ namespace ThinkerToys.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap testttttt {
-            get {
-                object obj = ResourceManager.GetObject("testttttt", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap visible_pass_removebg_preview__1_ {
-            get {
-                object obj = ResourceManager.GetObject("visible_pass-removebg-preview (1)", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
     }
 }
