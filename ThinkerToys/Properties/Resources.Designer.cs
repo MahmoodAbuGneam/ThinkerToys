@@ -69,5 +69,15 @@ namespace ThinkerToys.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap toys_and_kid_s_fashion__1__removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("toys_and_kid_s_fashion__1_-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }
