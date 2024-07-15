@@ -28,80 +28,75 @@
         /// </summary>
         private void InitializeComponent()
         {
-            panel1 = new Panel();
             pictureBox1 = new PictureBox();
             panel2 = new Panel();
             label9 = new Label();
             label8 = new Label();
             label7 = new Label();
             label6 = new Label();
-            checkBox1 = new CheckBox();
-            label5 = new Label();
-            label4 = new Label();
-            label3 = new Label();
-            label2 = new Label();
-            label1 = new Label();
-            textBox2 = new TextBox();
-            textBox1 = new TextBox();
+            LoginLabel = new Label();
+            panel1 = new Panel();
+            showPassCheckBox = new CheckBox();
+            SignUpLabel = new Label();
+            PasswordLabel = new Label();
+            CreateAccountLabel = new Label();
+            UsernameLabel = new Label();
+            PasswordTextBox = new TextBox();
+            UsernameTextBox = new TextBox();
             kryptonButton1 = new ComponentFactory.Krypton.Toolkit.KryptonButton();
-            panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel2.SuspendLayout();
+            panel1.SuspendLayout();
             SuspendLayout();
-            // 
-            // panel1
-            // 
-            panel1.Controls.Add(pictureBox1);
-            panel1.Location = new Point(438, 12);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(350, 426);
-            panel1.TabIndex = 0;
             // 
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.toys_and_kid_s_fashion__1__removebg_preview;
-            pictureBox1.Location = new Point(-84, -16);
+            pictureBox1.Location = new Point(-56, -11);
+            pictureBox1.Margin = new Padding(3, 2, 3, 2);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(449, 533);
+            pictureBox1.Size = new Size(425, 415);
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             // 
             // panel2
             // 
+            panel2.Controls.Add(showPassCheckBox);
+            panel2.Controls.Add(SignUpLabel);
+            panel2.Controls.Add(PasswordLabel);
+            panel2.Controls.Add(CreateAccountLabel);
+            panel2.Controls.Add(UsernameLabel);
+            panel2.Controls.Add(PasswordTextBox);
+            panel2.Controls.Add(UsernameTextBox);
+            panel2.Controls.Add(kryptonButton1);
             panel2.Controls.Add(label9);
             panel2.Controls.Add(label8);
             panel2.Controls.Add(label7);
             panel2.Controls.Add(label6);
-            panel2.Controls.Add(checkBox1);
-            panel2.Controls.Add(label5);
-            panel2.Controls.Add(label4);
-            panel2.Controls.Add(label3);
-            panel2.Controls.Add(label2);
-            panel2.Controls.Add(label1);
-            panel2.Controls.Add(textBox2);
-            panel2.Controls.Add(textBox1);
-            panel2.Controls.Add(kryptonButton1);
-            panel2.Location = new Point(12, 12);
+            panel2.Controls.Add(LoginLabel);
+            panel2.Location = new Point(10, 9);
+            panel2.Margin = new Padding(3, 2, 3, 2);
             panel2.Name = "panel2";
-            panel2.Size = new Size(420, 426);
+            panel2.Size = new Size(368, 437);
             panel2.TabIndex = 1;
+            panel2.Paint += panel2_Paint;
             // 
             // label9
             // 
             label9.AutoSize = true;
             label9.ForeColor = Color.Green;
-            label9.Location = new Point(3, 333);
+            label9.Location = new Point(3, 250);
             label9.Name = "label9";
-            label9.Size = new Size(0, 20);
+            label9.Size = new Size(0, 15);
             label9.TabIndex = 29;
             // 
             // label8
             // 
             label8.AutoSize = true;
             label8.ForeColor = Color.Red;
-            label8.Location = new Point(3, 239);
+            label8.Location = new Point(3, 179);
             label8.Name = "label8";
-            label8.Size = new Size(0, 20);
+            label8.Size = new Size(0, 15);
             label8.TabIndex = 28;
             // 
             // label7
@@ -109,9 +104,9 @@
             label7.AutoSize = true;
             label7.BackColor = SystemColors.Control;
             label7.ForeColor = Color.Red;
-            label7.Location = new Point(3, 154);
+            label7.Location = new Point(3, 116);
             label7.Name = "label7";
-            label7.Size = new Size(0, 20);
+            label7.Size = new Size(0, 15);
             label7.TabIndex = 27;
             label7.Click += label7_Click;
             // 
@@ -120,111 +115,122 @@
             label6.Anchor = AnchorStyles.None;
             label6.AutoSize = true;
             label6.ForeColor = Color.CadetBlue;
-            label6.Location = new Point(140, 626);
+            label6.Location = new Point(122, 528);
             label6.Name = "label6";
-            label6.Size = new Size(158, 20);
+            label6.Size = new Size(127, 15);
             label6.TabIndex = 22;
             label6.Text = "Dont Have an Account";
             // 
-            // checkBox1
+            // LoginLabel
             // 
-            checkBox1.AutoSize = true;
-            checkBox1.Location = new Point(89, 259);
-            checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(132, 24);
-            checkBox1.TabIndex = 26;
-            checkBox1.Text = "Show Password";
-            checkBox1.UseVisualStyleBackColor = true;
-            checkBox1.CheckedChanged += checkBox1_CheckedChanged;
+            LoginLabel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            LoginLabel.AutoSize = true;
+            LoginLabel.Font = new Font("Microsoft Tai Le", 15F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            LoginLabel.ForeColor = Color.Navy;
+            LoginLabel.Location = new Point(29, 32);
+            LoginLabel.Name = "LoginLabel";
+            LoginLabel.Size = new Size(73, 26);
+            LoginLabel.TabIndex = 12;
+            LoginLabel.Text = "LOGIN";
             // 
-            // label5
+            // panel1
             // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Microsoft Tai Le", 7.8F);
-            label5.ForeColor = Color.Red;
-            label5.Location = new Point(153, 384);
-            label5.Name = "label5";
-            label5.Size = new Size(88, 16);
-            label5.TabIndex = 25;
-            label5.Text = "Creat Account";
+            panel1.Controls.Add(pictureBox1);
+            panel1.Location = new Point(383, 9);
+            panel1.Margin = new Padding(3, 2, 3, 2);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(385, 437);
+            panel1.TabIndex = 0;
             // 
-            // label4
+            // showPassCheckBox
             // 
-            label4.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            label4.AutoSize = true;
-            label4.Font = new Font("Microsoft Tai Le", 13F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label4.ForeColor = Color.Navy;
-            label4.Location = new Point(93, 178);
-            label4.Name = "label4";
-            label4.Size = new Size(104, 29);
-            label4.TabIndex = 19;
-            label4.Text = "Password";
+            showPassCheckBox.AutoSize = true;
+            showPassCheckBox.Location = new Point(67, 215);
+            showPassCheckBox.Margin = new Padding(3, 2, 3, 2);
+            showPassCheckBox.Name = "showPassCheckBox";
+            showPassCheckBox.Size = new Size(108, 19);
+            showPassCheckBox.TabIndex = 37;
+            showPassCheckBox.Text = "Show Password";
+            showPassCheckBox.UseVisualStyleBackColor = true;
             // 
-            // label3
+            // SignUpLabel
             // 
-            label3.AutoSize = true;
-            label3.BackColor = SystemColors.Control;
-            label3.Cursor = Cursors.No;
-            label3.Font = new Font("Microsoft Tai Le", 7.8F);
-            label3.ForeColor = Color.Navy;
-            label3.Location = new Point(127, 354);
-            label3.Name = "label3";
-            label3.Size = new Size(138, 16);
-            label3.TabIndex = 23;
-            label3.Text = "Dont Have an Acoount";
+            SignUpLabel.AutoSize = true;
+            SignUpLabel.Font = new Font("Microsoft Tai Le", 7.8F);
+            SignUpLabel.ForeColor = Color.Red;
+            SignUpLabel.Location = new Point(119, 360);
+            SignUpLabel.Name = "SignUpLabel";
+            SignUpLabel.Size = new Size(71, 14);
+            SignUpLabel.TabIndex = 36;
+            SignUpLabel.Text = "Signup Here";
             // 
-            // label2
+            // PasswordLabel
             // 
-            label2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            label2.AutoSize = true;
-            label2.Font = new Font("Microsoft Tai Le", 13F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.ForeColor = Color.Navy;
-            label2.Location = new Point(93, 92);
-            label2.Name = "label2";
-            label2.Size = new Size(111, 29);
-            label2.TabIndex = 24;
-            label2.Text = "Username";
+            PasswordLabel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            PasswordLabel.AutoSize = true;
+            PasswordLabel.Font = new Font("Microsoft Tai Le", 13F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            PasswordLabel.ForeColor = Color.Navy;
+            PasswordLabel.Location = new Point(67, 166);
+            PasswordLabel.Name = "PasswordLabel";
+            PasswordLabel.Size = new Size(86, 23);
+            PasswordLabel.TabIndex = 31;
+            PasswordLabel.Text = "Password";
             // 
-            // label1
+            // CreateAccountLabel
             // 
-            label1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            label1.AutoSize = true;
-            label1.Font = new Font("Microsoft Tai Le", 15F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.Navy;
-            label1.Location = new Point(33, 43);
-            label1.Name = "label1";
-            label1.Size = new Size(93, 33);
-            label1.TabIndex = 12;
-            label1.Text = "LOGIN";
+            CreateAccountLabel.AutoSize = true;
+            CreateAccountLabel.BackColor = SystemColors.Control;
+            CreateAccountLabel.Cursor = Cursors.No;
+            CreateAccountLabel.Font = new Font("Microsoft Tai Le", 7.8F);
+            CreateAccountLabel.ForeColor = Color.Navy;
+            CreateAccountLabel.Location = new Point(105, 330);
+            CreateAccountLabel.Name = "CreateAccountLabel";
+            CreateAccountLabel.Size = new Size(128, 14);
+            CreateAccountLabel.TabIndex = 34;
+            CreateAccountLabel.Text = "Dont have an account ?";
+            CreateAccountLabel.Click += label3_Click;
             // 
-            // textBox2
+            // UsernameLabel
             // 
-            textBox2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            textBox2.ForeColor = Color.Navy;
-            textBox2.Location = new Point(93, 210);
-            textBox2.Multiline = true;
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(243, 27);
-            textBox2.TabIndex = 20;
-            textBox2.UseWaitCursor = true;
-            textBox2.TextChanged += textBox2_TextChanged;
+            UsernameLabel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            UsernameLabel.AutoSize = true;
+            UsernameLabel.Font = new Font("Microsoft Tai Le", 13F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            UsernameLabel.ForeColor = Color.Navy;
+            UsernameLabel.Location = new Point(67, 91);
+            UsernameLabel.Name = "UsernameLabel";
+            UsernameLabel.Size = new Size(89, 23);
+            UsernameLabel.TabIndex = 35;
+            UsernameLabel.Text = "Username";
             // 
-            // textBox1
+            // PasswordTextBox
             // 
-            textBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            textBox1.ForeColor = Color.Navy;
-            textBox1.Location = new Point(93, 124);
-            textBox1.Multiline = true;
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(243, 27);
-            textBox1.TabIndex = 15;
-            textBox1.UseWaitCursor = true;
-            textBox1.TextChanged += textBox1_TextChanged;
+            PasswordTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            PasswordTextBox.ForeColor = Color.Navy;
+            PasswordTextBox.Location = new Point(67, 190);
+            PasswordTextBox.Margin = new Padding(3, 2, 3, 2);
+            PasswordTextBox.Multiline = true;
+            PasswordTextBox.Name = "PasswordTextBox";
+            PasswordTextBox.Size = new Size(213, 21);
+            PasswordTextBox.TabIndex = 33;
+            PasswordTextBox.UseWaitCursor = true;
+            // 
+            // UsernameTextBox
+            // 
+            UsernameTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            UsernameTextBox.ForeColor = Color.Navy;
+            UsernameTextBox.Location = new Point(67, 116);
+            UsernameTextBox.Margin = new Padding(3, 2, 3, 2);
+            UsernameTextBox.Multiline = true;
+            UsernameTextBox.Name = "UsernameTextBox";
+            UsernameTextBox.Size = new Size(213, 21);
+            UsernameTextBox.TabIndex = 30;
+            UsernameTextBox.UseWaitCursor = true;
             // 
             // kryptonButton1
             // 
             kryptonButton1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            kryptonButton1.Location = new Point(95, 289);
+            kryptonButton1.Location = new Point(67, 272);
+            kryptonButton1.Margin = new Padding(3, 2, 3, 2);
             kryptonButton1.Name = "kryptonButton1";
             kryptonButton1.OverrideDefault.Back.Color1 = Color.FromArgb(1, 73, 175);
             kryptonButton1.OverrideDefault.Back.Color2 = Color.FromArgb(1, 73, 175);
@@ -245,7 +251,7 @@
             kryptonButton1.OverrideFocus.Border.Rounding = 100;
             kryptonButton1.OverrideFocus.Border.Width = 1;
             kryptonButton1.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.ProfessionalSystem;
-            kryptonButton1.Size = new Size(229, 50);
+            kryptonButton1.Size = new Size(200, 38);
             kryptonButton1.StateCommon.Back.Color1 = Color.FromArgb(1, 73, 175);
             kryptonButton1.StateCommon.Back.Color2 = Color.FromArgb(1, 73, 175);
             kryptonButton1.StateCommon.Back.ColorAngle = 45F;
@@ -278,44 +284,45 @@
             kryptonButton1.StateTracking.Border.GraphicsHint = ComponentFactory.Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
             kryptonButton1.StateTracking.Border.Rounding = 20;
             kryptonButton1.StateTracking.Border.Width = 1;
-            kryptonButton1.TabIndex = 19;
-            kryptonButton1.Values.Text = "LOGIN";
-            kryptonButton1.Click += kryptonButton1_Click;
+            kryptonButton1.TabIndex = 32;
+            kryptonButton1.Values.Text = "awd";
+            kryptonButton1.Click += kryptonButton1_Click_1;
             // 
             // Login
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(780, 457);
             Controls.Add(panel2);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.Fixed3D;
+            Margin = new Padding(3, 2, 3, 2);
             Name = "Login";
             Text = "Login";
-            panel1.ResumeLayout(false);
+            Load += Login_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
+            panel1.ResumeLayout(false);
             ResumeLayout(false);
         }
 
         #endregion
-
-        private Panel panel1;
         private PictureBox pictureBox1;
         private Panel panel2;
-        private ComponentFactory.Krypton.Toolkit.KryptonButton kryptonButton1;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private CheckBox checkBox1;
-        private Label label5;
-        private Label label4;
-        private Label label3;
-        private Label label2;
-        private Label label1;
+        private Label LoginLabel;
         private Label label6;
         private Label label7;
         private Label label9;
         private Label label8;
+        private Panel panel1;
+        private CheckBox showPassCheckBox;
+        private Label SignUpLabel;
+        private Label PasswordLabel;
+        private Label CreateAccountLabel;
+        private Label UsernameLabel;
+        private TextBox PasswordTextBox;
+        private TextBox UsernameTextBox;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton kryptonButton1;
     }
 }
