@@ -9,7 +9,19 @@ namespace ThinkerToys
         static void Main()
         {
             ApplicationConfiguration.Initialize();
-            Application.Run(new Signup());
+            Login loginForm = new Login();
+            loginForm.FormClosed += new FormClosedEventHandler(FormClosed);
+            loginForm.Show();
+            Application.Run();
         }
+
+        private static void FormClosed(object sender, FormClosedEventArgs e)
+        {
+            // Check if any forms are open, if none, exit the application
+            if (Application.OpenForms.Count == 0)
+                Application.Exit();
+        }
+
+
     }
 }

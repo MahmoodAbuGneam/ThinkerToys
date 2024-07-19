@@ -20,24 +20,25 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Signup));
             panel1 = new Panel();
             pictureBox1 = new PictureBox();
+            textBoxUsername = new TextBox();
             panel2 = new Panel();
+            IDLabel = new Label();
+            SignUpButton = new Button();
             label9 = new Label();
             label8 = new Label();
             label7 = new Label();
-            label6 = new Label();
+            GenderLabel = new Label();
             label5 = new Label();
             label4 = new Label();
             label3 = new Label();
             label2 = new Label();
             label1 = new Label();
             textBoxIDNumber = new TextBox();
-            textBoxUsername = new TextBox();
             textBoxPassword = new TextBox();
             textBoxConfirmPassword = new TextBox();
             textBoxParentPhone = new TextBox();
             radioButtonBoy = new RadioButton();
             radioButtonGirl = new RadioButton();
-            kryptonButtonSignup = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -57,27 +58,48 @@
             pictureBox1.Name = "pictureBox1";
             pictureBox1.TabStop = false;
             // 
+            // textBoxUsername
+            // 
+            textBoxUsername.ForeColor = Color.Navy;
+            resources.ApplyResources(textBoxUsername, "textBoxUsername");
+            textBoxUsername.Name = "textBoxUsername";
+            textBoxUsername.UseWaitCursor = true;
+            // 
             // panel2
             // 
+            panel2.Controls.Add(IDLabel);
+            panel2.Controls.Add(textBoxUsername);
+            panel2.Controls.Add(SignUpButton);
             panel2.Controls.Add(label9);
             panel2.Controls.Add(label8);
             panel2.Controls.Add(label7);
-            panel2.Controls.Add(label6);
+            panel2.Controls.Add(GenderLabel);
             panel2.Controls.Add(label5);
             panel2.Controls.Add(label4);
             panel2.Controls.Add(label3);
             panel2.Controls.Add(label2);
             panel2.Controls.Add(label1);
             panel2.Controls.Add(textBoxIDNumber);
-            panel2.Controls.Add(textBoxUsername);
             panel2.Controls.Add(textBoxPassword);
             panel2.Controls.Add(textBoxConfirmPassword);
             panel2.Controls.Add(textBoxParentPhone);
             panel2.Controls.Add(radioButtonBoy);
             panel2.Controls.Add(radioButtonGirl);
-            panel2.Controls.Add(kryptonButtonSignup);
             resources.ApplyResources(panel2, "panel2");
             panel2.Name = "panel2";
+            // 
+            // IDLabel
+            // 
+            resources.ApplyResources(IDLabel, "IDLabel");
+            IDLabel.ForeColor = Color.Navy;
+            IDLabel.Name = "IDLabel";
+            // 
+            // SignUpButton
+            // 
+            resources.ApplyResources(SignUpButton, "SignUpButton");
+            SignUpButton.Name = "SignUpButton";
+            SignUpButton.UseVisualStyleBackColor = true;
+            SignUpButton.Click += SignUpButton_Click;
             // 
             // label9
             // 
@@ -97,11 +119,11 @@
             label7.ForeColor = Color.Red;
             label7.Name = "label7";
             // 
-            // label6
+            // GenderLabel
             // 
-            resources.ApplyResources(label6, "label6");
-            label6.ForeColor = Color.Navy;
-            label6.Name = "label6";
+            resources.ApplyResources(GenderLabel, "GenderLabel");
+            GenderLabel.ForeColor = Color.Navy;
+            GenderLabel.Name = "GenderLabel";
             // 
             // label5
             // 
@@ -114,6 +136,7 @@
             resources.ApplyResources(label4, "label4");
             label4.ForeColor = Color.Navy;
             label4.Name = "label4";
+            label4.Click += label4_Click;
             // 
             // label3
             // 
@@ -139,13 +162,7 @@
             resources.ApplyResources(textBoxIDNumber, "textBoxIDNumber");
             textBoxIDNumber.Name = "textBoxIDNumber";
             textBoxIDNumber.UseWaitCursor = true;
-            // 
-            // textBoxUsername
-            // 
-            textBoxUsername.ForeColor = Color.Navy;
-            resources.ApplyResources(textBoxUsername, "textBoxUsername");
-            textBoxUsername.Name = "textBoxUsername";
-            textBoxUsername.UseWaitCursor = true;
+            textBoxIDNumber.TextChanged += textBoxIDNumber_TextChanged_1;
             // 
             // textBoxPassword
             // 
@@ -154,6 +171,7 @@
             textBoxPassword.Name = "textBoxPassword";
             textBoxPassword.UseSystemPasswordChar = true;
             textBoxPassword.UseWaitCursor = true;
+            textBoxPassword.TextChanged += textBoxPassword_TextChanged_1;
             // 
             // textBoxConfirmPassword
             // 
@@ -186,56 +204,6 @@
             radioButtonGirl.TabStop = true;
             radioButtonGirl.UseVisualStyleBackColor = true;
             // 
-            // kryptonButtonSignup
-            // 
-            resources.ApplyResources(kryptonButtonSignup, "kryptonButtonSignup");
-            kryptonButtonSignup.Name = "kryptonButtonSignup";
-            kryptonButtonSignup.OverrideDefault.Back.Color1 = Color.FromArgb(1, 73, 175);
-            kryptonButtonSignup.OverrideDefault.Back.Color2 = Color.FromArgb(1, 73, 175);
-            kryptonButtonSignup.OverrideDefault.Back.ColorAngle = 45F;
-            kryptonButtonSignup.OverrideDefault.Border.Color1 = Color.FromArgb(1, 73, 175);
-            kryptonButtonSignup.OverrideDefault.Border.Color2 = Color.FromArgb(1, 73, 175);
-            kryptonButtonSignup.OverrideDefault.Border.ColorAngle = 45F;
-            kryptonButtonSignup.OverrideDefault.Border.DrawBorders = ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right;
-            kryptonButtonSignup.OverrideDefault.Border.GraphicsHint = ComponentFactory.Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
-            kryptonButtonSignup.OverrideDefault.Border.Rounding = 20;
-            kryptonButtonSignup.OverrideDefault.Border.Width = 1;
-            kryptonButtonSignup.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.ProfessionalSystem;
-            kryptonButtonSignup.StateCommon.Back.Color1 = Color.FromArgb(1, 73, 175);
-            kryptonButtonSignup.StateCommon.Back.Color2 = Color.FromArgb(1, 73, 175);
-            kryptonButtonSignup.StateCommon.Back.ColorAngle = 45F;
-            kryptonButtonSignup.StateCommon.Border.Color1 = Color.FromArgb(1, 73, 175);
-            kryptonButtonSignup.StateCommon.Border.Color2 = Color.FromArgb(1, 73, 175);
-            kryptonButtonSignup.StateCommon.Border.ColorAngle = 45F;
-            kryptonButtonSignup.StateCommon.Border.DrawBorders = ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right;
-            kryptonButtonSignup.StateCommon.Border.GraphicsHint = ComponentFactory.Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
-            kryptonButtonSignup.StateCommon.Border.Rounding = 20;
-            kryptonButtonSignup.StateCommon.Border.Width = 1;
-            kryptonButtonSignup.StateCommon.Content.ShortText.Color1 = Color.White;
-            kryptonButtonSignup.StateCommon.Content.ShortText.Color2 = Color.White;
-            kryptonButtonSignup.StateCommon.Content.ShortText.Font = new Font("Microsoft Tai Le", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            kryptonButtonSignup.StatePressed.Back.Color1 = Color.FromArgb(1, 73, 175);
-            kryptonButtonSignup.StatePressed.Back.Color2 = Color.FromArgb(1, 73, 175);
-            kryptonButtonSignup.StatePressed.Back.ColorAngle = 135F;
-            kryptonButtonSignup.StatePressed.Border.Color1 = Color.FromArgb(1, 73, 175);
-            kryptonButtonSignup.StatePressed.Border.Color2 = Color.FromArgb(1, 73, 175);
-            kryptonButtonSignup.StatePressed.Border.ColorAngle = 135F;
-            kryptonButtonSignup.StatePressed.Border.DrawBorders = ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right;
-            kryptonButtonSignup.StatePressed.Border.Rounding = 20;
-            kryptonButtonSignup.StatePressed.Border.Width = 1;
-            kryptonButtonSignup.StateTracking.Back.Color1 = Color.FromArgb(1, 73, 175);
-            kryptonButtonSignup.StateTracking.Back.Color2 = Color.FromArgb(1, 73, 175);
-            kryptonButtonSignup.StateTracking.Back.ColorAngle = 45F;
-            kryptonButtonSignup.StateTracking.Border.Color1 = Color.FromArgb(1, 73, 175);
-            kryptonButtonSignup.StateTracking.Border.Color2 = Color.FromArgb(1, 73, 175);
-            kryptonButtonSignup.StateTracking.Border.ColorAngle = 45F;
-            kryptonButtonSignup.StateTracking.Border.DrawBorders = ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right;
-            kryptonButtonSignup.StateTracking.Border.GraphicsHint = ComponentFactory.Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
-            kryptonButtonSignup.StateTracking.Border.Rounding = 20;
-            kryptonButtonSignup.StateTracking.Border.Width = 1;
-            kryptonButtonSignup.Values.Text = resources.GetString("kryptonButtonSignup.Values.Text");
-            kryptonButtonSignup.Click += kryptonButtonSignup_Click;
-            // 
             // Signup
             // 
             resources.ApplyResources(this, "$this");
@@ -257,10 +225,8 @@
         private Panel panel1;
         private PictureBox pictureBox1;
         private Panel panel2;
-        private ComponentFactory.Krypton.Toolkit.KryptonButton kryptonButtonSignup;
         private TextBox textBoxIDNumber;
         private TextBox textBoxUsername;
-        private TextBox textBoxPassword;
         private TextBox textBoxConfirmPassword;
         private TextBox textBoxParentPhone;
         private RadioButton radioButtonBoy;
@@ -270,10 +236,13 @@
         private Label label3;
         private Label label4;
         private Label label5;
-        private Label label6;
+        private Label GenderLabel;
         private Label label7;
         private Label label8;
         private Label label9;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private Button SignUpButton;
+        private TextBox textBoxPassword;
+        private Label IDLabel;
     }
 }

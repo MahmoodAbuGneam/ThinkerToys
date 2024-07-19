@@ -1,42 +1,25 @@
-﻿using System;
+﻿using ComponentFactory.Krypton.Toolkit;
+using System;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
+
+
+
+
+
+
 
 namespace ThinkerToys
 {
     public partial class Login : Form
     {
+
         public Login()
         {
             InitializeComponent();
         }
 
-        private void kryptonButton1_Click(object sender, EventArgs e)
-        {
-            // Handle login button click event
-            string username = UsernameTextBox.Text;
-            string password = PasswordTextBox.Text;
 
-            // Validate username and password
-            bool isValidUsername = ValidateUsername(username);
-            bool isValidPassword = ValidatePassword(password);
-
-            // Update error labels
-            label7.Text = isValidUsername ? "" : "Invalid username. Username must be between 6 and 8 characters long and contain only letters.";
-            label8.Text = isValidPassword ? "" : "Invalid password. Password must be between 8 and 10 characters long, contain at least one special character, one number, and one letter.";
-
-            if (isValidUsername && isValidPassword)
-            {
-                // Clear any previous success message
-                label9.Text = "Login successful!";
-                // Add further logic here, such as navigating to another form or executing additional actions
-            }
-            else
-            {
-                // Clear success message if there's any
-                label9.Text = "";
-            }
-        }
         private bool ValidateUsername(string username)
         {
             // Example validation method for username
@@ -50,10 +33,6 @@ namespace ThinkerToys
                 System.Text.RegularExpressions.Regex.IsMatch(password, @"[!@#$%^&*(),.?\[\]{}|<>]") &&
                 System.Text.RegularExpressions.Regex.IsMatch(password, @"\d") &&
                 System.Text.RegularExpressions.Regex.IsMatch(password, "[a-zA-Z]");
-        }
-        private void kryptonTextBox1_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
@@ -95,7 +74,47 @@ namespace ThinkerToys
 
         }
 
-        private void kryptonButton1_Click_1(object sender, EventArgs e)
+
+        private void LoginButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void SignUpLabel_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Signup signup = new Signup();
+            signup.ShowDialog();
+            this.Close();
+        }
+
+        private void LoginLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void UsernameLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PasswordLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+        private void UsernameTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PasswordTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void showPassCheckBox_CheckedChanged(object sender, EventArgs e)
         {
 
         }
