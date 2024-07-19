@@ -18,10 +18,12 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Signup));
-            panel1 = new Panel();
-            pictureBox1 = new PictureBox();
+            RightPanel = new Panel();
+            LogoPicture = new PictureBox();
             textBoxUsername = new TextBox();
-            panel2 = new Panel();
+            LeftPanel = new Panel();
+            LoginAccLabel = new Label();
+            AlreadyHaveAccLabel = new Label();
             IDLabel = new Label();
             SignUpButton = new Button();
             label9 = new Label();
@@ -40,23 +42,23 @@
             radioButtonBoy = new RadioButton();
             radioButtonGirl = new RadioButton();
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            panel2.SuspendLayout();
+            RightPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)LogoPicture).BeginInit();
+            LeftPanel.SuspendLayout();
             SuspendLayout();
             // 
-            // panel1
+            // RightPanel
             // 
-            panel1.Controls.Add(pictureBox1);
-            resources.ApplyResources(panel1, "panel1");
-            panel1.Name = "panel1";
+            RightPanel.Controls.Add(LogoPicture);
+            resources.ApplyResources(RightPanel, "RightPanel");
+            RightPanel.Name = "RightPanel";
             // 
-            // pictureBox1
+            // LogoPicture
             // 
-            pictureBox1.Image = Properties.Resources.toys_and_kid_s_fashion__1__removebg_preview;
-            resources.ApplyResources(pictureBox1, "pictureBox1");
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.TabStop = false;
+            LogoPicture.Image = Properties.Resources.toys_and_kid_s_fashion__1__removebg_preview;
+            resources.ApplyResources(LogoPicture, "LogoPicture");
+            LogoPicture.Name = "LogoPicture";
+            LogoPicture.TabStop = false;
             // 
             // textBoxUsername
             // 
@@ -65,28 +67,46 @@
             textBoxUsername.Name = "textBoxUsername";
             textBoxUsername.UseWaitCursor = true;
             // 
-            // panel2
+            // LeftPanel
             // 
-            panel2.Controls.Add(IDLabel);
-            panel2.Controls.Add(textBoxUsername);
-            panel2.Controls.Add(SignUpButton);
-            panel2.Controls.Add(label9);
-            panel2.Controls.Add(label8);
-            panel2.Controls.Add(label7);
-            panel2.Controls.Add(GenderLabel);
-            panel2.Controls.Add(label5);
-            panel2.Controls.Add(label4);
-            panel2.Controls.Add(label3);
-            panel2.Controls.Add(label2);
-            panel2.Controls.Add(label1);
-            panel2.Controls.Add(textBoxIDNumber);
-            panel2.Controls.Add(textBoxPassword);
-            panel2.Controls.Add(textBoxConfirmPassword);
-            panel2.Controls.Add(textBoxParentPhone);
-            panel2.Controls.Add(radioButtonBoy);
-            panel2.Controls.Add(radioButtonGirl);
-            resources.ApplyResources(panel2, "panel2");
-            panel2.Name = "panel2";
+            LeftPanel.Controls.Add(LoginAccLabel);
+            LeftPanel.Controls.Add(AlreadyHaveAccLabel);
+            LeftPanel.Controls.Add(IDLabel);
+            LeftPanel.Controls.Add(textBoxUsername);
+            LeftPanel.Controls.Add(SignUpButton);
+            LeftPanel.Controls.Add(label9);
+            LeftPanel.Controls.Add(label8);
+            LeftPanel.Controls.Add(label7);
+            LeftPanel.Controls.Add(GenderLabel);
+            LeftPanel.Controls.Add(label5);
+            LeftPanel.Controls.Add(label4);
+            LeftPanel.Controls.Add(label3);
+            LeftPanel.Controls.Add(label2);
+            LeftPanel.Controls.Add(label1);
+            LeftPanel.Controls.Add(textBoxIDNumber);
+            LeftPanel.Controls.Add(textBoxPassword);
+            LeftPanel.Controls.Add(textBoxConfirmPassword);
+            LeftPanel.Controls.Add(textBoxParentPhone);
+            LeftPanel.Controls.Add(radioButtonBoy);
+            LeftPanel.Controls.Add(radioButtonGirl);
+            resources.ApplyResources(LeftPanel, "LeftPanel");
+            LeftPanel.Name = "LeftPanel";
+            // 
+            // LoginAccLabel
+            // 
+            resources.ApplyResources(LoginAccLabel, "LoginAccLabel");
+            LoginAccLabel.ForeColor = Color.Red;
+            LoginAccLabel.Name = "LoginAccLabel";
+            LoginAccLabel.Click += LoginAccLabel_Click;
+            // 
+            // AlreadyHaveAccLabel
+            // 
+            resources.ApplyResources(AlreadyHaveAccLabel, "AlreadyHaveAccLabel");
+            AlreadyHaveAccLabel.BackColor = SystemColors.Control;
+            AlreadyHaveAccLabel.Cursor = Cursors.No;
+            AlreadyHaveAccLabel.ForeColor = Color.Navy;
+            AlreadyHaveAccLabel.Name = "AlreadyHaveAccLabel";
+            AlreadyHaveAccLabel.Click += AlreadyHaveAccLabel_Click;
             // 
             // IDLabel
             // 
@@ -208,23 +228,23 @@
             // 
             resources.ApplyResources(this, "$this");
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(panel2);
-            Controls.Add(panel1);
+            Controls.Add(LeftPanel);
+            Controls.Add(RightPanel);
             FormBorderStyle = FormBorderStyle.Fixed3D;
             Name = "Signup";
             Load += Signup_Load;
-            panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            panel2.ResumeLayout(false);
-            panel2.PerformLayout();
+            RightPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)LogoPicture).EndInit();
+            LeftPanel.ResumeLayout(false);
+            LeftPanel.PerformLayout();
             ResumeLayout(false);
         }
 
         #endregion
 
-        private Panel panel1;
-        private PictureBox pictureBox1;
-        private Panel panel2;
+        private Panel RightPanel;
+        private PictureBox LogoPicture;
+        private Panel LeftPanel;
         private TextBox textBoxIDNumber;
         private TextBox textBoxUsername;
         private TextBox textBoxConfirmPassword;
@@ -244,5 +264,7 @@
         private Button SignUpButton;
         private TextBox textBoxPassword;
         private Label IDLabel;
+        private Label LoginAccLabel;
+        private Label AlreadyHaveAccLabel;
     }
 }

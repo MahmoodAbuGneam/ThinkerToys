@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            LogoPicture = new PictureBox();
             LeftSidePanel = new Panel();
             LoginButton = new Button();
             showPassCheckBox = new CheckBox();
@@ -44,20 +43,11 @@
             label6 = new Label();
             LoginLabel = new Label();
             LogoBackPanel = new Panel();
-            ((System.ComponentModel.ISupportInitialize)LogoPicture).BeginInit();
+            LogoPicture = new PictureBox();
             LeftSidePanel.SuspendLayout();
             LogoBackPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)LogoPicture).BeginInit();
             SuspendLayout();
-            // 
-            // LogoPicture
-            // 
-            LogoPicture.Image = Properties.Resources.toys_and_kid_s_fashion__1__removebg_preview;
-            LogoPicture.Location = new Point(-56, -11);
-            LogoPicture.Margin = new Padding(3, 2, 3, 2);
-            LogoPicture.Name = "LogoPicture";
-            LogoPicture.Size = new Size(425, 415);
-            LogoPicture.TabIndex = 0;
-            LogoPicture.TabStop = false;
             // 
             // LeftSidePanel
             // 
@@ -79,7 +69,7 @@
             LeftSidePanel.Name = "LeftSidePanel";
             LeftSidePanel.Size = new Size(368, 437);
             LeftSidePanel.TabIndex = 1;
-            LeftSidePanel.Paint += panel2_Paint;
+            LeftSidePanel.Paint += LeftPanel_Paint;
             // 
             // LoginButton
             // 
@@ -140,7 +130,7 @@
             CreateAccountLabel.Size = new Size(128, 14);
             CreateAccountLabel.TabIndex = 34;
             CreateAccountLabel.Text = "Dont have an account ?";
-            CreateAccountLabel.Click += label3_Click;
+            CreateAccountLabel.Click += CreateAccountLabel_Click;
             // 
             // UsernameLabel
             // 
@@ -163,6 +153,7 @@
             PasswordTextBox.Margin = new Padding(3, 2, 3, 2);
             PasswordTextBox.Multiline = true;
             PasswordTextBox.Name = "PasswordTextBox";
+            PasswordTextBox.PasswordChar = '•';
             PasswordTextBox.Size = new Size(213, 21);
             PasswordTextBox.TabIndex = 33;
             PasswordTextBox.UseWaitCursor = true;
@@ -183,43 +174,31 @@
             // 
             // label9
             // 
-            label9.AutoSize = true;
-            label9.ForeColor = Color.Green;
-            label9.Location = new Point(3, 250);
+            label9.Location = new Point(0, 0);
             label9.Name = "label9";
-            label9.Size = new Size(0, 15);
-            label9.TabIndex = 29;
+            label9.Size = new Size(100, 23);
+            label9.TabIndex = 38;
             // 
             // label8
             // 
-            label8.AutoSize = true;
-            label8.ForeColor = Color.Red;
-            label8.Location = new Point(3, 179);
+            label8.Location = new Point(0, 0);
             label8.Name = "label8";
-            label8.Size = new Size(0, 15);
-            label8.TabIndex = 28;
+            label8.Size = new Size(100, 23);
+            label8.TabIndex = 39;
             // 
             // label7
             // 
-            label7.AutoSize = true;
-            label7.BackColor = SystemColors.Control;
-            label7.ForeColor = Color.Red;
-            label7.Location = new Point(3, 116);
+            label7.Location = new Point(0, 0);
             label7.Name = "label7";
-            label7.Size = new Size(0, 15);
-            label7.TabIndex = 27;
-            label7.Click += label7_Click;
+            label7.Size = new Size(100, 23);
+            label7.TabIndex = 40;
             // 
             // label6
             // 
-            label6.Anchor = AnchorStyles.None;
-            label6.AutoSize = true;
-            label6.ForeColor = Color.CadetBlue;
-            label6.Location = new Point(122, 528);
+            label6.Location = new Point(0, 0);
             label6.Name = "label6";
-            label6.Size = new Size(127, 15);
-            label6.TabIndex = 22;
-            label6.Text = "Dont Have an Account";
+            label6.Size = new Size(100, 23);
+            label6.TabIndex = 41;
             // 
             // LoginLabel
             // 
@@ -243,6 +222,16 @@
             LogoBackPanel.Size = new Size(385, 437);
             LogoBackPanel.TabIndex = 0;
             // 
+            // LogoPicture
+            // 
+            LogoPicture.Image = Properties.Resources.toys_and_kid_s_fashion__1__removebg_preview;
+            LogoPicture.Location = new Point(-56, -11);
+            LogoPicture.Margin = new Padding(3, 2, 3, 2);
+            LogoPicture.Name = "LogoPicture";
+            LogoPicture.Size = new Size(425, 415);
+            LogoPicture.TabIndex = 0;
+            LogoPicture.TabStop = false;
+            // 
             // Login
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -255,15 +244,14 @@
             Name = "Login";
             Text = "Login";
             Load += Login_Load;
-            ((System.ComponentModel.ISupportInitialize)LogoPicture).EndInit();
             LeftSidePanel.ResumeLayout(false);
             LeftSidePanel.PerformLayout();
             LogoBackPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)LogoPicture).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
-        private PictureBox LogoPicture;
         private Panel LeftSidePanel;
         private Label LoginLabel;
         private Label label6;
@@ -279,5 +267,6 @@
         private TextBox PasswordTextBox;
         private TextBox UsernameTextBox;
         private Button LoginButton;
+        private PictureBox LogoPicture;
     }
 }
