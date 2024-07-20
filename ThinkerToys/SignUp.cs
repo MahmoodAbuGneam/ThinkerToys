@@ -196,6 +196,7 @@ namespace ThinkerToys
                 worksheet.Cells[1, 3] = "Password";
                 worksheet.Cells[1, 4] = "Parent Phone";
                 worksheet.Cells[1, 5] = "Gender";
+                worksheet.Cells[1, 6] = "Coins";
             }
 
             // Find the first empty row
@@ -204,9 +205,11 @@ namespace ThinkerToys
             // Write data
             worksheet.Cells[emptyRow, 1] = idNumber;
             worksheet.Cells[emptyRow, 2] = username;
-            worksheet.Cells[emptyRow, 3] = password; // Consider security implications
+            worksheet.Cells[emptyRow, 3] = password; 
             worksheet.Cells[emptyRow, 4] = parentPhone;
             worksheet.Cells[emptyRow, 5] = gender;
+            worksheet.Cells[emptyRow, 6] = 0; // Initialize coins to 0
+
 
             // Save changes and close
             workbook.Save();

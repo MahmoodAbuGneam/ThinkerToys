@@ -2,6 +2,13 @@ namespace ThinkerToys
 {
     internal static class Program
     {
+
+
+
+
+
+        public static int CurrentUserCoins { get; set; } // function to get the coins of the user 
+
         /// <summary>
         ///  The main entry point for the application.
         /// </summary>

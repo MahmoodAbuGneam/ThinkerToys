@@ -13,7 +13,9 @@ namespace ThinkerToys
     {
 
 
-        private const int Shift = 9;  
+        private const int Shift = 9;
+        private string currentUsername;
+        private int currentUserCoins;
 
 
         public Login()
@@ -47,6 +49,7 @@ namespace ThinkerToys
             string username = UsernameTextBox.Text;
             string password = EncryptText(PasswordTextBox.Text);
 
+
             // check the username and password using the validators
 
             if (!ValidateUsername(username) || !ValidatePassword(password))
@@ -59,7 +62,7 @@ namespace ThinkerToys
 
             if (AuthenticateUser(username, password))
             {
-                MessageBox.Show("Login successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show($"Login successful!\nUsername: {currentUsername}\nCoins: {currentUserCoins}", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 // هني دخلنا عالحساب بنجاح ، ولازم نكمل عصفحة البيت
                 // finished the login and logged in successfully , next : continue to the homepage
@@ -113,6 +116,8 @@ namespace ThinkerToys
                 {
                     string storedUsername = worksheet.Cells[row, 2].Value2.ToString();
                     string storedPassword = worksheet.Cells[row, 3].Value2.ToString();
+                    int storedCoins = int.Parse(worksheet.Cells[row, 6].Value2.ToString());
+
 
                     if (storedUsername == username && storedPassword == encryptedPassword)
                     {
@@ -121,6 +126,7 @@ namespace ThinkerToys
                         Marshal.ReleaseComObject(worksheet);
                         Marshal.ReleaseComObject(workbook);
                         Marshal.ReleaseComObject(excelApp);
+                        Program.CurrentUserCoins = storedCoins; // Save the coins value to a session variable or similar
                         return true;
                     }
                     row++;
