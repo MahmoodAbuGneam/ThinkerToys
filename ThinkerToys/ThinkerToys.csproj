@@ -22,6 +22,7 @@
 
   <ItemGroup>
     <PackageReference Include="ComponentFactory.Krypton.Toolkit" Version="1.0.0" />
+    <PackageReference Include="ExcelDataReader" Version="3.7.0" />
   </ItemGroup>
 
   <ItemGroup>
