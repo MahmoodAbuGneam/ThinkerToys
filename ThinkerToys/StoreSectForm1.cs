@@ -32,6 +32,7 @@ namespace ThinkerToys
         {
             InitializeComponent();
             market = new Market();
+            storeCoins = UserSession.Instance.Coins;
             LoadAllItems();
             storeCoinsValueLabel.Text = storeCoins.ToString();
             updateRealUserCoins();
