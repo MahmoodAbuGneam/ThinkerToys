@@ -129,7 +129,7 @@ namespace ThinkerToys
                 }
                 else
                 {
-                    MessageBox.Show("Not enough storeCoins.");
+                    MessageBox.Show("Not enough Coins.");
                 }
             }
             updateRealUserCoins();
@@ -275,6 +275,12 @@ namespace ThinkerToys
             //DisplayItems(market.GetAllItems());
             //To-Do:
             //Link this with Home-Page 
+            this.Hide();
+             
+            
+            HomePage stHomePage = new HomePage();
+            stHomePage.ShowDialog();
+            this.Close();
         }
 
         private void stClothesBtn_Click(object sender, EventArgs e)

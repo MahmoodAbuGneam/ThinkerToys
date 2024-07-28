@@ -90,6 +90,8 @@
             this.storeSectionlabel1.Size = new System.Drawing.Size(91, 21);
             this.storeSectionlabel1.TabIndex = 3;
             this.storeSectionlabel1.Text = "username";
+            this.storeSectionlabel1.Text = UserSession.Instance.Username;
+
             this.storeSectionlabel1.Click += new System.EventHandler(this.storeSectionlabel1_Click);
             // 
             // storeUserImage
