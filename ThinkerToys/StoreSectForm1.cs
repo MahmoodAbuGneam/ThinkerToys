@@ -38,7 +38,7 @@ namespace ThinkerToys
         }
         private void updateRealUserCoins()
         {
-            //UserSession.Instance.Coins = storeCoins;
+            UserSession.Instance.Coins = storeCoins;
         }
 
         private void LoadAllItems()
