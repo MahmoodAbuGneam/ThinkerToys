@@ -121,19 +121,253 @@
   <data name="visible_pass-removebg-preview (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\visible_pass-removebg-preview (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="coins-stack" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\coins-stack.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="logo - jpg " type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\logo - jpg .jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="profile" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\profile.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="logo_name_only" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\logo_name_only.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="coins-stack" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\coins-stack.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="toys_and_kid_s_fashion__1_-removebg-preview" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\toys_and_kid_s_fashion__1_-removebg-preview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="profile" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\profile.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="9036324" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\9036324.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="account-logout-32 (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\account-logout-32 (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="account-logout-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\account-logout-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="angry-hulk-ready-for-battle-marvel-sticker" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\angry-hulk-ready-for-battle-marvel-sticker.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="angry-hulk-ready-for-battle-marvel-sticker1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\angry-hulk-ready-for-battle-marvel-sticker1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="arrow-91-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\arrow-91-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="arrow-118-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\arrow-118-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="baby-clothing" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\baby-clothing.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="baby-shoes" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\baby-shoes.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="batman-6-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\batman-6-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="cart-43-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cart-43-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="christmas-toy-collection-flat-design" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\christmas-toy-collection-flat-design.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="crown-5-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\crown-5-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="flame-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\flame-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Flaticonmaker-Flat-Style-House.48" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Flaticonmaker-Flat-Style-House.48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Flaticonmaker-Flat-Style-House.256" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Flaticonmaker-Flat-Style-House.256.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="funny-stickers-collection" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\funny-stickers-collection.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="girlsToys" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\girlsToys.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="gold-star" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gold-star.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="hand-drawn-christmas-toys-collection" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\hand-drawn-christmas-toys-collection.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="hand-drawn-flat-christmas-toys-collection" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\hand-drawn-flat-christmas-toys-collection.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="hand-drawn-flat-christmas-toys-collection1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\hand-drawn-flat-christmas-toys-collection1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="happy-mouse-with-cheese-isolated-white-background-illustration_567746-36" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\happy-mouse-with-cheese-isolated-white-background-illustration_567746-36.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="home-7-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\home-7-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="home-7-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\home-7-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Hopstarter-Superhero-Avatar-Avengers-Iron-Man.48" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Hopstarter-Superhero-Avatar-Avengers-Iron-Man.48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Iconka-St-Patricks-Day-Hat-tophat.72" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Iconka-St-Patricks-Day-Hat-tophat.72.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Iconka-St-Patricks-Day-Hat-tophat.96" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Iconka-St-Patricks-Day-Hat-tophat.96.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Iconka-St-Patricks-Day-Hat-tophat.128" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Iconka-St-Patricks-Day-Hat-tophat.128.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Icons8-Windows-8-Data-Grid.512" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Icons8-Windows-8-Data-Grid.512.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="in-love-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\in-love-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Ionic-Ionicons-Grid.512" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Ionic-Ionicons-Grid.512.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="kisspng-amazon-com-shopping-cart-online-shopping-logo-store-shelf-5ab9522a322793.5223082615220946342054" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\kisspng-amazon-com-shopping-cart-online-shopping-logo-store-shelf-5ab9522a322793.5223082615220946342054.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="learning" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\learning.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="light-bulb" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\light-bulb.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="m2i8i8A0m2i8m2H7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\m2i8i8A0m2i8m2H7.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mens-fashion" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mens-fashion.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="microphones" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\microphones.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Microsoft-Fluentui-Emoji-3d-Womans-Clothes-3d.48" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Microsoft-Fluentui-Emoji-3d-Womans-Clothes-3d.48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Microsoft-Fluentui-Emoji-Flat-Orange-Circle-Flat.96" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Microsoft-Fluentui-Emoji-Flat-Orange-Circle-Flat.96.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Mysitemyway-Grunge-Stickers-Orange-sticker-badges-109.48" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Mysitemyway-Grunge-Stickers-Orange-sticker-badges-109.48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Oxygen-Icons.org-Oxygen-Categories-applications-toys.48" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Oxygen-Icons.org-Oxygen-Categories-applications-toys.48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Paomedia-Small-N-Flat-Profile.512" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Paomedia-Small-N-Flat-Profile.512.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="photo-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\photo-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Pictogrammers-Material-Dots-grid.512" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Pictogrammers-Material-Dots-grid.512.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="png-transparent-barbie-mariposa-doll-barbie-barbie-illustration-hair-accessory-child-face-thumbnail" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\png-transparent-barbie-mariposa-doll-barbie-barbie-illustration-hair-accessory-child-face-thumbnail.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="png-transparent-disney-princesses-illustration-disney-princess-princesas-princess-kida-kidagakash-princess-aurora-minnie-mouse-disney-princess-disney-princess-princesas-kida" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\png-transparent-disney-princesses-illustration-disney-princess-princesas-princess-kida-kidagakash-princess-aurora-minnie-mouse-disney-princess-disney-princess-princesas-kida.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="png-transparent-shopping-bags-trolleys-shopping-cart-logo-online-shop-white-logo-shopping-centre-thumbnail" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\png-transparent-shopping-bags-trolleys-shopping-cart-logo-online-shop-white-logo-shopping-centre-thumbnail.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="png-transparent-su-douglas-fireman-sam-firefighter-character-children-s-television-series-firefighter-su-douglas-fireman-sam (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\png-transparent-su-douglas-fireman-sam-firefighter-character-children-s-television-series-firefighter-su-douglas-fireman-sam (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="png-transparent-su-douglas-fireman-sam-firefighter-character-children-s-television-series-firefighter-su-douglas-fireman-sam" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\png-transparent-su-douglas-fireman-sam-firefighter-character-children-s-television-series-firefighter-su-douglas-fireman-sam.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="polo-shirt-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\polo-shirt-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="puppy" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\puppy.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="purchase" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\purchase.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="robot" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\robot.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="rocking-horse" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\rocking-horse.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="shoes" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\shoes.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="shopping-cart-64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\shopping-cart-64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="skull-11-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\skull-11-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="soccer-3-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\soccer-3-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="spider-man-head-blue-stroke-sticker" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\spider-man-head-blue-stroke-sticker.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="sticker.1024x1024" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sticker.1024x1024.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="sticker-icons-hand-drawn-doodle (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sticker-icons-hand-drawn-doodle (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="sticker-icons-hand-drawn-doodle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sticker-icons-hand-drawn-doodle.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="superCat" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\superCat.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="superUnicorn" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\superUnicorn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="superwoman" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\superwoman.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="teddy-bear (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\teddy-bear (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="teddy-bear" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\teddy-bear.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="think-different" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\think-different.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="toy_car" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\toy_car.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="toys_and_kid_s_fashion__1_-removebg-preview1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\toys_and_kid_s_fashion__1_-removebg-preview1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="tshirt" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\tshirt.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="u93b_5ebo_210528" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\u93b_5ebo_210528.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="unicorn" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\unicorn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="user-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\user-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="video-game-star-coin" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\video-game-star-coin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="young-superhero-girl-costume" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\young-superhero-girl-costume.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="yoyo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\yoyo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

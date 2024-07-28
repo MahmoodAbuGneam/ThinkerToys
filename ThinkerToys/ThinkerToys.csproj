@@ -21,6 +21,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Bunifu.Dataviz.WinForms" Version="2.2.1" />
+    <PackageReference Include="Bunifu.UI.WinForms" Version="7.0.0" />
+    <PackageReference Include="Bunifu.Utils" Version="1.0.5" />
     <PackageReference Include="ComponentFactory.Krypton.Toolkit" Version="1.0.0" />
     <PackageReference Include="ExcelDataReader" Version="3.7.0" />
   </ItemGroup>
