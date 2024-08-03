@@ -117,17 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="LogoPicture.Location" type="System.Drawing.Point, System.Drawing">
-    <value>-40, 5</value>
-  </data>
-  <data name="LogoPicture.Size" type="System.Drawing.Size, System.Drawing">
-    <value>416, 412</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="LogoPicture.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
   <data name="&gt;&gt;LogoPicture.Name" xml:space="preserve">
     <value>LogoPicture</value>
   </data>
@@ -140,12 +129,14 @@
   <data name="&gt;&gt;LogoPicture.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="RightPanel.Location" type="System.Drawing.Point, System.Drawing">
     <value>383, 9</value>
   </data>
   <data name="RightPanel.Size" type="System.Drawing.Size, System.Drawing">
     <value>393, 446</value>
   </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="RightPanel.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
@@ -160,6 +151,27 @@
   </data>
   <data name="&gt;&gt;RightPanel.ZOrder" xml:space="preserve">
     <value>1</value>
+  </data>
+  <data name="LogoPicture.Location" type="System.Drawing.Point, System.Drawing">
+    <value>-40, 5</value>
+  </data>
+  <data name="LogoPicture.Size" type="System.Drawing.Size, System.Drawing">
+    <value>416, 412</value>
+  </data>
+  <data name="LogoPicture.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;LogoPicture.Name" xml:space="preserve">
+    <value>LogoPicture</value>
+  </data>
+  <data name="&gt;&gt;LogoPicture.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LogoPicture.Parent" xml:space="preserve">
+    <value>RightPanel</value>
+  </data>
+  <data name="&gt;&gt;LogoPicture.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="textBoxUsername.Location" type="System.Drawing.Point, System.Drawing">
     <value>129, 96</value>
@@ -412,13 +424,13 @@
     <value>15, 136</value>
   </data>
   <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>113, 23</value>
+    <value>61, 23</value>
   </data>
   <data name="label5.TabIndex" type="System.Int32, mscorlib">
     <value>25</value>
   </data>
   <data name="label5.Text" xml:space="preserve">
-    <value>Phone Num :</value>
+    <value>Email :</value>
   </data>
   <data name="&gt;&gt;label5.Name" xml:space="preserve">
     <value>label5</value>
@@ -621,25 +633,25 @@
   <data name="&gt;&gt;textBoxConfirmPassword.ZOrder" xml:space="preserve">
     <value>16</value>
   </data>
-  <data name="textBoxParentPhone.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="textBoxEmail.Location" type="System.Drawing.Point, System.Drawing">
     <value>129, 136</value>
   </data>
-  <data name="textBoxParentPhone.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="textBoxEmail.Size" type="System.Drawing.Size, System.Drawing">
     <value>213, 23</value>
   </data>
-  <data name="textBoxParentPhone.TabIndex" type="System.Int32, mscorlib">
+  <data name="textBoxEmail.TabIndex" type="System.Int32, mscorlib">
     <value>17</value>
   </data>
-  <data name="&gt;&gt;textBoxParentPhone.Name" xml:space="preserve">
-    <value>textBoxParentPhone</value>
+  <data name="&gt;&gt;textBoxEmail.Name" xml:space="preserve">
+    <value>textBoxEmail</value>
   </data>
-  <data name="&gt;&gt;textBoxParentPhone.Type" xml:space="preserve">
+  <data name="&gt;&gt;textBoxEmail.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;textBoxParentPhone.Parent" xml:space="preserve">
+  <data name="&gt;&gt;textBoxEmail.Parent" xml:space="preserve">
     <value>LeftPanel</value>
   </data>
-  <data name="&gt;&gt;textBoxParentPhone.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;textBoxEmail.ZOrder" xml:space="preserve">
     <value>17</value>
   </data>
   <data name="radioButtonBoy.AutoSize" type="System.Boolean, mscorlib">

@@ -38,7 +38,7 @@
             textBoxIDNumber = new TextBox();
             textBoxPassword = new TextBox();
             textBoxConfirmPassword = new TextBox();
-            textBoxParentPhone = new TextBox();
+            textBoxEmail = new TextBox();
             radioButtonBoy = new RadioButton();
             radioButtonGirl = new RadioButton();
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
@@ -86,7 +86,7 @@
             LeftPanel.Controls.Add(textBoxIDNumber);
             LeftPanel.Controls.Add(textBoxPassword);
             LeftPanel.Controls.Add(textBoxConfirmPassword);
-            LeftPanel.Controls.Add(textBoxParentPhone);
+            LeftPanel.Controls.Add(textBoxEmail);
             LeftPanel.Controls.Add(radioButtonBoy);
             LeftPanel.Controls.Add(radioButtonGirl);
             resources.ApplyResources(LeftPanel, "LeftPanel");
@@ -150,6 +150,7 @@
             resources.ApplyResources(label5, "label5");
             label5.ForeColor = Color.Navy;
             label5.Name = "label5";
+            label5.Click += label5_Click;
             // 
             // label4
             // 
@@ -201,12 +202,13 @@
             textBoxConfirmPassword.UseSystemPasswordChar = true;
             textBoxConfirmPassword.UseWaitCursor = true;
             // 
-            // textBoxParentPhone
+            // textBoxEmail
             // 
-            textBoxParentPhone.ForeColor = Color.Navy;
-            resources.ApplyResources(textBoxParentPhone, "textBoxParentPhone");
-            textBoxParentPhone.Name = "textBoxParentPhone";
-            textBoxParentPhone.UseWaitCursor = true;
+            textBoxEmail.ForeColor = Color.Navy;
+            resources.ApplyResources(textBoxEmail, "textBoxEmail");
+            textBoxEmail.Name = "textBoxEmail";
+            textBoxEmail.UseWaitCursor = true;
+            textBoxEmail.TextChanged += textBoxEmail_TextChanged_1;
             // 
             // radioButtonBoy
             // 
@@ -248,7 +250,7 @@
         private TextBox textBoxIDNumber;
         private TextBox textBoxUsername;
         private TextBox textBoxConfirmPassword;
-        private TextBox textBoxParentPhone;
+        private TextBox textBoxEmail;
         private RadioButton radioButtonBoy;
         private RadioButton radioButtonGirl;
         private Label label1;

@@ -4,6 +4,7 @@ using System.Runtime.InteropServices;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using Microsoft.Office.Interop.Excel;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 using _Excel = Microsoft.Office.Interop.Excel;
 
 
@@ -20,6 +21,141 @@ namespace ThinkerToys
         {
             InitializeComponent();
         }
+
+
+
+        // check if ID already exists . 
+        private bool IDExists(string idNumber)
+        {
+            _Excel.Application excelApp = new _Excel.Application();
+            _Excel.Workbook workbook = null;
+            _Excel.Worksheet worksheet = null;
+
+            try
+            {
+                string filePath = System.IO.Path.Combine(System.IO.Directory.GetCurrentDirectory(), "SignupData.xlsx");
+                workbook = excelApp.Workbooks.Open(filePath);
+                worksheet = (_Excel.Worksheet)workbook.Sheets[1];
+
+                int rowCount = worksheet.Cells.SpecialCells(_Excel.XlCellType.xlCellTypeLastCell, Type.Missing).Row;
+
+                for (int i = 2; i <= rowCount; i++) //row 1 has headers
+                {
+                    if (worksheet.Cells[i, 1].Value.ToString() == idNumber)
+                    {
+                        return true;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error checking ID: " + ex.Message);
+            }
+            finally
+            {
+                if (workbook != null)
+                {
+                    workbook.Close(false);
+                    Marshal.ReleaseComObject(workbook);
+                }
+                excelApp.Quit();
+                Marshal.ReleaseComObject(excelApp);
+                GC.Collect();
+                GC.WaitForPendingFinalizers();
+            }
+            return false;
+        }
+
+
+
+        // check if the username already exists.
+        private bool UsernameExists(string username)
+        {
+            _Excel.Application excelApp = new _Excel.Application();
+            _Excel.Workbook workbook = null;
+            _Excel.Worksheet worksheet = null;
+
+            try
+            {
+                string filePath = System.IO.Path.Combine(System.IO.Directory.GetCurrentDirectory(), "SignupData.xlsx");
+                workbook = excelApp.Workbooks.Open(filePath);
+                worksheet = (_Excel.Worksheet)workbook.Sheets[1];
+
+                int rowCount = worksheet.Cells.SpecialCells(_Excel.XlCellType.xlCellTypeLastCell, Type.Missing).Row;
+
+                for (int i = 2; i <= rowCount; i++) //row 1 has headers
+                {
+                    if (worksheet.Cells[i, 2].Value.ToString() == username)
+                    {
+                        return true;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error checking username: " + ex.Message);
+            }
+            finally
+            {
+                if (workbook != null)
+                {
+                    workbook.Close(false);
+                    Marshal.ReleaseComObject(workbook);
+                }
+                excelApp.Quit();
+                Marshal.ReleaseComObject(excelApp);
+                GC.Collect();
+                GC.WaitForPendingFinalizers();
+            }
+            return false;
+        }
+
+
+
+        // check if the email address already exists.
+        private bool EmailExists(string email)
+        {
+            _Excel.Application excelApp = new _Excel.Application();
+            _Excel.Workbook workbook = null;
+            _Excel.Worksheet worksheet = null;
+
+            try
+            {
+                string filePath = System.IO.Path.Combine(System.IO.Directory.GetCurrentDirectory(), "SignupData.xlsx");
+                workbook = excelApp.Workbooks.Open(filePath);
+                worksheet = (_Excel.Worksheet)workbook.Sheets[1];
+
+                int rowCount = worksheet.Cells.SpecialCells(_Excel.XlCellType.xlCellTypeLastCell, Type.Missing).Row;
+
+                for (int i = 2; i <= rowCount; i++) // Assuming row 1 has headers
+                {
+                    if (worksheet.Cells[i, 4].Value != null && worksheet.Cells[i, 4].Value.ToString().ToLower() == email.ToLower())
+                    {
+                        return true;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error checking email: " + ex.Message);
+            }
+            finally
+            {
+                if (workbook != null)
+                {
+                    workbook.Close(false);
+                    Marshal.ReleaseComObject(workbook);
+                }
+                excelApp.Quit();
+                Marshal.ReleaseComObject(excelApp);
+                GC.Collect();
+                GC.WaitForPendingFinalizers();
+            }
+            return false;
+        }
+
+
+
 
         private string EncryptText(string input, int shifter = Shift)
         {
@@ -65,11 +201,9 @@ namespace ThinkerToys
         {
             return password == confirmPassword;
         }
-
-        private bool ValidateParentPhone(string phone)
+        private bool ValidateEmail(string email)
         {
-
-            return Regex.IsMatch(phone, @"^\d{10}$");
+            return Regex.IsMatch(email, @"^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$");
         }
 
         private void textBoxIDNumber_TextChanged(object sender, EventArgs e)
@@ -92,7 +226,7 @@ namespace ThinkerToys
             label4.Text = "";
         }
 
-        private void textBoxParentPhone_TextChanged(object sender, EventArgs e)
+        private void textBoxEmail_TextChanged(object sender, EventArgs e)
         {
             label5.Text = "";
         }
@@ -119,8 +253,32 @@ namespace ThinkerToys
             string username = textBoxUsername.Text;
             string password = textBoxPassword.Text;
             string confirmPassword = textBoxConfirmPassword.Text;
-            string parentPhone = textBoxParentPhone.Text;
+            string email = textBoxEmail.Text;
             string gender = radioButtonBoy.Checked ? "Boy" : (radioButtonGirl.Checked ? "Girl" : "");
+
+
+
+
+            // Check if the id exists or not and print an error if not . 
+            if (IDExists(idNumber))
+            {
+                MessageBox.Show("An account with this ID already exists.", "Registration Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (UsernameExists(username))
+            {
+                MessageBox.Show("This username is already taken.", "Registration Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+
+            // Check if the id exists or not and print an error if not . 
+            if (EmailExists(email))
+            {
+                MessageBox.Show("This email is already registered.", "Registration Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
 
 
@@ -137,7 +295,7 @@ namespace ThinkerToys
             bool isValidUsername = ValidateUsername(username);
             bool isValidPassword = ValidatePassword(password);
             bool isValidConfirmPassword = ValidateConfirmPassword(password, confirmPassword);
-            bool isValidParentPhone = ValidateParentPhone(parentPhone);
+            bool isValidEmail = ValidateEmail(email);
             bool isGenderSelected = !string.IsNullOrEmpty(gender);
 
             // Check for errors and show message boxes
@@ -149,20 +307,20 @@ namespace ThinkerToys
                 MessageBox.Show("Invalid password. Password must be between 8 and 16 characters long, contain at least one special character, one number, and one letter.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else if (!isValidConfirmPassword)
                 MessageBox.Show("Passwords do not match.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            else if (!isValidParentPhone)
-                MessageBox.Show("Invalid phone number. Please enter a valid phone number.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            else if (!isValidEmail)
+                MessageBox.Show("Invalid email address. Please enter a valid Email address.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else if (!isGenderSelected)
                 MessageBox.Show("Please select a gender.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else
             {
                 // all inputs are good , we can save it in the database ( excel file )
-                SaveDataToExcel(idNumber, username, encryptedPassword, parentPhone, gender);
+                SaveDataToExcel(idNumber, username, encryptedPassword, email, gender);
                 MessageBox.Show("Signup successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             }
         }
 
-        private void SaveDataToExcel(string idNumber, string username, string password, string parentPhone, string gender)
+        private void SaveDataToExcel(string idNumber, string username, string password, string Email, string gender)
         {
             _Excel.Application excelApp = new _Excel.Application();
             if (excelApp == null)
@@ -194,9 +352,12 @@ namespace ThinkerToys
                 worksheet.Cells[1, 1] = "ID Number";
                 worksheet.Cells[1, 2] = "Username";
                 worksheet.Cells[1, 3] = "Password";
-                worksheet.Cells[1, 4] = "Parent Phone";
+                worksheet.Cells[1, 4] = "Email Address";
                 worksheet.Cells[1, 5] = "Gender";
                 worksheet.Cells[1, 6] = "Coins";
+                worksheet.Cells[1, 7] = "IsConfirmed";
+                worksheet.Cells[1, 8] = "OTP";
+                worksheet.Cells[1, 9] = "OTPExpiryTime";
             }
 
             // Find the first empty row
@@ -205,11 +366,13 @@ namespace ThinkerToys
             // Write data
             worksheet.Cells[emptyRow, 1] = idNumber;
             worksheet.Cells[emptyRow, 2] = username;
-            worksheet.Cells[emptyRow, 3] = password; 
-            worksheet.Cells[emptyRow, 4] = parentPhone;
+            worksheet.Cells[emptyRow, 3] = password;
+            worksheet.Cells[emptyRow, 4] = Email;
             worksheet.Cells[emptyRow, 5] = gender;
             worksheet.Cells[emptyRow, 6] = 0; // Initialize coins to 0
-
+            worksheet.Cells[emptyRow, 7] = false; // IsConfirmed
+            worksheet.Cells[emptyRow, 8] = GenerateOTP(); // OTP
+            worksheet.Cells[emptyRow, 9] = DateTime.Now.AddMinutes(10); // OTPExpiryTime
 
             // Save changes and close
             workbook.Save();
@@ -224,6 +387,12 @@ namespace ThinkerToys
             // Clear unreferenced COM objects
             GC.Collect();
             GC.WaitForPendingFinalizers();
+        }
+
+        private dynamic GenerateOTP()
+        {
+            Random random = new Random();
+            return random.Next(100000, 999999).ToString();
         }
 
         private void label4_Click(object sender, EventArgs e)
@@ -252,6 +421,16 @@ namespace ThinkerToys
             Login login = new Login();
             login.ShowDialog();
             this.Close();
+        }
+
+        private void textBoxEmail_TextChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
