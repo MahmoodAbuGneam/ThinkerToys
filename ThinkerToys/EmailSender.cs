@@ -13,7 +13,7 @@ namespace ThinkerToys
         public static void SendOTPEmail(string toEmail, string otp)
         {
             string fromEmail = "ThinkerToys.App@gmail.com";
-            string password = "ThinkerToys2024!@";
+            string password = "llyf ezkk xdev fuqv";
 
             var smtpClient = new SmtpClient("smtp.gmail.com")
             {
