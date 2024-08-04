@@ -20,6 +20,7 @@ namespace ThinkerToys
             loginForm.FormClosed += new FormClosedEventHandler(FormClosed);
             loginForm.Show();
             Application.Run();
+
         }
 
         private static void FormClosed(object sender, FormClosedEventArgs e)
