@@ -36,6 +36,8 @@ namespace ThinkerToys
                 InitializeComponent();
                 LoadPictures();
                 lblCoins.Text = "Coins: " + coinCounter;
+                updateCionsEMMatching();
+
             }
 
             private void Form1_Load(object sender, EventArgs e)
@@ -137,8 +139,12 @@ namespace ThinkerToys
                     CheckPictures(picA, picB);
                 }
             }
+        private void updateCionsEMMatching()
+            {
+            UserSession.Instance.Coins += coinCounter;
+            }
 
-            private void RestartGame()
+        private void RestartGame()
             {
                 var randomList = letters.OrderBy(x => Guid.NewGuid()).ToList();
                 letters = randomList;
