@@ -17,326 +17,323 @@
 
         private void InitializeComponent()
         {
-            this.panel1StoreSectForm1 = new System.Windows.Forms.Panel();
-            this.storeLogoutBtn = new System.Windows.Forms.Button();
-            this.storeSectionlabel1 = new System.Windows.Forms.Label();
-            this.storeUserImage = new System.Windows.Forms.PictureBox();
-            this.storeCoinsImage = new System.Windows.Forms.PictureBox();
-            this.storeCoinsValueLabel = new System.Windows.Forms.Label();
-            this.stCoinsLb = new System.Windows.Forms.Label();
-            this.StorepictureBox1 = new System.Windows.Forms.PictureBox();
-            this.StoreSectForm1panel1 = new System.Windows.Forms.Panel();
-            this.StorePurhacedCard = new System.Windows.Forms.Button();
-            this.stHomeBtn = new System.Windows.Forms.Button();
-            this.stHeroessBtn = new System.Windows.Forms.Button();
-            this.stToysBtn = new System.Windows.Forms.Button();
-            this.stStickersBtn = new System.Windows.Forms.Button();
-            this.stClothesBtn = new System.Windows.Forms.Button();
-            this.storeAllItemsButton = new System.Windows.Forms.Button();
-            this.Storepanel1 = new System.Windows.Forms.Panel();
-            this.panel1StoreSectForm1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.storeUserImage)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.storeCoinsImage)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.StorepictureBox1)).BeginInit();
-            this.StoreSectForm1panel1.SuspendLayout();
-            this.SuspendLayout();
+            panel1StoreSectForm1 = new Panel();
+            StorepictureBox1 = new PictureBox();
+            storeLogoutBtn = new Button();
+            storeSectionlabel1 = new Label();
+            storeUserImage = new PictureBox();
+            storeCoinsImage = new PictureBox();
+            storeCoinsValueLabel = new Label();
+            stCoinsLb = new Label();
+            StoreSectForm1panel1 = new Panel();
+            StorePurhacedCard = new Button();
+            stHomeBtn = new Button();
+            stHeroessBtn = new Button();
+            stToysBtn = new Button();
+            stStickersBtn = new Button();
+            stClothesBtn = new Button();
+            storeAllItemsButton = new Button();
+            Storepanel1 = new Panel();
+            panel1StoreSectForm1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)StorepictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)storeUserImage).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)storeCoinsImage).BeginInit();
+            StoreSectForm1panel1.SuspendLayout();
+            SuspendLayout();
             // 
             // panel1StoreSectForm1
             // 
-            this.panel1StoreSectForm1.BackColor = System.Drawing.SystemColors.Highlight;
-            this.panel1StoreSectForm1.Controls.Add(this.storeLogoutBtn);
-            this.panel1StoreSectForm1.Controls.Add(this.storeSectionlabel1);
-            this.panel1StoreSectForm1.Controls.Add(this.storeUserImage);
-            this.panel1StoreSectForm1.Controls.Add(this.storeCoinsImage);
-            this.panel1StoreSectForm1.Controls.Add(this.storeCoinsValueLabel);
-            this.panel1StoreSectForm1.Controls.Add(this.stCoinsLb);
-            this.panel1StoreSectForm1.Controls.Add(this.StorepictureBox1);
-            this.panel1StoreSectForm1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1StoreSectForm1.Location = new System.Drawing.Point(0, 0);
-            this.panel1StoreSectForm1.Name = "panel1StoreSectForm1";
-            this.panel1StoreSectForm1.Size = new System.Drawing.Size(1536, 67);
-            this.panel1StoreSectForm1.TabIndex = 0;
-            // 
-            // storeLogoutBtn
-            // 
-            this.storeLogoutBtn.AccessibleDescription = "";
-            this.storeLogoutBtn.AccessibleName = "";
-            this.storeLogoutBtn.BackColor = System.Drawing.SystemColors.Highlight;
-            this.storeLogoutBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.storeLogoutBtn.FlatAppearance.BorderSize = 0;
-            this.storeLogoutBtn.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.Menu;
-            this.storeLogoutBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.storeLogoutBtn.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.storeLogoutBtn.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.storeLogoutBtn.Image = global::ThinkerToys.Properties.Resources.account_logout_32__1_;
-            this.storeLogoutBtn.Location = new System.Drawing.Point(1089, 3);
-            this.storeLogoutBtn.Name = "storeLogoutBtn";
-            this.storeLogoutBtn.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.storeLogoutBtn.Size = new System.Drawing.Size(273, 63);
-            this.storeLogoutBtn.TabIndex = 4;
-            this.storeLogoutBtn.Text = "   Logout";
-            this.storeLogoutBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.storeLogoutBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.storeLogoutBtn.UseVisualStyleBackColor = false;
-            this.storeLogoutBtn.Click += new System.EventHandler(this.storeLogoutBtn_Click);
-            // 
-            // storeSectionlabel1
-            // 
-            this.storeSectionlabel1.AutoSize = true;
-            this.storeSectionlabel1.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.storeSectionlabel1.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.storeSectionlabel1.Location = new System.Drawing.Point(905, 24);
-            this.storeSectionlabel1.Name = "storeSectionlabel1";
-            this.storeSectionlabel1.Size = new System.Drawing.Size(91, 21);
-            this.storeSectionlabel1.TabIndex = 3;
-            this.storeSectionlabel1.Text = "username";
-            this.storeSectionlabel1.Text = UserSession.Instance.Username;
-
-            this.storeSectionlabel1.Click += new System.EventHandler(this.storeSectionlabel1_Click);
-            // 
-            // storeUserImage
-            // 
-            this.storeUserImage.Image = global::ThinkerToys.Properties.Resources.user_48;
-            this.storeUserImage.Location = new System.Drawing.Point(787, 3);
-            this.storeUserImage.Name = "storeUserImage";
-            this.storeUserImage.Size = new System.Drawing.Size(112, 58);
-            this.storeUserImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.storeUserImage.TabIndex = 5;
-            this.storeUserImage.TabStop = false;
-            this.storeUserImage.Click += new System.EventHandler(this.storeUserImage_Click);
-            // 
-            // storeCoinsImage
-            // 
-            this.storeCoinsImage.Image = global::ThinkerToys.Properties.Resources.video_game_star_coin;
-            this.storeCoinsImage.Location = new System.Drawing.Point(539, 14);
-            this.storeCoinsImage.Name = "storeCoinsImage";
-            this.storeCoinsImage.Size = new System.Drawing.Size(100, 50);
-            this.storeCoinsImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.storeCoinsImage.TabIndex = 7;
-            this.storeCoinsImage.TabStop = false;
-            // 
-            // storeCoinsValueLabel
-            // 
-            this.storeCoinsValueLabel.AutoSize = true;
-            this.storeCoinsValueLabel.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.storeCoinsValueLabel.Location = new System.Drawing.Point(460, 25);
-            this.storeCoinsValueLabel.Name = "storeCoinsValueLabel";
-            this.storeCoinsValueLabel.Size = new System.Drawing.Size(43, 23);
-            this.storeCoinsValueLabel.TabIndex = 8;
-            this.storeCoinsValueLabel.Text = "100";
-            // 
-            // stCoinsLb
-            // 
-            this.stCoinsLb.AutoSize = true;
-            this.stCoinsLb.BackColor = System.Drawing.SystemColors.Highlight;
-            this.stCoinsLb.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.stCoinsLb.Location = new System.Drawing.Point(373, 25);
-            this.stCoinsLb.Name = "stCoinsLb";
-            this.stCoinsLb.Size = new System.Drawing.Size(60, 21);
-            this.stCoinsLb.TabIndex = 6;
-            this.stCoinsLb.Text = "Coins ";
+            panel1StoreSectForm1.BackColor = SystemColors.Highlight;
+            panel1StoreSectForm1.Controls.Add(StorepictureBox1);
+            panel1StoreSectForm1.Controls.Add(storeLogoutBtn);
+            panel1StoreSectForm1.Controls.Add(storeSectionlabel1);
+            panel1StoreSectForm1.Controls.Add(storeUserImage);
+            panel1StoreSectForm1.Controls.Add(storeCoinsImage);
+            panel1StoreSectForm1.Controls.Add(storeCoinsValueLabel);
+            panel1StoreSectForm1.Controls.Add(stCoinsLb);
+            panel1StoreSectForm1.Dock = DockStyle.Top;
+            panel1StoreSectForm1.Location = new Point(0, 0);
+            panel1StoreSectForm1.Name = "panel1StoreSectForm1";
+            panel1StoreSectForm1.Size = new Size(1344, 63);
+            panel1StoreSectForm1.TabIndex = 0;
+            panel1StoreSectForm1.Paint += panel1StoreSectForm1_Paint;
             // 
             // StorepictureBox1
             // 
-            this.StorepictureBox1.Image = global::ThinkerToys.Properties.Resources.toys_and_kid_s_fashion__1__removebg_preview;
-            this.StorepictureBox1.Location = new System.Drawing.Point(0, -12);
-            this.StorepictureBox1.Name = "StorepictureBox1";
-            this.StorepictureBox1.Size = new System.Drawing.Size(239, 92);
-            this.StorepictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.StorepictureBox1.TabIndex = 2;
-            this.StorepictureBox1.TabStop = false;
+            StorepictureBox1.BackColor = SystemColors.Highlight;
+            StorepictureBox1.Image = Properties.Resources.THINKERTOYS;
+            StorepictureBox1.Location = new Point(414, 2);
+            StorepictureBox1.Name = "StorepictureBox1";
+            StorepictureBox1.Size = new Size(616, 63);
+            StorepictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            StorepictureBox1.TabIndex = 2;
+            StorepictureBox1.TabStop = false;
+            // 
+            // storeLogoutBtn
+            // 
+            storeLogoutBtn.AccessibleDescription = "";
+            storeLogoutBtn.AccessibleName = "";
+            storeLogoutBtn.BackColor = SystemColors.Highlight;
+            storeLogoutBtn.Cursor = Cursors.Hand;
+            storeLogoutBtn.FlatAppearance.BorderSize = 0;
+            storeLogoutBtn.FlatAppearance.MouseOverBackColor = SystemColors.Menu;
+            storeLogoutBtn.FlatStyle = FlatStyle.Flat;
+            storeLogoutBtn.Font = new Font("Century Gothic", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            storeLogoutBtn.ForeColor = SystemColors.Desktop;
+            storeLogoutBtn.Image = Properties.Resources.account_logout_32__1_;
+            storeLogoutBtn.Location = new Point(1223, 2);
+            storeLogoutBtn.Name = "storeLogoutBtn";
+            storeLogoutBtn.RightToLeft = RightToLeft.No;
+            storeLogoutBtn.Size = new Size(121, 59);
+            storeLogoutBtn.TabIndex = 4;
+            storeLogoutBtn.Text = "   Logout";
+            storeLogoutBtn.TextAlign = ContentAlignment.MiddleRight;
+            storeLogoutBtn.TextImageRelation = TextImageRelation.TextBeforeImage;
+            storeLogoutBtn.UseVisualStyleBackColor = false;
+            storeLogoutBtn.Click += storeLogoutBtn_Click;
+            // 
+            // storeSectionlabel1
+            // 
+            storeSectionlabel1.AutoSize = true;
+            storeSectionlabel1.BackColor = SystemColors.MenuHighlight;
+            storeSectionlabel1.Font = new Font("Century Gothic", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            storeSectionlabel1.Location = new Point(61, 22);
+            storeSectionlabel1.Name = "storeSectionlabel1";
+            storeSectionlabel1.Size = new Size(77, 19);
+            storeSectionlabel1.TabIndex = 3;
+            storeSectionlabel1.Text = "Username";
+            storeSectionlabel1.Click += storeSectionlabel1_Click;
+            // 
+            // storeUserImage
+            // 
+            storeUserImage.Image = Properties.Resources.user_48;
+            storeUserImage.Location = new Point(0, 2);
+            storeUserImage.Name = "storeUserImage";
+            storeUserImage.Size = new Size(55, 53);
+            storeUserImage.SizeMode = PictureBoxSizeMode.Zoom;
+            storeUserImage.TabIndex = 5;
+            storeUserImage.TabStop = false;
+            storeUserImage.Click += storeUserImage_Click;
+            // 
+            // storeCoinsImage
+            // 
+            storeCoinsImage.Image = Properties.Resources.video_game_star_coin;
+            storeCoinsImage.Location = new Point(222, 10);
+            storeCoinsImage.Name = "storeCoinsImage";
+            storeCoinsImage.Size = new Size(64, 47);
+            storeCoinsImage.SizeMode = PictureBoxSizeMode.Zoom;
+            storeCoinsImage.TabIndex = 7;
+            storeCoinsImage.TabStop = false;
+            // 
+            // storeCoinsValueLabel
+            // 
+            storeCoinsValueLabel.AutoSize = true;
+            storeCoinsValueLabel.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            storeCoinsValueLabel.Location = new Point(355, 24);
+            storeCoinsValueLabel.Name = "storeCoinsValueLabel";
+            storeCoinsValueLabel.Size = new Size(37, 21);
+            storeCoinsValueLabel.TabIndex = 8;
+            storeCoinsValueLabel.Text = "100";
+            // 
+            // stCoinsLb
+            // 
+            stCoinsLb.AutoSize = true;
+            stCoinsLb.BackColor = SystemColors.Highlight;
+            stCoinsLb.Font = new Font("Century Gothic", 12.2F);
+            stCoinsLb.Location = new Point(292, 23);
+            stCoinsLb.Name = "stCoinsLb";
+            stCoinsLb.Size = new Size(65, 21);
+            stCoinsLb.TabIndex = 6;
+            stCoinsLb.Text = "Coins :";
             // 
             // StoreSectForm1panel1
             // 
-            this.StoreSectForm1panel1.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.StoreSectForm1panel1.Controls.Add(this.StorePurhacedCard);
-            this.StoreSectForm1panel1.Controls.Add(this.stHomeBtn);
-            this.StoreSectForm1panel1.Controls.Add(this.stHeroessBtn);
-            this.StoreSectForm1panel1.Controls.Add(this.stToysBtn);
-            this.StoreSectForm1panel1.Controls.Add(this.stStickersBtn);
-            this.StoreSectForm1panel1.Controls.Add(this.stClothesBtn);
-            this.StoreSectForm1panel1.Controls.Add(this.storeAllItemsButton);
-            this.StoreSectForm1panel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.StoreSectForm1panel1.Location = new System.Drawing.Point(0, 67);
-            this.StoreSectForm1panel1.Name = "StoreSectForm1panel1";
-            this.StoreSectForm1panel1.Size = new System.Drawing.Size(239, 656);
-            this.StoreSectForm1panel1.TabIndex = 1;
+            StoreSectForm1panel1.BackColor = SystemColors.ControlLightLight;
+            StoreSectForm1panel1.Controls.Add(StorePurhacedCard);
+            StoreSectForm1panel1.Controls.Add(stHomeBtn);
+            StoreSectForm1panel1.Controls.Add(stHeroessBtn);
+            StoreSectForm1panel1.Controls.Add(stToysBtn);
+            StoreSectForm1panel1.Controls.Add(stStickersBtn);
+            StoreSectForm1panel1.Controls.Add(stClothesBtn);
+            StoreSectForm1panel1.Controls.Add(storeAllItemsButton);
+            StoreSectForm1panel1.Dock = DockStyle.Left;
+            StoreSectForm1panel1.Location = new Point(0, 63);
+            StoreSectForm1panel1.Name = "StoreSectForm1panel1";
+            StoreSectForm1panel1.Size = new Size(209, 615);
+            StoreSectForm1panel1.TabIndex = 1;
             // 
             // StorePurhacedCard
             // 
-            this.StorePurhacedCard.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.StorePurhacedCard.FlatAppearance.BorderSize = 0;
-            this.StorePurhacedCard.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.Menu;
-            this.StorePurhacedCard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.StorePurhacedCard.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.StorePurhacedCard.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.StorePurhacedCard.Image = global::ThinkerToys.Properties.Resources.cart_43_32;
-            this.StorePurhacedCard.Location = new System.Drawing.Point(-34, 414);
-            this.StorePurhacedCard.Name = "StorePurhacedCard";
-            this.StorePurhacedCard.Size = new System.Drawing.Size(273, 63);
-            this.StorePurhacedCard.TabIndex = 69;
-            this.StorePurhacedCard.Text = "My purchases";
-            this.StorePurhacedCard.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.StorePurhacedCard.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.StorePurhacedCard.UseVisualStyleBackColor = true;
-            this.StorePurhacedCard.Click += new System.EventHandler(this.StorePurhacedCard_Click);
+            StorePurhacedCard.Cursor = Cursors.Hand;
+            StorePurhacedCard.FlatAppearance.BorderSize = 0;
+            StorePurhacedCard.FlatAppearance.MouseOverBackColor = SystemColors.Menu;
+            StorePurhacedCard.FlatStyle = FlatStyle.Flat;
+            StorePurhacedCard.Font = new Font("Century Gothic", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            StorePurhacedCard.ForeColor = SystemColors.GrayText;
+            StorePurhacedCard.Image = Properties.Resources.cart_43_32;
+            StorePurhacedCard.Location = new Point(10, 512);
+            StorePurhacedCard.Name = "StorePurhacedCard";
+            StorePurhacedCard.Size = new Size(151, 59);
+            StorePurhacedCard.TabIndex = 69;
+            StorePurhacedCard.Text = "My purchases";
+            StorePurhacedCard.TextAlign = ContentAlignment.MiddleRight;
+            StorePurhacedCard.TextImageRelation = TextImageRelation.ImageBeforeText;
+            StorePurhacedCard.UseVisualStyleBackColor = true;
+            StorePurhacedCard.Click += StorePurhacedCard_Click;
             // 
             // stHomeBtn
             // 
-            this.stHomeBtn.AccessibleDescription = "";
-            this.stHomeBtn.AccessibleName = "";
-            this.stHomeBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.stHomeBtn.FlatAppearance.BorderSize = 0;
-            this.stHomeBtn.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.Menu;
-            this.stHomeBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.stHomeBtn.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.stHomeBtn.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.stHomeBtn.Image = global::ThinkerToys.Properties.Resources.home_7_32;
-            this.stHomeBtn.Location = new System.Drawing.Point(-34, 0);
-            this.stHomeBtn.Name = "stHomeBtn";
-            this.stHomeBtn.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.stHomeBtn.Size = new System.Drawing.Size(273, 63);
-            this.stHomeBtn.TabIndex = 3;
-            this.stHomeBtn.Text = "   Home";
-            this.stHomeBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.stHomeBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.stHomeBtn.UseVisualStyleBackColor = false;
-            this.stHomeBtn.Click += new System.EventHandler(this.stHomeBtn_Click);
+            stHomeBtn.AccessibleDescription = "";
+            stHomeBtn.AccessibleName = "";
+            stHomeBtn.Cursor = Cursors.Hand;
+            stHomeBtn.FlatAppearance.BorderSize = 0;
+            stHomeBtn.FlatAppearance.MouseOverBackColor = SystemColors.Menu;
+            stHomeBtn.FlatStyle = FlatStyle.Flat;
+            stHomeBtn.Font = new Font("Century Gothic", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            stHomeBtn.ForeColor = SystemColors.GrayText;
+            stHomeBtn.Image = Properties.Resources.home_7_32;
+            stHomeBtn.Location = new Point(10, -1);
+            stHomeBtn.Name = "stHomeBtn";
+            stHomeBtn.RightToLeft = RightToLeft.No;
+            stHomeBtn.Size = new Size(105, 59);
+            stHomeBtn.TabIndex = 3;
+            stHomeBtn.Text = "   Home";
+            stHomeBtn.TextAlign = ContentAlignment.MiddleRight;
+            stHomeBtn.TextImageRelation = TextImageRelation.ImageBeforeText;
+            stHomeBtn.UseVisualStyleBackColor = false;
+            stHomeBtn.Click += stHomeBtn_Click;
             // 
             // stHeroessBtn
             // 
-            this.stHeroessBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.stHeroessBtn.FlatAppearance.BorderSize = 0;
-            this.stHeroessBtn.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.Menu;
-            this.stHeroessBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.stHeroessBtn.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.stHeroessBtn.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.stHeroessBtn.Image = global::ThinkerToys.Properties.Resources.batman_6_32;
-            this.stHeroessBtn.Location = new System.Drawing.Point(-34, 345);
-            this.stHeroessBtn.Name = "stHeroessBtn";
-            this.stHeroessBtn.Size = new System.Drawing.Size(273, 63);
-            this.stHeroessBtn.TabIndex = 4;
-            this.stHeroessBtn.Text = " Heroes";
-            this.stHeroessBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.stHeroessBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.stHeroessBtn.UseVisualStyleBackColor = true;
-            this.stHeroessBtn.Click += new System.EventHandler(this.stHeroessBtn_Click);
+            stHeroessBtn.Cursor = Cursors.Hand;
+            stHeroessBtn.FlatAppearance.BorderSize = 0;
+            stHeroessBtn.FlatAppearance.MouseOverBackColor = SystemColors.Menu;
+            stHeroessBtn.FlatStyle = FlatStyle.Flat;
+            stHeroessBtn.Font = new Font("Century Gothic", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            stHeroessBtn.ForeColor = SystemColors.GrayText;
+            stHeroessBtn.Image = Properties.Resources.batman_6_32;
+            stHeroessBtn.Location = new Point(12, 370);
+            stHeroessBtn.Name = "stHeroessBtn";
+            stHeroessBtn.Size = new Size(104, 59);
+            stHeroessBtn.TabIndex = 4;
+            stHeroessBtn.Text = " Heroes";
+            stHeroessBtn.TextAlign = ContentAlignment.MiddleRight;
+            stHeroessBtn.TextImageRelation = TextImageRelation.ImageBeforeText;
+            stHeroessBtn.UseVisualStyleBackColor = true;
+            stHeroessBtn.Click += stHeroessBtn_Click;
             // 
             // stToysBtn
             // 
-            this.stToysBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.stToysBtn.FlatAppearance.BorderSize = 0;
-            this.stToysBtn.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.Menu;
-            this.stToysBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.stToysBtn.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.stToysBtn.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.stToysBtn.Image = global::ThinkerToys.Properties.Resources.soccer_3_32;
-            this.stToysBtn.Location = new System.Drawing.Point(-34, 138);
-            this.stToysBtn.Name = "stToysBtn";
-            this.stToysBtn.Size = new System.Drawing.Size(273, 63);
-            this.stToysBtn.TabIndex = 7;
-            this.stToysBtn.Text = " Toys";
-            this.stToysBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.stToysBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.stToysBtn.UseVisualStyleBackColor = true;
-            this.stToysBtn.Click += new System.EventHandler(this.stToysBtn_Click);
+            stToysBtn.Cursor = Cursors.Hand;
+            stToysBtn.FlatAppearance.BorderSize = 0;
+            stToysBtn.FlatAppearance.MouseOverBackColor = SystemColors.Menu;
+            stToysBtn.FlatStyle = FlatStyle.Flat;
+            stToysBtn.Font = new Font("Century Gothic", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            stToysBtn.ForeColor = SystemColors.GrayText;
+            stToysBtn.Image = Properties.Resources.soccer_3_32;
+            stToysBtn.Location = new Point(12, 145);
+            stToysBtn.Name = "stToysBtn";
+            stToysBtn.Size = new Size(83, 59);
+            stToysBtn.TabIndex = 7;
+            stToysBtn.Text = " Toys";
+            stToysBtn.TextAlign = ContentAlignment.MiddleRight;
+            stToysBtn.TextImageRelation = TextImageRelation.ImageBeforeText;
+            stToysBtn.UseVisualStyleBackColor = true;
+            stToysBtn.Click += stToysBtn_Click;
             // 
             // stStickersBtn
             // 
-            this.stStickersBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.stStickersBtn.FlatAppearance.BorderSize = 0;
-            this.stStickersBtn.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.Menu;
-            this.stStickersBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.stStickersBtn.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.stStickersBtn.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.stStickersBtn.Image = global::ThinkerToys.Properties.Resources.in_love_32;
-            this.stStickersBtn.Location = new System.Drawing.Point(-34, 207);
-            this.stStickersBtn.Name = "stStickersBtn";
-            this.stStickersBtn.Size = new System.Drawing.Size(273, 63);
-            this.stStickersBtn.TabIndex = 4;
-            this.stStickersBtn.Text = " Stickers";
-            this.stStickersBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.stStickersBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.stStickersBtn.UseVisualStyleBackColor = true;
-            this.stStickersBtn.Click += new System.EventHandler(this.stStickersBtn_Click);
+            stStickersBtn.Cursor = Cursors.Hand;
+            stStickersBtn.FlatAppearance.BorderSize = 0;
+            stStickersBtn.FlatAppearance.MouseOverBackColor = SystemColors.Menu;
+            stStickersBtn.FlatStyle = FlatStyle.Flat;
+            stStickersBtn.Font = new Font("Century Gothic", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            stStickersBtn.ForeColor = SystemColors.GrayText;
+            stStickersBtn.Image = Properties.Resources.in_love_32;
+            stStickersBtn.Location = new Point(12, 220);
+            stStickersBtn.Name = "stStickersBtn";
+            stStickersBtn.Size = new Size(108, 59);
+            stStickersBtn.TabIndex = 4;
+            stStickersBtn.Text = " Stickers";
+            stStickersBtn.TextAlign = ContentAlignment.MiddleRight;
+            stStickersBtn.TextImageRelation = TextImageRelation.ImageBeforeText;
+            stStickersBtn.UseVisualStyleBackColor = true;
+            stStickersBtn.Click += stStickersBtn_Click;
             // 
             // stClothesBtn
             // 
-            this.stClothesBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.stClothesBtn.FlatAppearance.BorderSize = 0;
-            this.stClothesBtn.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.Menu;
-            this.stClothesBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.stClothesBtn.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.stClothesBtn.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.stClothesBtn.Image = global::ThinkerToys.Properties.Resources.polo_shirt_32;
-            this.stClothesBtn.Location = new System.Drawing.Point(-34, 276);
-            this.stClothesBtn.Name = "stClothesBtn";
-            this.stClothesBtn.Size = new System.Drawing.Size(273, 63);
-            this.stClothesBtn.TabIndex = 5;
-            this.stClothesBtn.Text = " Clotehs";
-            this.stClothesBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.stClothesBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.stClothesBtn.UseVisualStyleBackColor = true;
-            this.stClothesBtn.Click += new System.EventHandler(this.stClothesBtn_Click);
+            stClothesBtn.Cursor = Cursors.Hand;
+            stClothesBtn.FlatAppearance.BorderSize = 0;
+            stClothesBtn.FlatAppearance.MouseOverBackColor = SystemColors.Menu;
+            stClothesBtn.FlatStyle = FlatStyle.Flat;
+            stClothesBtn.Font = new Font("Century Gothic", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            stClothesBtn.ForeColor = SystemColors.GrayText;
+            stClothesBtn.Image = Properties.Resources.polo_shirt_32;
+            stClothesBtn.Location = new Point(12, 295);
+            stClothesBtn.Name = "stClothesBtn";
+            stClothesBtn.Size = new Size(104, 59);
+            stClothesBtn.TabIndex = 5;
+            stClothesBtn.Text = "Clothes";
+            stClothesBtn.TextAlign = ContentAlignment.MiddleRight;
+            stClothesBtn.TextImageRelation = TextImageRelation.ImageBeforeText;
+            stClothesBtn.UseVisualStyleBackColor = true;
+            stClothesBtn.Click += stClothesBtn_Click;
             // 
             // storeAllItemsButton
             // 
-            this.storeAllItemsButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.storeAllItemsButton.FlatAppearance.BorderSize = 0;
-            this.storeAllItemsButton.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.Menu;
-            this.storeAllItemsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.storeAllItemsButton.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.storeAllItemsButton.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.storeAllItemsButton.Image = global::ThinkerToys.Properties.Resources.flame_32;
-            this.storeAllItemsButton.Location = new System.Drawing.Point(-34, 69);
-            this.storeAllItemsButton.Name = "storeAllItemsButton";
-            this.storeAllItemsButton.Size = new System.Drawing.Size(273, 63);
-            this.storeAllItemsButton.TabIndex = 5;
-            this.storeAllItemsButton.Text = " All Items";
-            this.storeAllItemsButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.storeAllItemsButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.storeAllItemsButton.UseVisualStyleBackColor = true;
-            this.storeAllItemsButton.Click += new System.EventHandler(this.storeAllItemsButton_Click);
+            storeAllItemsButton.Cursor = Cursors.Hand;
+            storeAllItemsButton.FlatAppearance.BorderSize = 0;
+            storeAllItemsButton.FlatAppearance.MouseOverBackColor = SystemColors.Menu;
+            storeAllItemsButton.FlatStyle = FlatStyle.Flat;
+            storeAllItemsButton.Font = new Font("Century Gothic", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            storeAllItemsButton.ForeColor = SystemColors.GrayText;
+            storeAllItemsButton.Image = Properties.Resources.flame_32;
+            storeAllItemsButton.Location = new Point(9, 70);
+            storeAllItemsButton.Name = "storeAllItemsButton";
+            storeAllItemsButton.Size = new Size(115, 59);
+            storeAllItemsButton.TabIndex = 5;
+            storeAllItemsButton.Text = " All Items";
+            storeAllItemsButton.TextAlign = ContentAlignment.MiddleRight;
+            storeAllItemsButton.TextImageRelation = TextImageRelation.ImageBeforeText;
+            storeAllItemsButton.UseVisualStyleBackColor = true;
+            storeAllItemsButton.Click += storeAllItemsButton_Click;
             // 
             // Storepanel1
             // 
-            this.Storepanel1.AutoScroll = true;
-            this.Storepanel1.BackColor = System.Drawing.SystemColors.Control;
-            this.Storepanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Storepanel1.Location = new System.Drawing.Point(239, 67);
-            this.Storepanel1.Name = "Storepanel1";
-            this.Storepanel1.Size = new System.Drawing.Size(1297, 656);
-            this.Storepanel1.TabIndex = 2;
+            Storepanel1.AutoScroll = true;
+            Storepanel1.BackColor = SystemColors.Control;
+            Storepanel1.Dock = DockStyle.Fill;
+            Storepanel1.Location = new Point(209, 63);
+            Storepanel1.Name = "Storepanel1";
+            Storepanel1.Size = new Size(1135, 615);
+            Storepanel1.TabIndex = 2;
             // 
             // StoreSectForm1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoScroll = true;
-            this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1536, 723);
-            this.Controls.Add(this.Storepanel1);
-            this.Controls.Add(this.StoreSectForm1panel1);
-            this.Controls.Add(this.panel1StoreSectForm1);
-            this.Cursor = System.Windows.Forms.Cursors.Default;
-            this.Name = "StoreSectForm1";
-            this.Text = "Store";
-            this.Load += new System.EventHandler(this.StoreSectForm1_Load);
-            this.panel1StoreSectForm1.ResumeLayout(false);
-            this.panel1StoreSectForm1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.storeUserImage)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.storeCoinsImage)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.StorepictureBox1)).EndInit();
-            this.StoreSectForm1panel1.ResumeLayout(false);
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            AutoScroll = true;
+            AutoSize = true;
+            ClientSize = new Size(1344, 678);
+            Controls.Add(Storepanel1);
+            Controls.Add(StoreSectForm1panel1);
+            Controls.Add(panel1StoreSectForm1);
+            Name = "StoreSectForm1";
+            Text = "Store";
+            Load += StoreSectForm1_Load;
+            panel1StoreSectForm1.ResumeLayout(false);
+            panel1StoreSectForm1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)StorepictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)storeUserImage).EndInit();
+            ((System.ComponentModel.ISupportInitialize)storeCoinsImage).EndInit();
+            StoreSectForm1panel1.ResumeLayout(false);
+            ResumeLayout(false);
         }
 
         #endregion
 
         private System.Windows.Forms.Panel panel1StoreSectForm1;
         private System.Windows.Forms.Panel StoreSectForm1panel1;
-        private System.Windows.Forms.PictureBox StorepictureBox1;
         private System.Windows.Forms.Button stHomeBtn;
         private System.Windows.Forms.Button stHeroessBtn;
         private System.Windows.Forms.Button stToysBtn;
@@ -351,5 +348,6 @@
         private System.Windows.Forms.Label storeSectionlabel1;
         private System.Windows.Forms.PictureBox storeUserImage;
         private System.Windows.Forms.Button storeLogoutBtn;
+        private PictureBox StorepictureBox1;
     }
 }

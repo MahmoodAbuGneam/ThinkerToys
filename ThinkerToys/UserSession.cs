@@ -5,6 +5,10 @@
     public string Username { get; private set; }
     public int Coins { get; set; } // Changed setter to public
 
+
+    // hashtable for the purchases (string,int = name, quantity )
+    public Dictionary<string, int> Purchases { get; set; } = new Dictionary<string, int>();
+
     // Private constructor to prevent direct instantiation
     private UserSession() { }
 

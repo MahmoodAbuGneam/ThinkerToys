@@ -94,9 +94,31 @@ namespace ThinkerToys
 
                     if (storedUsername == username && storedPassword == encryptedPassword)
                     {
-                        // Assign the values to the class fields
                         currentUsername = storedUsername;
                         currentUserCoins = storedCoins;
+
+                        // Find the "Purchases" column
+                        int purchasesColumn = 0;
+                        for (int i = 1; i <= worksheet.UsedRange.Columns.Count; i++)
+                        {
+                            if (worksheet.Cells[1, i].Value2?.ToString() == "Purchases")
+                            {
+                                purchasesColumn = i;
+                                break;
+                            }
+                        }
+
+                        if (purchasesColumn > 0)
+                        {
+                            string purchasesString = worksheet.Cells[row, purchasesColumn].Value2?.ToString();
+                            if (!string.IsNullOrEmpty(purchasesString))
+                            {
+                                UserSession.Instance.Purchases = purchasesString
+                                    .Split(';')
+                                    .Select(s => s.Split(':'))
+                                    .ToDictionary(s => s[0], s => int.Parse(s[1]));
+                            }
+                        }
 
                         workbook.Close(false);
                         excelApp.Quit();

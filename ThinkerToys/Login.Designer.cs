@@ -156,7 +156,6 @@
             PasswordTextBox.PasswordChar = '•';
             PasswordTextBox.Size = new Size(213, 21);
             PasswordTextBox.TabIndex = 33;
-            PasswordTextBox.UseWaitCursor = true;
             PasswordTextBox.TextChanged += PasswordTextBox_TextChanged;
             // 
             // UsernameTextBox
@@ -169,7 +168,6 @@
             UsernameTextBox.Name = "UsernameTextBox";
             UsernameTextBox.Size = new Size(213, 21);
             UsernameTextBox.TabIndex = 30;
-            UsernameTextBox.UseWaitCursor = true;
             UsernameTextBox.TextChanged += UsernameTextBox_TextChanged;
             // 
             // label9

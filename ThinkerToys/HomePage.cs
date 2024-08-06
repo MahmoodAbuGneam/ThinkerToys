@@ -71,10 +71,10 @@ namespace ThinkerToys
         private void storeButton_Click(object sender, EventArgs e)
         {
             // Navigate to Store
-            // StoreForm storeForm = new StoreForm();
-            // this.Hide();
-            // storeForm.ShowDialog();
-            // this.Close();
+            StoreSectForm1 storeForm = new StoreSectForm1();
+            this.Hide();
+            storeForm.ShowDialog();
+            this.Close();
         }
 
         private void profileButton_Click(object sender, EventArgs e)
@@ -111,7 +111,7 @@ namespace ThinkerToys
         }
 
 
-        private void UpdateCoinsInDocument(string username, int coins)
+        public void UpdateCoinsInDocument(string username, int coins)
         {
             _Excel.Application excelApp = new _Excel.Application();
             if (excelApp == null)

@@ -1,34 +1,43 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ThinkerToys
 {
     public partial class EnglishGame1Form : Form
     {
-
         int speed;
         int score;
         Random rand = new Random();
         bool gameOver;
 
-
         public EnglishGame1Form()
         {
             InitializeComponent();
+            SetStyle(ControlStyles.AllPaintingInWmPaint | ControlStyles.UserPaint | ControlStyles.DoubleBuffer, true);
+            LoadAndSetImages();
             RestartGame();
             updateCionsEng1();
         }
 
+        private void LoadAndSetImages()
+        {
+            pictureBox1.Image = MakeImageTransparent(Properties.Resources.A);
+            pictureBox2.Image = MakeImageTransparent(Properties.Resources.B);
+            pictureBox3.Image = MakeImageTransparent(Properties.Resources.C);
+            pictureBox4.Image = MakeImageTransparent(Properties.Resources.D);
+            bomb.Image = MakeImageTransparent(Properties.Resources.bomb);   
+        }
+
+        private Bitmap MakeImageTransparent(Bitmap bitmap)
+        {
+            Bitmap transparentBitmap = new Bitmap(bitmap);
+            transparentBitmap.MakeTransparent(Color.White); // HotPink
+            return transparentBitmap;
+        }
+
         private void MainTimerEvent(object sender, EventArgs e)
         {
-
             txtScore.Text = "Score: " + score;
 
             if (gameOver == true)
@@ -39,7 +48,6 @@ namespace ThinkerToys
 
             foreach (Control x in this.Controls)
             {
-
                 if (x is PictureBox)
                 {
                     x.Top -= speed;
@@ -52,7 +60,6 @@ namespace ThinkerToys
 
                     if ((string)x.Tag == "balloon")
                     {
-
                         if (x.Top < -50)
                         {
                             gameOver = true;
@@ -65,9 +72,7 @@ namespace ThinkerToys
                         }
                     }
                 }
-
             }
-
 
             if (score > 5)
             {
@@ -76,16 +81,19 @@ namespace ThinkerToys
 
             if (score > 15 && score < 25)
             {
-                speed = 12;
+                speed = 11;
             }
 
-
+            if(score > 60)
+            {
+                speed = 20;
+            }
 
         }
 
         private void updateCionsEng1()
         {
-            UserSession.Instance.Coins+= score;
+            UserSession.Instance.Coins += score;
         }
 
         private void PopLetter(object sender, EventArgs e)
@@ -98,10 +106,7 @@ namespace ThinkerToys
                 balloon.Left = rand.Next(5, 500);
 
                 score += 1;
-
             }
-
-
         }
 
         private void GoBoom(object sender, EventArgs e)
@@ -111,9 +116,6 @@ namespace ThinkerToys
                 bomb.Image = Properties.Resources.boom;
                 gameOver = true;
             }
-
-
-
         }
 
         private void KeyIsUp(object sender, KeyEventArgs e)
@@ -142,6 +144,10 @@ namespace ThinkerToys
             }
 
             gameTimer.Start();
+        }
+
+        private void EnglishGame1Form_Load(object sender, EventArgs e)
+        {
         }
     }
 }

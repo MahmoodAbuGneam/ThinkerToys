@@ -4,10 +4,13 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Bunifu.UI.WinForms;
+using _Excel = Microsoft.Office.Interop.Excel;
+using System.Runtime.InteropServices;
 
 
 namespace ThinkerToys
@@ -15,16 +18,15 @@ namespace ThinkerToys
     public partial class StoreSectForm1 : Form
     {
         private Market market;
-        private int storeCoins = 400;
+        private int storeCoins = 0;
+        private string username = UserSession.Instance.Username;
+
+
 
         //To-Do:
-        //1.Change the storeCoins to real user storeCoins 
-        //     storeCoins=UserSession.Instance.Coins;
         //2.Create new Field to the user to store the purchased Items 
         //        private Dictionary<string, int> storePurchasedItems = new Dictionary<string, int>();
-        //3.Display Username:
-        //          storeSectionlabel1.Text=UserSession.Instance.Username;
-        //4.Complete Logout button fuction
+
 
         private Dictionary<string, int> storePurchasedItems = new Dictionary<string, int>();
 
@@ -33,8 +35,10 @@ namespace ThinkerToys
             InitializeComponent();
             market = new Market();
             storeCoins = UserSession.Instance.Coins;
+            LoadPurchasesFromExcel();
             LoadAllItems();
             storeCoinsValueLabel.Text = storeCoins.ToString();
+            storeSectionlabel1.Text = username;
             updateRealUserCoins();
         }
         private void updateRealUserCoins()
@@ -105,6 +109,9 @@ namespace ThinkerToys
             DisplayItems(market.GetAllItems());
         }
 
+
+
+
         private void ItemBuy_Click(object sender, EventArgs e)
         {
             Button button = sender as Button;
@@ -117,13 +124,13 @@ namespace ThinkerToys
                     storeCoins -= item.Price;
                     storeCoinsValueLabel.Text = storeCoins.ToString();
 
-                    if (storePurchasedItems.ContainsKey(item.Name))
+                    if (UserSession.Instance.Purchases.ContainsKey(item.Name))
                     {
-                        storePurchasedItems[item.Name]++;
+                        UserSession.Instance.Purchases[item.Name]++;
                     }
                     else
                     {
-                        storePurchasedItems[item.Name] = 1;
+                        UserSession.Instance.Purchases[item.Name] = 1;
                     }
 
                     MessageBox.Show($"Purchased {item.Name}!");
@@ -135,6 +142,7 @@ namespace ThinkerToys
             }
             updateRealUserCoins();
         }
+
 
         private void DisplayItems(List<Item> items)
         {
@@ -218,7 +226,7 @@ namespace ThinkerToys
             int y = 10;
             int margin = 10;
 
-            foreach (var kvp in storePurchasedItems)
+            foreach (var kvp in UserSession.Instance.Purchases)
             {
                 string itemName = kvp.Key;
                 int itemCount = kvp.Value;
@@ -273,12 +281,8 @@ namespace ThinkerToys
 
         private void stHomeBtn_Click(object sender, EventArgs e)
         {
-            //DisplayItems(market.GetAllItems());
-            //To-Do:
-            //Link this with Home-Page 
             this.Hide();
-             
-            
+
             HomePage stHomePage = new HomePage();
             stHomePage.ShowDialog();
             this.Close();
@@ -316,8 +320,73 @@ namespace ThinkerToys
 
         private void storeLogoutBtn_Click(object sender, EventArgs e)
         {
-            //logoutButton_Click()(found in Homepage.cs)
+            SavePurchasesToExcel();
+
+            // Update coins in the document
+            UpdateCoinsInDocument(UserSession.Instance.Username, UserSession.Instance.Coins);
+
+
+            // Clear the user session
+            UserSession.Instance.Clear();
+
+            // Navigate back to the login form
+            Login loginForm = new Login();
+            this.Hide();
+            loginForm.ShowDialog();
+            this.Close();
         }
+
+        private void UpdateCoinsInDocument(string username, int coins)
+        {
+            _Excel.Application excelApp = new _Excel.Application();
+            if (excelApp == null)
+            {
+                MessageBox.Show("Excel is not properly installed!");
+                return;
+            }
+
+            excelApp.Visible = false;
+            string filePath = System.IO.Path.Combine(System.IO.Directory.GetCurrentDirectory(), "SignupData.xlsx");
+            _Excel.Workbook workbook;
+            _Excel.Worksheet worksheet;
+
+            try
+            {
+                workbook = excelApp.Workbooks.Open(filePath); // Try to open an existing workbook
+                worksheet = (_Excel.Worksheet)workbook.Sheets[1]; // Access the first sheet
+            }
+            catch
+            {
+                MessageBox.Show("Unable to open the specified Excel file.");
+                return;
+            }
+
+            // Find the user in the Excel file and update the coins
+            int rowCount = worksheet.UsedRange.Rows.Count;
+            for (int i = 2; i <= rowCount; i++)
+            {
+                if ((string)(worksheet.Cells[i, 2] as _Excel.Range).Value == username)
+                {
+                    worksheet.Cells[i, 6] = coins;
+                    break;
+                }
+            }
+
+            // Save changes and close
+            workbook.Save();
+            workbook.Close(true);
+            excelApp.Quit();
+
+            // Release COM objects to fully kill Excel process from running in the background
+            Marshal.ReleaseComObject(worksheet);
+            Marshal.ReleaseComObject(workbook);
+            Marshal.ReleaseComObject(excelApp);
+
+            // Clear unreferenced COM objects
+            GC.Collect();
+            GC.WaitForPendingFinalizers();
+        }
+
 
         private void storeUserImage_Click(object sender, EventArgs e)
         {
@@ -329,11 +398,149 @@ namespace ThinkerToys
         {
             //To-Do:
             //Link this with show profile and show the real username
+
         }
 
         private void storeAllItemsButton_Click(object sender, EventArgs e)
         {
             DisplayItems(market.GetAllItems());
+        }
+
+
+
+        // methods for the purchases 
+
+
+        private void SavePurchasesToExcel()
+        {
+            string purchasesString = string.Join(";", UserSession.Instance.Purchases.Select(kvp => $"{kvp.Key}:{kvp.Value}"));
+
+            _Excel.Application excelApp = new _Excel.Application();
+            excelApp.DisplayAlerts = false;  // Add this line to disable alerts
+            _Excel.Workbook workbook = null;
+            _Excel.Worksheet worksheet = null;
+
+            try
+            {
+                string filePath = Path.Combine(Directory.GetCurrentDirectory(), "SignupData.xlsx");
+                workbook = excelApp.Workbooks.Open(filePath);
+                worksheet = workbook.Sheets[1];
+
+                int rowCount = worksheet.UsedRange.Rows.Count;
+                int colCount = worksheet.UsedRange.Columns.Count;
+
+                // Find or create the "Purchases" column
+                int purchasesColumn = 0;
+                for (int i = 1; i <= colCount; i++)
+                {
+                    if (worksheet.Cells[1, i].Value2?.ToString() == "Purchases")
+                    {
+                        purchasesColumn = i;
+                        break;
+                    }
+                }
+                if (purchasesColumn == 0)
+                {
+                    purchasesColumn = colCount + 1;
+                    worksheet.Cells[1, purchasesColumn] = "Purchases";
+                }
+
+                // Find the user's row and update purchases
+                for (int i = 2; i <= rowCount; i++)
+                {
+                    if (worksheet.Cells[i, 2].Value2?.ToString() == UserSession.Instance.Username)
+                    {
+                        worksheet.Cells[i, purchasesColumn] = purchasesString;
+                        break;
+                    }
+                }
+
+                workbook.Save();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error saving purchases: " + ex.Message);
+            }
+            finally
+            {
+                if (workbook != null)
+                {
+                    workbook.Close(true);  // Change this to true
+                    Marshal.ReleaseComObject(workbook);
+                }
+                excelApp.Quit();
+                Marshal.ReleaseComObject(excelApp);
+                GC.Collect();
+                GC.WaitForPendingFinalizers();
+            }
+        }
+
+
+
+        private void LoadPurchasesFromExcel()
+        {
+            _Excel.Application excelApp = new _Excel.Application();
+            _Excel.Workbook workbook = null;
+            _Excel.Worksheet worksheet = null;
+
+            try
+            {
+                string filePath = Path.Combine(Directory.GetCurrentDirectory(), "SignupData.xlsx");
+                workbook = excelApp.Workbooks.Open(filePath);
+                worksheet = workbook.Sheets[1];
+
+                int rowCount = worksheet.UsedRange.Rows.Count;
+                int colCount = worksheet.UsedRange.Columns.Count;
+
+                // Find the "Purchases" column
+                int purchasesColumn = 0;
+                for (int i = 1; i <= colCount; i++)
+                {
+                    if (worksheet.Cells[1, i].Value2?.ToString() == "Purchases")
+                    {
+                        purchasesColumn = i;
+                        break;
+                    }
+                }
+
+                if (purchasesColumn > 0)
+                {
+                    for (int i = 2; i <= rowCount; i++)
+                    {
+                        if (worksheet.Cells[i, 2].Value2?.ToString() == UserSession.Instance.Username)
+                        {
+                            string purchasesString = worksheet.Cells[i, purchasesColumn].Value2?.ToString();
+                            if (!string.IsNullOrEmpty(purchasesString))
+                            {
+                                UserSession.Instance.Purchases = purchasesString
+                                    .Split(';')
+                                    .Select(s => s.Split(':'))
+                                    .ToDictionary(s => s[0], s => int.Parse(s[1]));
+                            }
+                            break;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error loading purchases: " + ex.Message);
+            }
+            finally
+            {
+                if (workbook != null)
+                {
+                    workbook.Close();
+                    Marshal.ReleaseComObject(workbook);
+                }
+                excelApp.Quit();
+                Marshal.ReleaseComObject(excelApp);
+            }
+        }
+
+        private void panel1StoreSectForm1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

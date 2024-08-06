@@ -2,15 +2,8 @@
 {
     partial class EnglishGame1Form
     {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -22,13 +15,10 @@
 
         #region Windows Form Designer generated code
 
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EnglishGame1Form));
             txtScore = new Label();
             gameTimer = new System.Windows.Forms.Timer(components);
             bomb = new PictureBox();
@@ -47,10 +37,10 @@
             // 
             txtScore.AutoSize = true;
             txtScore.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            txtScore.Location = new Point(21, 25);
-            txtScore.Margin = new Padding(5, 0, 5, 0);
+            txtScore.Location = new Point(15, 15);
+            txtScore.Margin = new Padding(4, 0, 4, 0);
             txtScore.Name = "txtScore";
-            txtScore.Size = new Size(131, 33);
+            txtScore.Size = new Size(88, 24);
             txtScore.TabIndex = 1;
             txtScore.Text = "Score: 0";
             // 
@@ -61,11 +51,12 @@
             // 
             // bomb
             // 
+            bomb.BackColor = Color.Transparent;
             bomb.Image = Properties.Resources.bomb;
-            bomb.Location = new Point(385, 214);
-            bomb.Margin = new Padding(5, 6, 5, 6);
+            bomb.Location = new Point(270, 128);
+            bomb.Margin = new Padding(4);
             bomb.Name = "bomb";
-            bomb.Size = new Size(238, 238);
+            bomb.Size = new Size(167, 143);
             bomb.SizeMode = PictureBoxSizeMode.Zoom;
             bomb.TabIndex = 0;
             bomb.TabStop = false;
@@ -73,11 +64,12 @@
             // 
             // pictureBox4
             // 
-            pictureBox4.Image = Properties.Resources.D;
-            pictureBox4.Location = new Point(-2, 997);
-            pictureBox4.Margin = new Padding(5, 6, 5, 6);
+            pictureBox4.BackColor = Color.Transparent;
+            pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
+            pictureBox4.Location = new Point(-1, 598);
+            pictureBox4.Margin = new Padding(4);
             pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(249, 289);
+            pictureBox4.Size = new Size(174, 173);
             pictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox4.TabIndex = 0;
             pictureBox4.TabStop = false;
@@ -86,11 +78,12 @@
             // 
             // pictureBox3
             // 
-            pictureBox3.Image = Properties.Resources.C;
-            pictureBox3.Location = new Point(806, 997);
-            pictureBox3.Margin = new Padding(5, 6, 5, 6);
+            pictureBox3.BackColor = Color.Transparent;
+            pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
+            pictureBox3.Location = new Point(564, 598);
+            pictureBox3.Margin = new Padding(4);
             pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(249, 289);
+            pictureBox3.Size = new Size(174, 173);
             pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox3.TabIndex = 0;
             pictureBox3.TabStop = false;
@@ -99,11 +92,12 @@
             // 
             // pictureBox2
             // 
-            pictureBox2.Image = Properties.Resources.B;
-            pictureBox2.Location = new Point(778, 452);
-            pictureBox2.Margin = new Padding(5, 6, 5, 6);
+            pictureBox2.BackColor = Color.Transparent;
+            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.Location = new Point(545, 271);
+            pictureBox2.Margin = new Padding(4);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(249, 289);
+            pictureBox2.Size = new Size(174, 173);
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox2.TabIndex = 0;
             pictureBox2.TabStop = false;
@@ -112,11 +106,12 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.Image = Properties.Resources.A;
-            pictureBox1.Location = new Point(28, 505);
-            pictureBox1.Margin = new Padding(5, 6, 5, 6);
+            pictureBox1.BackColor = Color.Transparent;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(20, 303);
+            pictureBox1.Margin = new Padding(4);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(249, 289);
+            pictureBox1.Size = new Size(174, 173);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
@@ -125,19 +120,20 @@
             // 
             // EnglishGame1Form
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.PaleTurquoise;
-            ClientSize = new Size(1056, 1272);
+            BackColor = SystemColors.ButtonFace;
+            ClientSize = new Size(739, 637);
             Controls.Add(txtScore);
             Controls.Add(bomb);
             Controls.Add(pictureBox4);
             Controls.Add(pictureBox3);
             Controls.Add(pictureBox2);
             Controls.Add(pictureBox1);
-            Margin = new Padding(5, 6, 5, 6);
+            Margin = new Padding(4);
             Name = "EnglishGame1Form";
-            Text = "Pop Letters,Avoid the Boom";
+            Text = "Pop Letters, Avoid the Boom";
+            Load += EnglishGame1Form_Load;
             KeyUp += KeyIsUp;
             ((System.ComponentModel.ISupportInitialize)bomb).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
@@ -150,12 +146,12 @@
 
         #endregion
 
+        private System.Windows.Forms.Label txtScore;
+        private System.Windows.Forms.Timer gameTimer;
+        private System.Windows.Forms.PictureBox bomb;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.PictureBox bomb;
-        private System.Windows.Forms.Label txtScore;
-        private System.Windows.Forms.Timer gameTimer;
     }
 }
