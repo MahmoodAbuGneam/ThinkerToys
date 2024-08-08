@@ -43,7 +43,7 @@
         };
 
 
-        
+
 
         public HebrewGame1(char startingLetter)
         {
@@ -97,7 +97,7 @@
             Random rand = new Random();
             const int minDistance = 60; // Minimum distance between PictureBox controls
 
-            for (int i = 0; i < 1; i++) 
+            for (int i = 0; i < 1; i++)
             {
                 PictureBox pb = new PictureBox
                 {
@@ -142,28 +142,28 @@
         {
             switch (letter)
             {
-                case 'א': return Properties.Resources.א; 
-                case 'ב': return Properties.Resources.ב;
-                case 'ג': return Properties.Resources.ג;
-                case 'ד': return Properties.Resources.ד;
-                case 'ה': return Properties.Resources.ה;
-                case 'ו': return Properties.Resources.ו;
-                case 'ז': return Properties.Resources.ז;
-                case 'ח': return Properties.Resources.ח;
-                case 'ט': return Properties.Resources.ט;
-                case 'י': return Properties.Resources.י;
-                case 'כ': return Properties.Resources.כ;
-                case 'ל': return Properties.Resources.ל;
-                case 'מ': return Properties.Resources.מ;
-                case 'נ': return Properties.Resources.נ;
-                case 'ס': return Properties.Resources.ס;
-                case 'ע': return Properties.Resources.ע;
-                case 'פ': return Properties.Resources.פ;
-                case 'צ': return Properties.Resources.צ;
-                case 'ק': return Properties.Resources.ק;
-                case 'ר': return Properties.Resources.ר;
-                case 'ש': return Properties.Resources.ש;
-                case 'ת': return Properties.Resources.ת;
+                case 'א': return Properties.Resources.A_1;
+                case 'ב': return Properties.Resources.B_2;
+                case 'ג': return Properties.Resources.C_3;
+                case 'ד': return Properties.Resources.D_4;
+                case 'ה': return Properties.Resources.H_5;
+                case 'ו': return Properties.Resources.V_6;
+                case 'ז': return Properties.Resources.Z_7;
+                case 'ח': return Properties.Resources.KH_8;
+                case 'ט': return Properties.Resources.T_9;
+                case 'י': return Properties.Resources.E_10;
+                case 'כ': return Properties.Resources.KH_11;
+                case 'ל': return Properties.Resources.L_12;
+                case 'מ': return Properties.Resources.M_13;
+                case 'נ': return Properties.Resources.N_14;
+                case 'ס': return Properties.Resources.S_15;
+                case 'ע': return Properties.Resources.Aa_16;
+                case 'פ': return Properties.Resources.P_17;
+                case 'צ': return Properties.Resources.TS_18;
+                case 'ק': return Properties.Resources.K_19;
+                case 'ר': return Properties.Resources.R_20;
+                case 'ש': return Properties.Resources.SH_21;
+                case 'ת': return Properties.Resources.T_22;
 
                 default: return null; // Handle the case where the image does not exist
             }
@@ -419,7 +419,12 @@
             levelSelectionForm.Show();
             this.Close(); // Close the current game form
         }
+
+        private void pictureBox7_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 
-    
+
 }

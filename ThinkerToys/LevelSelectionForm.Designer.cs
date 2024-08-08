@@ -83,7 +83,7 @@
             // אButton
             // 
             אButton.BorderStyle = BorderStyle.Fixed3D;
-            אButton.Image = Properties.Resources.א;
+            אButton.Image = Properties.Resources.A_1;
             אButton.Location = new Point(359, 3);
             אButton.Name = "אButton";
             אButton.Size = new Size(69, 62);
@@ -94,7 +94,7 @@
             // בButton
             // 
             בButton.BorderStyle = BorderStyle.Fixed3D;
-            בButton.Image = Properties.Resources.ב;
+            בButton.Image = Properties.Resources.B_2;
             בButton.Location = new Point(286, 3);
             בButton.Name = "בButton";
             בButton.Size = new Size(67, 62);
@@ -132,7 +132,7 @@
             // גButton
             // 
             גButton.BorderStyle = BorderStyle.Fixed3D;
-            גButton.Image = Properties.Resources.ג;
+            גButton.Image = Properties.Resources.C_3;
             גButton.Location = new Point(213, 3);
             גButton.Name = "גButton";
             גButton.Size = new Size(67, 62);
@@ -143,7 +143,7 @@
             // דButton
             // 
             דButton.BorderStyle = BorderStyle.Fixed3D;
-            דButton.Image = Properties.Resources.ד;
+            דButton.Image = Properties.Resources.D_4;
             דButton.Location = new Point(140, 3);
             דButton.Name = "דButton";
             דButton.Size = new Size(67, 62);
@@ -154,7 +154,7 @@
             // הButton
             // 
             הButton.BorderStyle = BorderStyle.Fixed3D;
-            הButton.Image = Properties.Resources.ה;
+            הButton.Image = Properties.Resources.H_5;
             הButton.Location = new Point(67, 3);
             הButton.Name = "הButton";
             הButton.Size = new Size(67, 62);
@@ -165,7 +165,7 @@
             // וButton
             // 
             וButton.BorderStyle = BorderStyle.Fixed3D;
-            וButton.Image = Properties.Resources.ו;
+            וButton.Image = Properties.Resources.V_6;
             וButton.Location = new Point(7, 3);
             וButton.Name = "וButton";
             וButton.Size = new Size(54, 62);
@@ -176,7 +176,7 @@
             // זButton
             // 
             זButton.BorderStyle = BorderStyle.Fixed3D;
-            זButton.Image = Properties.Resources.ז;
+            זButton.Image = Properties.Resources.Z_7;
             זButton.Location = new Point(361, 71);
             זButton.Name = "זButton";
             זButton.Size = new Size(67, 62);
@@ -187,7 +187,7 @@
             // חButton
             // 
             חButton.BorderStyle = BorderStyle.Fixed3D;
-            חButton.Image = Properties.Resources.ח;
+            חButton.Image = Properties.Resources.KH_8;
             חButton.Location = new Point(288, 71);
             חButton.Name = "חButton";
             חButton.Size = new Size(67, 62);
@@ -198,7 +198,7 @@
             // טButton
             // 
             טButton.BorderStyle = BorderStyle.Fixed3D;
-            טButton.Image = Properties.Resources.ט;
+            טButton.Image = Properties.Resources.T_9;
             טButton.Location = new Point(215, 71);
             טButton.Name = "טButton";
             טButton.Size = new Size(67, 62);
@@ -209,7 +209,7 @@
             // יButton
             // 
             יButton.BorderStyle = BorderStyle.Fixed3D;
-            יButton.Image = Properties.Resources.י;
+            יButton.Image = Properties.Resources.E_10;
             יButton.Location = new Point(142, 71);
             יButton.Name = "יButton";
             יButton.Size = new Size(67, 62);
@@ -220,7 +220,7 @@
             // כButton
             // 
             כButton.BorderStyle = BorderStyle.Fixed3D;
-            כButton.Image = Properties.Resources.כ;
+            כButton.Image = Properties.Resources.KH_11;
             כButton.Location = new Point(69, 71);
             כButton.Name = "כButton";
             כButton.Size = new Size(67, 62);
@@ -231,7 +231,7 @@
             // לButton
             // 
             לButton.BorderStyle = BorderStyle.Fixed3D;
-            לButton.Image = Properties.Resources.ל;
+            לButton.Image = Properties.Resources.L_12;
             לButton.Location = new Point(7, 71);
             לButton.Name = "לButton";
             לButton.Size = new Size(56, 62);
@@ -242,7 +242,7 @@
             // מButton
             // 
             מButton.BorderStyle = BorderStyle.Fixed3D;
-            מButton.Image = Properties.Resources.מ;
+            מButton.Image = Properties.Resources.M_13;
             מButton.Location = new Point(361, 139);
             מButton.Name = "מButton";
             מButton.Size = new Size(67, 62);
@@ -253,7 +253,7 @@
             // נButton
             // 
             נButton.BorderStyle = BorderStyle.Fixed3D;
-            נButton.Image = Properties.Resources.נ;
+            נButton.Image = Properties.Resources.N_14;
             נButton.Location = new Point(288, 139);
             נButton.Name = "נButton";
             נButton.Size = new Size(67, 62);
@@ -264,7 +264,7 @@
             // סButton
             // 
             סButton.BorderStyle = BorderStyle.Fixed3D;
-            סButton.Image = Properties.Resources.ס;
+            סButton.Image = Properties.Resources.S_15;
             סButton.Location = new Point(215, 139);
             סButton.Name = "סButton";
             סButton.Size = new Size(67, 62);
@@ -275,7 +275,7 @@
             // עButton
             // 
             עButton.BorderStyle = BorderStyle.Fixed3D;
-            עButton.Image = Properties.Resources.ע;
+            עButton.Image = Properties.Resources.Aa_16;
             עButton.Location = new Point(142, 139);
             עButton.Name = "עButton";
             עButton.Size = new Size(67, 62);
@@ -286,7 +286,7 @@
             // פButton
             // 
             פButton.BorderStyle = BorderStyle.Fixed3D;
-            פButton.Image = Properties.Resources.פ;
+            פButton.Image = Properties.Resources.P_17;
             פButton.Location = new Point(69, 139);
             פButton.Name = "פButton";
             פButton.Size = new Size(67, 62);
@@ -297,7 +297,7 @@
             // צButton
             // 
             צButton.BorderStyle = BorderStyle.Fixed3D;
-            צButton.Image = Properties.Resources.צ;
+            צButton.Image = Properties.Resources.TS_18;
             צButton.Location = new Point(6, 139);
             צButton.Name = "צButton";
             צButton.Size = new Size(57, 62);
@@ -308,7 +308,7 @@
             // קButton
             // 
             קButton.BorderStyle = BorderStyle.Fixed3D;
-            קButton.Image = Properties.Resources.ק;
+            קButton.Image = Properties.Resources.K_19;
             קButton.Location = new Point(314, 362);
             קButton.Name = "קButton";
             קButton.Size = new Size(67, 62);
@@ -319,7 +319,7 @@
             // רButton
             // 
             רButton.BorderStyle = BorderStyle.Fixed3D;
-            רButton.Image = Properties.Resources.ר;
+            רButton.Image = Properties.Resources.R_20;
             רButton.Location = new Point(241, 362);
             רButton.Name = "רButton";
             רButton.Size = new Size(67, 62);
@@ -330,7 +330,7 @@
             // שButton
             // 
             שButton.BorderStyle = BorderStyle.Fixed3D;
-            שButton.Image = Properties.Resources.ש;
+            שButton.Image = Properties.Resources.SH_21;
             שButton.Location = new Point(168, 362);
             שButton.Name = "שButton";
             שButton.Size = new Size(67, 62);
@@ -341,7 +341,7 @@
             // תButton
             // 
             תButton.BorderStyle = BorderStyle.Fixed3D;
-            תButton.Image = Properties.Resources.ת;
+            תButton.Image = Properties.Resources.T_22;
             תButton.Location = new Point(95, 362);
             תButton.Name = "תButton";
             תButton.Size = new Size(67, 62);

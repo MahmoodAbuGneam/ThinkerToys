@@ -12,8 +12,8 @@ namespace ThinkerToys
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
            // Application.Run(new MainMenuForm());
-            Application.Run(new MainMenuForm());
+            Application.Run(new LevelSelectionForm());
 
         }
     }
-}
+}  
