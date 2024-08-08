@@ -18,21 +18,21 @@ namespace ThinkerToys
 
             //Login page 
 
-            //ApplicationConfiguration.Initialize();
-            //Login loginForm = new Login();
-            //loginForm.FormClosed += new FormClosedEventHandler(FormClosed);
-            //loginForm.Show();
-            //Application.Run();
+            ApplicationConfiguration.Initialize();
+            Login loginForm = new Login();
+            loginForm.FormClosed += new FormClosedEventHandler(FormClosed);
+            loginForm.Show();
+            Application.Run();
 
 
 
             // Store Form
 
-            ApplicationConfiguration.Initialize();
-            StoreSectForm1 storeForm = new StoreSectForm1();
-            storeForm.FormClosed += new FormClosedEventHandler(FormClosed);
-            storeForm.Show();
-            Application.Run();
+            //ApplicationConfiguration.Initialize();
+            //StoreSectForm1 storeForm = new StoreSectForm1();
+            //storeForm.FormClosed += new FormClosedEventHandler(FormClosed);
+            //storeForm.Show();
+            //Application.Run();
 
             //EnglishGame1 - bomb
 

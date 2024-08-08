@@ -10,6 +10,7 @@ namespace ThinkerToys
         int score;
         Random rand = new Random();
         bool gameOver;
+        bool gamePaused;
 
         public EnglishGame1Form()
         {
@@ -18,6 +19,11 @@ namespace ThinkerToys
             LoadAndSetImages();
             RestartGame();
             updateCionsEng1();
+
+            this.KeyPreview = true;
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.KeyIsUp);
+
+            MessageBox.Show("Welcome to the game! Press 'P' at any time to pause or exit the game.", "Game Instructions", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void LoadAndSetImages()
@@ -42,6 +48,7 @@ namespace ThinkerToys
 
             if (gameOver == true)
             {
+                UserSession.Instance.Coins += score;
                 gameTimer.Stop();
                 txtScore.Text = "Score: " + score + " Game over, press enter to restart!";
             }
@@ -93,7 +100,7 @@ namespace ThinkerToys
 
         private void updateCionsEng1()
         {
-            UserSession.Instance.Coins += score;
+            //UserSession.Instance.Coins += score;
         }
 
         private void PopLetter(object sender, EventArgs e)
@@ -124,13 +131,46 @@ namespace ThinkerToys
             {
                 RestartGame();
             }
+            else if (e.KeyCode == Keys.P)
+            {
+                if (!gameOver)
+                {
+                    gamePaused = !gamePaused;
+                    if (gamePaused)
+                    {
+                        gameTimer.Stop();
+                        DialogResult result = MessageBox.Show("Game paused. Do you want to return to the homepage?\nNote: Your current score will not be added to your coins.", "Pause", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                        if (result == DialogResult.Yes)
+                        {
+                            ReturnToHomepage();
+                        }
+                        else
+                        {
+                            gamePaused = false;
+                            gameTimer.Start();
+                        }
+                    }
+                    else
+                    {
+                        gameTimer.Start();
+                    }
+                }
+            }
         }
-
+        private void ReturnToHomepage()
+        {
+            // Create and show the HomePage form without updating coins
+            HomePage homePage = new HomePage();
+            this.Hide();
+            homePage.ShowDialog();
+            this.Close();
+        }
         private void RestartGame()
         {
             speed = 5;
             score = 0;
             gameOver = false;
+            gamePaused = false;
 
             bomb.Image = Properties.Resources.bomb;
 

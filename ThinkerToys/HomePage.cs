@@ -59,13 +59,13 @@ namespace ThinkerToys
             // this.Close();
         }
 
-        private void englishGameButton_Click(object sender, EventArgs e)
+        private void englishMatching_Click(object sender, EventArgs e)
         {
-            // Navigate to English Game
-            // EnglishGameForm englishGameForm = new EnglishGameForm();
-            // this.Hide();
-            // englishGameForm.ShowDialog();
-            // this.Close();
+            //// Navigate to English Matching Game
+            EnglishMemoryMatching englishGameForm = new EnglishMemoryMatching();
+            this.Hide();
+            englishGameForm.ShowDialog();
+            this.Close();
         }
 
         private void storeButton_Click(object sender, EventArgs e)
@@ -140,7 +140,7 @@ namespace ThinkerToys
             int rowCount = worksheet.UsedRange.Rows.Count;
             for (int i = 2; i <= rowCount; i++)
             {
-                if ((string)(worksheet.Cells[i, 2] as _Excel.Range).Value == username) 
+                if ((string)(worksheet.Cells[i, 2] as _Excel.Range).Value == username)
                 {
                     worksheet.Cells[i, 6] = coins;
                     break;
@@ -162,6 +162,13 @@ namespace ThinkerToys
             GC.WaitForPendingFinalizers();
         }
 
-
+        private void EnglishPoppingGame_Click(object sender, EventArgs e)
+        {
+            //// Navigate to English Game
+            EnglishGame1Form englishGameForm = new EnglishGame1Form();
+            this.Hide();
+            englishGameForm.ShowDialog();
+            this.Close();
+        }
     }
 }
