@@ -162,7 +162,7 @@ namespace ThinkerToys
         }
 
 
-        private string GenerateOTP()
+        public string GenerateOTP()
         {
             Random random = new Random();
             return random.Next(100000, 999999).ToString();

@@ -12,6 +12,8 @@ namespace ThinkerToys
         private const int Shift = 9;
         private string currentUsername;
         private int currentUserCoins;
+        private string currentUserEmail;
+
 
         public Login()
         {
@@ -47,17 +49,52 @@ namespace ThinkerToys
             }
 
             // Authenticate the user using Excel data
-            if (AuthenticateUser(username, password))
+            if (AuthenticateUser(username, password, out bool isConfirmed))
             {
-                // Initialize user session
-                UserSession.Instance.Initialize(currentUsername, currentUserCoins);
-                MessageBox.Show($"Login successful!\nUsername: {currentUsername}\nCoins: {currentUserCoins}", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if (isConfirmed)
+                {
+                    // Account is confirmed, proceed with login
+                    UserSession.Instance.Initialize(currentUsername, currentUserCoins);
+                    MessageBox.Show($"Login successful!\nUsername: {currentUsername}\nCoins: {currentUserCoins}", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                // Navigate to the homepage
-                HomePage homePage = new HomePage();
-                this.Hide();
-                homePage.ShowDialog();
-                this.Close();
+                    // Navigate to the homepage
+                    HomePage homePage = new HomePage();
+                    this.Hide();
+                    homePage.ShowDialog();
+                    this.Close();
+                }
+                else
+                {
+                    // Account is not confirmed, ask user if they want to confirm now
+                    var result = MessageBox.Show("Your account is not confirmed. Do you want to confirm it now?", "Account Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (result == DialogResult.Yes)
+                    {
+                        // Generate and send new OTP
+                        string newOTP = GenerateOTP();
+                        if (SendOTPEmail(currentUserEmail, newOTP))
+                        {
+                            // Update OTP in Excel file
+                            UpdateOTPInExcel(username, newOTP);
+
+                            // Open OTP confirmation form
+                            using (OTPConfirmationForm otpForm = new OTPConfirmationForm(username, currentUserEmail))
+                            {
+                                if (otpForm.ShowDialog() == DialogResult.OK)
+                                {
+                                    MessageBox.Show("Account confirmed successfully! You can now log in.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Account confirmation failed. Please try again later.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                }
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Failed to send OTP email. Please try again later.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                }
             }
             else
             {
@@ -66,8 +103,9 @@ namespace ThinkerToys
         }
 
         // Excel authentication
-        private bool AuthenticateUser(string username, string encryptedPassword)
+        private bool AuthenticateUser(string username, string encryptedPassword, out bool isConfirmed)
         {
+            isConfirmed = false;
             _Excel.Application excelApp = new _Excel.Application();
             if (excelApp == null)
             {
@@ -77,37 +115,31 @@ namespace ThinkerToys
 
             string filePath = System.IO.Path.Combine(System.IO.Directory.GetCurrentDirectory(), "SignupData.xlsx");
 
-            _Excel.Workbook workbook;
-            _Excel.Worksheet worksheet;
+            _Excel.Workbook workbook = null;
+            _Excel.Worksheet worksheet = null;
 
             try
             {
                 workbook = excelApp.Workbooks.Open(filePath);
                 worksheet = (_Excel.Worksheet)workbook.Sheets[1];
-                int row = 2; // row 1 is the titles and headers
+                int row = 2;
 
                 while (worksheet.Cells[row, 2].Value2 != null)
                 {
                     string storedUsername = worksheet.Cells[row, 2].Value2.ToString();
                     string storedPassword = worksheet.Cells[row, 3].Value2.ToString();
                     int storedCoins = int.Parse(worksheet.Cells[row, 6].Value2.ToString());
+                    bool accountConfirmed = Convert.ToBoolean(worksheet.Cells[row, 7].Value2);
 
                     if (storedUsername == username && storedPassword == encryptedPassword)
                     {
                         currentUsername = storedUsername;
                         currentUserCoins = storedCoins;
+                        currentUserEmail = worksheet.Cells[row, 4].Value2.ToString();
+                        isConfirmed = accountConfirmed;
 
-                        // Find the "Purchases" column
-                        int purchasesColumn = 0;
-                        for (int i = 1; i <= worksheet.UsedRange.Columns.Count; i++)
-                        {
-                            if (worksheet.Cells[1, i].Value2?.ToString() == "Purchases")
-                            {
-                                purchasesColumn = i;
-                                break;
-                            }
-                        }
-
+                        // Find and load purchases (if any)
+                        int purchasesColumn = FindPurchasesColumn(worksheet);
                         if (purchasesColumn > 0)
                         {
                             string purchasesString = worksheet.Cells[row, purchasesColumn].Value2?.ToString();
@@ -120,29 +152,28 @@ namespace ThinkerToys
                             }
                         }
 
-                        workbook.Close(false);
-                        excelApp.Quit();
-                        Marshal.ReleaseComObject(worksheet);
-                        Marshal.ReleaseComObject(workbook);
-                        Marshal.ReleaseComObject(excelApp);
-
                         return true;
                     }
                     row++;
                 }
-
-                workbook.Close(false);
-                excelApp.Quit();
-                Marshal.ReleaseComObject(worksheet);
-                Marshal.ReleaseComObject(workbook);
-                Marshal.ReleaseComObject(excelApp);
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Failed to open Excel file: " + ex.Message);
-                return false;
+                MessageBox.Show("Error authenticating user: " + ex.Message);
             }
-
+            finally
+            {
+                if (worksheet != null) Marshal.ReleaseComObject(worksheet);
+                if (workbook != null)
+                {
+                    workbook.Close(false);
+                    Marshal.ReleaseComObject(workbook);
+                }
+                excelApp.Quit();
+                Marshal.ReleaseComObject(excelApp);
+                GC.Collect();
+                GC.WaitForPendingFinalizers();
+            }
             return false;
         }
 
@@ -196,5 +227,86 @@ namespace ThinkerToys
                 PasswordTextBox.PasswordChar = '•'; 
             }
         }
+
+
+        private int FindPurchasesColumn(_Excel.Worksheet worksheet)
+        {
+            int lastColumn = worksheet.UsedRange.Columns.Count;
+            for (int i = 1; i <= lastColumn; i++)
+            {
+                if (worksheet.Cells[1, i].Value2?.ToString() == "Purchases")
+                {
+                    return i;
+                }
+            }
+            return -1;
+        }
+
+
+
+        private string GenerateOTP()
+        {
+            Random random = new Random();
+            return random.Next(100000, 999999).ToString();
+        }
+
+        private bool SendOTPEmail(string email, string otp)
+        {
+            try
+            {
+                EmailSender.SendOTPEmail(email, otp);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error sending OTP email: {ex.Message}", "Email Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+        }
+
+        private void UpdateOTPInExcel(string username, string newOTP)
+        {
+            string filePath = System.IO.Path.Combine(System.IO.Directory.GetCurrentDirectory(), "SignupData.xlsx");
+            _Excel.Application excelApp = new _Excel.Application();
+            _Excel.Workbook workbook = null;
+            _Excel.Worksheet worksheet = null;
+
+            try
+            {
+                workbook = excelApp.Workbooks.Open(filePath);
+                worksheet = workbook.Sheets[1];
+
+                int rowCount = worksheet.UsedRange.Rows.Count;
+                for (int i = 2; i <= rowCount; i++)
+                {
+                    if (worksheet.Cells[i, 2].Value.ToString() == username)
+                    {
+                        worksheet.Cells[i, 8] = newOTP; // Assuming OTP is in column 8
+                        worksheet.Cells[i, 9] = DateTime.Now.AddMinutes(10); // OTP expiry time
+                        break;
+                    }
+                }
+
+                workbook.Save();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error updating OTP in Excel: {ex.Message}", "Excel Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                if (worksheet != null) Marshal.ReleaseComObject(worksheet);
+                if (workbook != null)
+                {
+                    workbook.Close(true);
+                    Marshal.ReleaseComObject(workbook);
+                }
+                excelApp.Quit();
+                Marshal.ReleaseComObject(excelApp);
+                GC.Collect();
+                GC.WaitForPendingFinalizers();
+            }
+        }
+
     }
 }
