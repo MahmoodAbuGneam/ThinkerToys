@@ -50,7 +50,9 @@ namespace ThinkerToys
             {
                 UserSession.Instance.Coins += score;
                 gameTimer.Stop();
-                txtScore.Text = "Score: " + score + " Game over, press enter to restart!";
+                txtScore.Text = "Score: " + score;
+                MessageBox.Show("The game has finished. Press OK, then ESC to return to the homepage or Enter to restart the game.", "Game Over", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
             }
 
             foreach (Control x in this.Controls)
@@ -131,6 +133,7 @@ namespace ThinkerToys
             {
                 RestartGame();
             }
+
             else if (e.KeyCode == Keys.P)
             {
                 if (!gameOver)
@@ -156,7 +159,18 @@ namespace ThinkerToys
                     }
                 }
             }
+
+            else if (e.KeyCode == Keys.Escape)
+            {
+
+                // go the return page
+
+                ReturnToHomepage();
+            }
         }
+
+
+
         private void ReturnToHomepage()
         {
             // Create and show the HomePage form without updating coins

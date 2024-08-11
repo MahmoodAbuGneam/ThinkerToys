@@ -39,7 +39,7 @@ namespace ThinkerToys
             // 
             lblStatus.AutoSize = true;
             lblStatus.Font = new Font("Arial", 12F, FontStyle.Bold);
-            lblStatus.Location = new Point(42, 15);
+            lblStatus.Location = new Point(42, 4);
             lblStatus.Name = "lblStatus";
             lblStatus.Size = new Size(169, 19);
             lblStatus.TabIndex = 0;
@@ -49,7 +49,7 @@ namespace ThinkerToys
             // 
             lblTimeLeft.AutoSize = true;
             lblTimeLeft.Font = new Font("Arial", 12F, FontStyle.Bold);
-            lblTimeLeft.Location = new Point(327, 15);
+            lblTimeLeft.Location = new Point(328, 4);
             lblTimeLeft.Name = "lblTimeLeft";
             lblTimeLeft.Size = new Size(107, 19);
             lblTimeLeft.TabIndex = 1;
@@ -60,7 +60,7 @@ namespace ThinkerToys
             // 
             lblCoins.AutoSize = true;
             lblCoins.Font = new Font("Arial", 12F, FontStyle.Bold);
-            lblCoins.Location = new Point(533, 15);
+            lblCoins.Location = new Point(534, 4);
             lblCoins.Name = "lblCoins";
             lblCoins.Size = new Size(73, 19);
             lblCoins.TabIndex = 2;
@@ -70,7 +70,7 @@ namespace ThinkerToys
             // 
             btnRestart.BackColor = Color.White;
             btnRestart.Font = new Font("Arial", 12F, FontStyle.Bold);
-            btnRestart.Location = new Point(667, 144);
+            btnRestart.Location = new Point(600, 346);
             btnRestart.Name = "btnRestart";
             btnRestart.Size = new Size(105, 37);
             btnRestart.TabIndex = 3;
@@ -87,10 +87,10 @@ namespace ThinkerToys
             // 
             btnHome.BackColor = Color.White;
             btnHome.Font = new Font("Arial", 12F, FontStyle.Bold);
-            btnHome.Location = new Point(697, 11);
+            btnHome.Location = new Point(600, 116);
             btnHome.Margin = new Padding(3, 0, 3, 0);
             btnHome.Name = "btnHome";
-            btnHome.Size = new Size(75, 23);
+            btnHome.Size = new Size(105, 36);
             btnHome.TabIndex = 5;
             btnHome.Text = "Home";
             btnHome.UseVisualStyleBackColor = false;
@@ -103,7 +103,7 @@ namespace ThinkerToys
             BackColor = Color.WhiteSmoke;
             BackgroundImage = Properties.Resources.MatchingGame_Background;
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(784, 761);
+            ClientSize = new Size(717, 706);
             Controls.Add(btnHome);
             Controls.Add(btnRestart);
             Controls.Add(lblCoins);
