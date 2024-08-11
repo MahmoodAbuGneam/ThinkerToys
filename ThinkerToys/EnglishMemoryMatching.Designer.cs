@@ -1,27 +1,28 @@
-﻿namespace ThinkerToys
+﻿using System.ComponentModel;
+using System.Drawing;
+using System.Windows.Forms;
+using Timer = System.Windows.Forms.Timer;
+
+namespace ThinkerToys
 {
-    using System.ComponentModel;
-    using System.Drawing;
-    using System.Windows.Forms;
+    partial class EnglishMemoryMatching
+    {
+        private IContainer components = null;
+        private Label lblStatus;
+        private Label lblTimeLeft;
+        private Label lblCoins;
+        private Button btnRestart;
+        private Timer GameTimer;
+        private Button btnHome;
 
-        partial class EnglishMemoryMatching
+        protected override void Dispose(bool disposing)
         {
-            private IContainer components = null;
-            private Label lblStatus;
-            private Label lblTimeLeft;
-            private Label lblCoins;
-            private Button btnRestart;
-            private Timer GameTimer;
-            private Button btnHome;
-
-            protected override void Dispose(bool disposing)
+            if (disposing && (components != null))
             {
-                if (disposing && (components != null))
-                {
-                    components.Dispose();
-                }
-                base.Dispose(disposing);
+                components.Dispose();
             }
+            base.Dispose(disposing);
+        }
 
         private void InitializeComponent()
         {
@@ -38,7 +39,7 @@
             // 
             lblStatus.AutoSize = true;
             lblStatus.Font = new Font("Arial", 12F, FontStyle.Bold);
-            lblStatus.Location = new Point(591, 108);
+            lblStatus.Location = new Point(42, 15);
             lblStatus.Name = "lblStatus";
             lblStatus.Size = new Size(169, 19);
             lblStatus.TabIndex = 0;
@@ -48,7 +49,7 @@
             // 
             lblTimeLeft.AutoSize = true;
             lblTimeLeft.Font = new Font("Arial", 12F, FontStyle.Bold);
-            lblTimeLeft.Location = new Point(629, 145);
+            lblTimeLeft.Location = new Point(327, 15);
             lblTimeLeft.Name = "lblTimeLeft";
             lblTimeLeft.Size = new Size(107, 19);
             lblTimeLeft.TabIndex = 1;
@@ -59,7 +60,7 @@
             // 
             lblCoins.AutoSize = true;
             lblCoins.Font = new Font("Arial", 12F, FontStyle.Bold);
-            lblCoins.Location = new Point(645, 72);
+            lblCoins.Location = new Point(533, 15);
             lblCoins.Name = "lblCoins";
             lblCoins.Size = new Size(73, 19);
             lblCoins.TabIndex = 2;
@@ -67,9 +68,9 @@
             // 
             // btnRestart
             // 
-            btnRestart.BackColor = Color.LightBlue;
+            btnRestart.BackColor = Color.White;
             btnRestart.Font = new Font("Arial", 12F, FontStyle.Bold);
-            btnRestart.Location = new Point(631, 182);
+            btnRestart.Location = new Point(667, 144);
             btnRestart.Name = "btnRestart";
             btnRestart.Size = new Size(105, 37);
             btnRestart.TabIndex = 3;
@@ -84,11 +85,12 @@
             // 
             // btnHome
             // 
-            btnHome.BackColor = Color.LightBlue;
+            btnHome.BackColor = Color.White;
             btnHome.Font = new Font("Arial", 12F, FontStyle.Bold);
-            btnHome.Location = new Point(649, 25);
+            btnHome.Location = new Point(697, 11);
+            btnHome.Margin = new Padding(3, 0, 3, 0);
             btnHome.Name = "btnHome";
-            btnHome.Size = new Size(63, 24);
+            btnHome.Size = new Size(75, 23);
             btnHome.TabIndex = 5;
             btnHome.Text = "Home";
             btnHome.UseVisualStyleBackColor = false;
@@ -99,18 +101,21 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.WhiteSmoke;
-            ClientSize = new Size(762, 701);
+            BackgroundImage = Properties.Resources.MatchingGame_Background;
+            BackgroundImageLayout = ImageLayout.Stretch;
+            ClientSize = new Size(784, 761);
             Controls.Add(btnHome);
             Controls.Add(btnRestart);
             Controls.Add(lblCoins);
             Controls.Add(lblTimeLeft);
             Controls.Add(lblStatus);
+            DoubleBuffered = true;
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "EnglishMemoryMatching";
             Text = "English Matching Game";
-            Load += Form1_Load;
+            Load += EnglishMemoryMatching_Load;
             ResumeLayout(false);
             PerformLayout();
         }
     }
-
 }

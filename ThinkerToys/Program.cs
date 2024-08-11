@@ -18,11 +18,11 @@ namespace ThinkerToys
 
             //Login page 
 
-            ApplicationConfiguration.Initialize();
-            Login loginForm = new Login();
-            loginForm.FormClosed += new FormClosedEventHandler(FormClosed);
-            loginForm.Show();
-            Application.Run();
+            //ApplicationConfiguration.Initialize();
+            //Login loginForm = new Login();
+            //loginForm.FormClosed += new FormClosedEventHandler(FormClosed);
+            //loginForm.Show();
+            //Application.Run();
 
 
 
@@ -49,11 +49,11 @@ namespace ThinkerToys
 
             // English Game - Memory 
 
-            //ApplicationConfiguration.Initialize();
-            //EnglishMemoryMatching game = new EnglishMemoryMatching();
-            //game.FormClosed += new FormClosedEventHandler(FormClosed);
-            //game.Show();
-            //Application.Run();
+            ApplicationConfiguration.Initialize();
+            EnglishMemoryMatching game = new EnglishMemoryMatching();
+            game.FormClosed += new FormClosedEventHandler(FormClosed);
+            game.Show();
+            Application.Run();
 
         }
           
