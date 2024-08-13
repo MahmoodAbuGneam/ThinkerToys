@@ -1,4 +1,9 @@
-﻿namespace ThinkerToys
+﻿using System.Runtime.InteropServices;
+using _Excel = Microsoft.Office.Interop.Excel;
+using System.Runtime.InteropServices;
+
+
+namespace ThinkerToys
 {
     public partial class HebrewGame1 : Form
     {
@@ -41,9 +46,7 @@
             new Level { CorrectLetter = 'ש', IncorrectLetters = new List<char> { 'א', 'ם', 'כ', 'י' } },
             new Level { CorrectLetter = 'ת', IncorrectLetters = new List<char> { 'ב', 'ר', 'כ', 'ק' } },
         };
-
-
-
+        private int coinCounter = 0;
 
         public HebrewGame1(char startingLetter)
         {
@@ -67,7 +70,7 @@
             }
             else
             {
-                // Handle case when the level is not found
+                // handle case where level is not found 
             }
         }
 
@@ -298,6 +301,8 @@
             CenterGameOverLabel(); // Center the label on the screen
             gameOverLabel.Visible = true; // Show the "GAME OVER" label
 
+            UpdateCoinsHebrewGame(); // Update and save coins
+
             if (btnBackToLevels == null)
             {
                 btnBackToLevels = new Button
@@ -318,10 +323,56 @@
             }
         }
 
+
+        private void UpdateCoinsHebrewGame()
+        {
+            UserSession.Instance.Coins += coinCounter;
+
+            string filePath = System.IO.Path.Combine(System.IO.Directory.GetCurrentDirectory(), "SignupData.xlsx");
+
+            _Excel.Application excelApp = new _Excel.Application();
+            _Excel.Workbook workbook = null;
+            _Excel.Worksheet worksheet = null;
+
+            try
+            {
+                workbook = excelApp.Workbooks.Open(filePath);
+                worksheet = (_Excel.Worksheet)workbook.Sheets[1];
+
+                int rowCount = worksheet.UsedRange.Rows.Count;
+                for (int i = 2; i <= rowCount; i++)
+                {
+                    if ((string)(worksheet.Cells[i, 2] as _Excel.Range).Value == UserSession.Instance.Username)
+                    {
+                        worksheet.Cells[i, 6] = UserSession.Instance.Coins;
+                        break;
+                    }
+                }
+
+                workbook.Save();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error updating coins: " + ex.Message);
+            }
+            finally
+            {
+                if (workbook != null)
+                {
+                    workbook.Close();
+                    Marshal.ReleaseComObject(workbook);
+                }
+                excelApp.Quit();
+                Marshal.ReleaseComObject(excelApp);
+            }
+        }
+
         private void IncrementScore()
         {
             score += 1; // Increase score by 1
             scoreLabel.Text = "Score: " + score; // Update score label
+            coinCounter += 5; // Increase coins by 5 for each correct letter
+
         }
 
         private void InitializeGameOverLabel()

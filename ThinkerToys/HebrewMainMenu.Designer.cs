@@ -1,6 +1,6 @@
 ﻿namespace ThinkerToys
 {
-    partial class MainMenuForm
+    partial class HebrewMainMenu
     {
         private System.ComponentModel.IContainer components = null;
 
@@ -17,14 +17,14 @@
         {
             SuspendLayout();
             // 
-            // MainMenuForm
+            // HebrewMainMenu
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 600);
-            Name = "MainMenuForm";
+            Name = "HebrewMainMenu";
             Text = "Main Menu";
-            Load += MainMenuForm_Load;
+            Load += HebrewMainMenu_Load;
             ResumeLayout(false);
         }
     }

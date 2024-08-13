@@ -8,7 +8,7 @@ namespace ThinkerToys
     public partial class LevelForm : Form
     {
         private int level;
-        private MainMenuForm mainMenuForm;
+        private HebrewMainMenu mainMenuForm;
         private List<Label> wordLabels = new List<Label>();
         private List<LevelData> levels = new List<LevelData>
         {
@@ -78,7 +78,7 @@ namespace ThinkerToys
         private Panel dropTargetPanel;
         private int currentScore = 0;
 
-        public LevelForm(int level, MainMenuForm mainMenuForm)
+        public LevelForm(int level, HebrewMainMenu mainMenuForm)
         {
             this.level = level;
             this.mainMenuForm = mainMenuForm;

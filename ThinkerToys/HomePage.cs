@@ -141,10 +141,10 @@ namespace ThinkerToys
 
         private void englishGamesImage_Click(object sender, EventArgs e)
         {
-            // Navigate to English Games section
-            // Example:
-            MessageBox.Show("Navigating to English Games...");
-            // Add navigation logic here
+            EnglishGamesTogether englishTogether = new EnglishGamesTogether();
+            this.Hide();
+            englishTogether.ShowDialog();
+            this.Close();
         }
 
         private void mathGamesImage_Click(object sender, EventArgs e)
@@ -157,10 +157,10 @@ namespace ThinkerToys
 
         private void hebrewGamesImage_Click(object sender, EventArgs e)
         {
-            // Navigate to Hebrew Games section
-            // Example:
-            MessageBox.Show("Navigating to Hebrew Games...");
-            // Add navigation logic here
+            HebrewGamesTogether hebrewTogether = new HebrewGamesTogether();
+            this.Hide();
+            hebrewTogether.ShowDialog();
+            this.Close();
         }
 
         private void profileImage_Click(object sender, EventArgs e)

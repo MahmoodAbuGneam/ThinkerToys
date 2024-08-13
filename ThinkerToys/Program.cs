@@ -1,3 +1,6 @@
+﻿using System.Globalization;
+using ThinkerToys;
+
 namespace ThinkerToys
 {
     internal static class Program
@@ -24,13 +27,53 @@ namespace ThinkerToys
             loginForm.Show();
             Application.Run();
 
+            // ---------------------------------------------------
+
+
+            // Hebrew Game 1
+            //ApplicationConfiguration.Initialize();
+            //HebrewGame1 hebrew1 = new HebrewGame1('א');
+            //hebrew1.FormClosed += new FormClosedEventHandler(FormClosed);
+            //hebrew1.Show();
+            //Application.Run();
+
+            // Level selection form for Hebrew game 1 
+            //ApplicationConfiguration.Initialize();
+            //LevelSelectionForm hebrew1 = new LevelSelectionForm();
+            //hebrew1.FormClosed += new FormClosedEventHandler(FormClosed);
+            //hebrew1.Show();
+            //Application.Run();
+
+
+            // Hebrew Game 2 
+            //ApplicationConfiguration.Initialize();
+            //HebrewMainMenu hebrew2 = new HebrewMainMenu();
+            //hebrew2.FormClosed += new FormClosedEventHandler(FormClosed);
+            //hebrew2.Show();
+            //Application.Run();
+
+
+
+            // Hebrew Games Together
+            //ApplicationConfiguration.Initialize();
+            //HebrewGamesTogether hebrewTogether = new HebrewGamesTogether();
+            //hebrewTogether.FormClosed += new FormClosedEventHandler(FormClosed);
+            //hebrewTogether.Show();
+            //Application.Run();
+
+            // ---------------------------------------------------
+
 
             //Home page
             //ApplicationConfiguration.Initialize();
-            //HomePage homepage = new HomePage();
-            //homepage.FormClosed += new FormClosedEventHandler(FormClosed);
-            //homepage.Show();
+            //MainMenuForm mainMenuForm = new MainMenuForm();
+            //LevelForm levelform = new LevelForm(1,mainMenuForm);
+            //levelform.FormClosed += new FormClosedEventHandler(FormClosed);
+            //levelform.Show();
             //Application.Run();
+
+
+            // ---------------------------------------------------
 
 
 
@@ -41,6 +84,9 @@ namespace ThinkerToys
             //storeForm.FormClosed += new FormClosedEventHandler(FormClosed);
             //storeForm.Show();
             //Application.Run();
+
+
+            // ---------------------------------------------------
 
             //EnglishGame1 - bomb
 
@@ -59,8 +105,13 @@ namespace ThinkerToys
             //game.Show();
             //Application.Run();
 
+
+
+            // English Games Together
+
+
         }
-          
+
         private static void FormClosed(object sender, FormClosedEventArgs e)
         {
             // Check if any forms are open, if none, exit the application

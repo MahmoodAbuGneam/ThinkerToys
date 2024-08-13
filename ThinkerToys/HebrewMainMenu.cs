@@ -4,12 +4,12 @@ using System.Windows.Forms;
 
 namespace ThinkerToys
 {
-    public partial class MainMenuForm : Form
+    public partial class HebrewMainMenu : Form
     {
         private int currentScore = 0;
         private int levelsUnlocked = 1;
 
-        public MainMenuForm()
+        public HebrewMainMenu()
         {
             InitializeComponent();
             InitializeCustomComponents();
@@ -105,7 +105,7 @@ namespace ThinkerToys
             }
         }
 
-        private void MainMenuForm_Load(object sender, EventArgs e)
+        private void HebrewMainMenu_Load(object sender, EventArgs e)
         {
         }
 
@@ -113,11 +113,11 @@ namespace ThinkerToys
         {
             SuspendLayout();
             // 
-            // MainMenuForm
+            // HebrewMainMenu
             // 
             ClientSize = new Size(800, 679);
-            Name = "MainMenuForm";
-            Load += MainMenuForm_Load;
+            Name = "HebrewMainMenu";
+            Load += HebrewMainMenu_Load;
             ResumeLayout(false);
         }
     }
