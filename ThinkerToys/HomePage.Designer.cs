@@ -1,17 +1,12 @@
-﻿
+﻿using System.Drawing;
+using System.Windows.Forms;
+
 namespace ThinkerToys
 {
     partial class HomePage
     {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -21,213 +16,369 @@ namespace ThinkerToys
             base.Dispose(disposing);
         }
 
-        #region Windows Form Designer generated code
-
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
         private void InitializeComponent()
         {
+            mainPanel = new Panel();
+            headerPanel = new Panel();
             usernameLabel = new Label();
-            coinsLabel = new Label();
-            logoutButton = new Button();
-            mathGameButton = new Button();
-            hebrewGameButton = new Button();
-            englishMatching = new Button();
-            storeButton = new Button();
-            profileButton = new Button();
-            logoName = new PictureBox();
-            coinsPictureBox = new PictureBox();
-            ProfilePicture = new PictureBox();
-            debugButton = new Button();
-            EnglishPoppingGame = new Button();
-            ((System.ComponentModel.ISupportInitialize)logoName).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)coinsPictureBox).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)ProfilePicture).BeginInit();
+            headerLabel = new Label();
+            subHeaderLabel = new Label();
+            coinsLabel = new RoundedButton();
+            tableLayoutPanel = new TableLayoutPanel();
+            storeCard = new RoundedPanel();
+            storeImage = new PictureBox();
+            storeLabel = new Label();
+            englishGamesCard = new RoundedPanel();
+            englishGamesImage = new PictureBox();
+            englishGamesLabel = new Label();
+            mathGamesCard = new RoundedPanel();
+            mathGamesImage = new PictureBox();
+            mathGamesLabel = new Label();
+            hebrewGamesCard = new RoundedPanel();
+            hebrewGamesImage = new PictureBox();
+            hebrewGamesLabel = new Label();
+            profileCard = new RoundedPanel();
+            profileImage = new PictureBox();
+            profileLabel = new Label();
+            mainPanel.SuspendLayout();
+            headerPanel.SuspendLayout();
+            tableLayoutPanel.SuspendLayout();
+            storeCard.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)storeImage).BeginInit();
+            englishGamesCard.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)englishGamesImage).BeginInit();
+            mathGamesCard.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)mathGamesImage).BeginInit();
+            hebrewGamesCard.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)hebrewGamesImage).BeginInit();
+            profileCard.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)profileImage).BeginInit();
             SuspendLayout();
+            // 
+            // mainPanel
+            // 
+            mainPanel.BackColor = Color.White;
+            mainPanel.Controls.Add(headerPanel);
+            mainPanel.Controls.Add(tableLayoutPanel);
+            mainPanel.Dock = DockStyle.Fill;
+            mainPanel.Location = new Point(0, 0);
+            mainPanel.Name = "mainPanel";
+            mainPanel.Size = new Size(1213, 685);
+            mainPanel.TabIndex = 0;
+            // 
+            // headerPanel
+            // 
+            headerPanel.BackColor = Color.FromArgb(50, 100, 200);
+            headerPanel.Controls.Add(usernameLabel);
+            headerPanel.Controls.Add(headerLabel);
+            headerPanel.Controls.Add(subHeaderLabel);
+            headerPanel.Controls.Add(coinsLabel);
+            headerPanel.Dock = DockStyle.Top;
+            headerPanel.Location = new Point(0, 0);
+            headerPanel.Name = "headerPanel";
+            headerPanel.Padding = new Padding(0, 0, 0, 20);
+            headerPanel.Size = new Size(1213, 180);
+            headerPanel.TabIndex = 0;
             // 
             // usernameLabel
             // 
             usernameLabel.AutoSize = true;
-            usernameLabel.Font = new Font("Comic Sans MS", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            usernameLabel.Location = new Point(64, 52);
+            usernameLabel.Font = new Font("Segoe UI", 28F, FontStyle.Bold);
+            usernameLabel.ForeColor = Color.White;
+            usernameLabel.Location = new Point(673, 33);
             usernameLabel.Name = "usernameLabel";
-            usernameLabel.Size = new Size(99, 26);
-            usernameLabel.TabIndex = 0;
-            usernameLabel.Text = "Username";
-            usernameLabel.TextAlign = ContentAlignment.TopCenter;
-            usernameLabel.Click += usernameLabel_Click;
+            usernameLabel.Size = new Size(41, 51);
+            usernameLabel.TabIndex = 4;
+            usernameLabel.Text = "\"";
+            // 
+            // headerLabel
+            // 
+            headerLabel.AutoSize = true;
+            headerLabel.Font = new Font("Segoe UI", 28F, FontStyle.Bold);
+            headerLabel.ForeColor = Color.White;
+            headerLabel.Location = new Point(193, 30);
+            headerLabel.Name = "headerLabel";
+            headerLabel.Size = new Size(483, 51);
+            headerLabel.TabIndex = 0;
+            headerLabel.Text = "Welcome to Thinker-Toys,";
+            headerLabel.Click += headerLabel_Click;
+            // 
+            // subHeaderLabel
+            // 
+            subHeaderLabel.AutoSize = true;
+            subHeaderLabel.Font = new Font("Segoe UI", 16F);
+            subHeaderLabel.ForeColor = Color.White;
+            subHeaderLabel.Location = new Point(414, 90);
+            subHeaderLabel.Name = "subHeaderLabel";
+            subHeaderLabel.Size = new Size(290, 30);
+            subHeaderLabel.TabIndex = 1;
+            subHeaderLabel.Text = "Your gateway to fun learning";
             // 
             // coinsLabel
             // 
-            coinsLabel.AutoSize = true;
-            coinsLabel.Font = new Font("Comic Sans MS", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            coinsLabel.Location = new Point(64, 91);
+            coinsLabel.BackColor = Color.FromArgb(0, 120, 215);
+            coinsLabel.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
+            coinsLabel.ForeColor = Color.White;
+            coinsLabel.Location = new Point(500, 128);
             coinsLabel.Name = "coinsLabel";
-            coinsLabel.Size = new Size(56, 26);
-            coinsLabel.TabIndex = 1;
-            coinsLabel.Text = "Coins";
+            coinsLabel.Size = new Size(150, 40);
+            coinsLabel.TabIndex = 2;
+            coinsLabel.Text = "Coins credit: 100";
+            coinsLabel.UseVisualStyleBackColor = false;
             // 
-            // logoutButton
+            // tableLayoutPanel
             // 
-            logoutButton.Location = new Point(310, 499);
-            logoutButton.Name = "logoutButton";
-            logoutButton.Size = new Size(150, 50);
-            logoutButton.TabIndex = 2;
-            logoutButton.Text = "Logout";
-            logoutButton.UseVisualStyleBackColor = true;
-            logoutButton.Click += logoutButton_Click;
+            tableLayoutPanel.ColumnCount = 3;
+            tableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.33F));
+            tableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.33F));
+            tableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.33F));
+            tableLayoutPanel.Controls.Add(storeCard, 0, 0);
+            tableLayoutPanel.Controls.Add(englishGamesCard, 1, 0);
+            tableLayoutPanel.Controls.Add(mathGamesCard, 2, 0);
+            tableLayoutPanel.Controls.Add(hebrewGamesCard, 0, 1);
+            tableLayoutPanel.Controls.Add(profileCard, 1, 1);
+            tableLayoutPanel.Location = new Point(3, 186);
+            tableLayoutPanel.Name = "tableLayoutPanel";
+            tableLayoutPanel.Padding = new Padding(10);
+            tableLayoutPanel.RowCount = 2;
+            tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
+            tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
+            tableLayoutPanel.Size = new Size(1208, 497);
+            tableLayoutPanel.TabIndex = 1;
             // 
-            // mathGameButton
+            // storeCard
             // 
-            mathGameButton.Location = new Point(310, 157);
-            mathGameButton.Name = "mathGameButton";
-            mathGameButton.Size = new Size(150, 50);
-            mathGameButton.TabIndex = 3;
-            mathGameButton.Text = "Math Game";
-            mathGameButton.UseVisualStyleBackColor = true;
-            mathGameButton.Click += mathGameButton_Click;
+            storeCard.Controls.Add(storeImage);
+            storeCard.Controls.Add(storeLabel);
+            storeCard.Cursor = Cursors.Hand;
+            storeCard.Dock = DockStyle.Fill;
+            storeCard.Location = new Point(13, 13);
+            storeCard.Name = "storeCard";
+            storeCard.Padding = new Padding(5);
+            storeCard.Size = new Size(390, 232);
+            storeCard.TabIndex = 0;
+            storeCard.Click += StoreCard_Click;
             // 
-            // hebrewGameButton
+            // storeImage
             // 
-            hebrewGameButton.Location = new Point(12, 157);
-            hebrewGameButton.Name = "hebrewGameButton";
-            hebrewGameButton.Size = new Size(150, 50);
-            hebrewGameButton.TabIndex = 4;
-            hebrewGameButton.Text = "Hebrew Game";
-            hebrewGameButton.UseVisualStyleBackColor = true;
-            hebrewGameButton.Click += hebrewGameButton_Click;
+            storeImage.Dock = DockStyle.Fill;
+            storeImage.Image = Properties.Resources.store_icon;
+            storeImage.Location = new Point(5, 5);
+            storeImage.Name = "storeImage";
+            storeImage.Size = new Size(380, 192);
+            storeImage.SizeMode = PictureBoxSizeMode.Zoom;
+            storeImage.TabIndex = 0;
+            storeImage.TabStop = false;
+            storeImage.Click += storeImage_Click;
             // 
-            // englishMatching
+            // storeLabel
             // 
-            englishMatching.Location = new Point(622, 157);
-            englishMatching.Name = "englishMatching";
-            englishMatching.Size = new Size(150, 50);
-            englishMatching.TabIndex = 5;
-            englishMatching.Text = "Matching Game";
-            englishMatching.UseVisualStyleBackColor = true;
-            englishMatching.Click += englishMatching_Click;
+            storeLabel.Dock = DockStyle.Bottom;
+            storeLabel.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            storeLabel.Location = new Point(5, 197);
+            storeLabel.Name = "storeLabel";
+            storeLabel.Size = new Size(380, 30);
+            storeLabel.TabIndex = 1;
+            storeLabel.Text = "Store";
+            storeLabel.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // storeButton
+            // englishGamesCard
             // 
-            storeButton.Location = new Point(310, 434);
-            storeButton.Name = "storeButton";
-            storeButton.Size = new Size(150, 50);
-            storeButton.TabIndex = 6;
-            storeButton.Text = "Store";
-            storeButton.UseVisualStyleBackColor = true;
-            storeButton.Click += storeButton_Click;
+            englishGamesCard.Controls.Add(englishGamesImage);
+            englishGamesCard.Controls.Add(englishGamesLabel);
+            englishGamesCard.Cursor = Cursors.Hand;
+            englishGamesCard.Dock = DockStyle.Fill;
+            englishGamesCard.Location = new Point(409, 13);
+            englishGamesCard.Name = "englishGamesCard";
+            englishGamesCard.Padding = new Padding(5);
+            englishGamesCard.Size = new Size(390, 232);
+            englishGamesCard.TabIndex = 1;
+            englishGamesCard.Click += EnglishGamesCard_Click;
             // 
-            // profileButton
+            // englishGamesImage
             // 
-            profileButton.Location = new Point(642, 55);
-            profileButton.Name = "profileButton";
-            profileButton.Size = new Size(130, 38);
-            profileButton.TabIndex = 7;
-            profileButton.Text = "Profile";
-            profileButton.UseVisualStyleBackColor = true;
-            profileButton.Click += profileButton_Click;
+            englishGamesImage.Dock = DockStyle.Fill;
+            englishGamesImage.Image = Properties.Resources.english_games_icon;
+            englishGamesImage.Location = new Point(5, 5);
+            englishGamesImage.Name = "englishGamesImage";
+            englishGamesImage.Size = new Size(380, 192);
+            englishGamesImage.SizeMode = PictureBoxSizeMode.Zoom;
+            englishGamesImage.TabIndex = 0;
+            englishGamesImage.TabStop = false;
+            englishGamesImage.Click += englishGamesImage_Click;
             // 
-            // logoName
+            // englishGamesLabel
             // 
-            logoName.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            logoName.Image = Properties.Resources.logo_name_only;
-            logoName.Location = new Point(0, 0);
-            logoName.Name = "logoName";
-            logoName.Size = new Size(784, 49);
-            logoName.SizeMode = PictureBoxSizeMode.CenterImage;
-            logoName.TabIndex = 8;
-            logoName.TabStop = false;
-            logoName.Click += pictureBox1_Click;
+            englishGamesLabel.Dock = DockStyle.Bottom;
+            englishGamesLabel.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            englishGamesLabel.Location = new Point(5, 197);
+            englishGamesLabel.Name = "englishGamesLabel";
+            englishGamesLabel.Size = new Size(380, 30);
+            englishGamesLabel.TabIndex = 1;
+            englishGamesLabel.Text = "English Games";
+            englishGamesLabel.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // coinsPictureBox
+            // mathGamesCard
             // 
-            coinsPictureBox.Image = Properties.Resources.coins_stack;
-            coinsPictureBox.Location = new Point(12, 92);
-            coinsPictureBox.Name = "coinsPictureBox";
-            coinsPictureBox.Size = new Size(27, 25);
-            coinsPictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
-            coinsPictureBox.TabIndex = 9;
-            coinsPictureBox.TabStop = false;
+            mathGamesCard.Controls.Add(mathGamesImage);
+            mathGamesCard.Controls.Add(mathGamesLabel);
+            mathGamesCard.Cursor = Cursors.Hand;
+            mathGamesCard.Dock = DockStyle.Fill;
+            mathGamesCard.Location = new Point(805, 13);
+            mathGamesCard.Name = "mathGamesCard";
+            mathGamesCard.Padding = new Padding(5);
+            mathGamesCard.Size = new Size(390, 232);
+            mathGamesCard.TabIndex = 2;
+            mathGamesCard.Click += MathGamesCard_Click;
             // 
-            // ProfilePicture
+            // mathGamesImage
             // 
-            ProfilePicture.Image = Properties.Resources.profile;
-            ProfilePicture.Location = new Point(5, 46);
-            ProfilePicture.Name = "ProfilePicture";
-            ProfilePicture.Size = new Size(40, 40);
-            ProfilePicture.SizeMode = PictureBoxSizeMode.StretchImage;
-            ProfilePicture.TabIndex = 10;
-            ProfilePicture.TabStop = false;
+            mathGamesImage.Dock = DockStyle.Fill;
+            mathGamesImage.Image = Properties.Resources.math_games_icon;
+            mathGamesImage.Location = new Point(5, 5);
+            mathGamesImage.Name = "mathGamesImage";
+            mathGamesImage.Size = new Size(380, 192);
+            mathGamesImage.SizeMode = PictureBoxSizeMode.Zoom;
+            mathGamesImage.TabIndex = 0;
+            mathGamesImage.TabStop = false;
+            mathGamesImage.Click += mathGamesImage_Click;
             // 
-            // debugButton
+            // mathGamesLabel
             // 
-            debugButton.Font = new Font("Comic Sans MS", 12F, FontStyle.Bold);
-            debugButton.Location = new Point(12, 430);
-            debugButton.Name = "debugButton";
-            debugButton.Size = new Size(150, 40);
-            debugButton.TabIndex = 9;
-            debugButton.Text = "Debug Coins";
-            debugButton.UseVisualStyleBackColor = true;
-            debugButton.Click += debugButton_Click;
+            mathGamesLabel.Dock = DockStyle.Bottom;
+            mathGamesLabel.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            mathGamesLabel.Location = new Point(5, 197);
+            mathGamesLabel.Name = "mathGamesLabel";
+            mathGamesLabel.Size = new Size(380, 30);
+            mathGamesLabel.TabIndex = 1;
+            mathGamesLabel.Text = "Math Games";
+            mathGamesLabel.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // EnglishPoppingGame
+            // hebrewGamesCard
             // 
-            EnglishPoppingGame.Location = new Point(622, 238);
-            EnglishPoppingGame.Name = "EnglishPoppingGame";
-            EnglishPoppingGame.Size = new Size(150, 50);
-            EnglishPoppingGame.TabIndex = 11;
-            EnglishPoppingGame.Text = "Popping Game";
-            EnglishPoppingGame.UseVisualStyleBackColor = true;
-            EnglishPoppingGame.Click += EnglishPoppingGame_Click;
+            hebrewGamesCard.Controls.Add(hebrewGamesImage);
+            hebrewGamesCard.Controls.Add(hebrewGamesLabel);
+            hebrewGamesCard.Cursor = Cursors.Hand;
+            hebrewGamesCard.Dock = DockStyle.Fill;
+            hebrewGamesCard.Location = new Point(13, 251);
+            hebrewGamesCard.Name = "hebrewGamesCard";
+            hebrewGamesCard.Padding = new Padding(5);
+            hebrewGamesCard.Size = new Size(390, 233);
+            hebrewGamesCard.TabIndex = 3;
+            hebrewGamesCard.Click += HebrewGamesCard_Click;
+            // 
+            // hebrewGamesImage
+            // 
+            hebrewGamesImage.Dock = DockStyle.Fill;
+            hebrewGamesImage.Image = Properties.Resources.hebrew_games_icon;
+            hebrewGamesImage.Location = new Point(5, 5);
+            hebrewGamesImage.Name = "hebrewGamesImage";
+            hebrewGamesImage.Size = new Size(380, 193);
+            hebrewGamesImage.SizeMode = PictureBoxSizeMode.Zoom;
+            hebrewGamesImage.TabIndex = 0;
+            hebrewGamesImage.TabStop = false;
+            hebrewGamesImage.Click += hebrewGamesImage_Click;
+            // 
+            // hebrewGamesLabel
+            // 
+            hebrewGamesLabel.Dock = DockStyle.Bottom;
+            hebrewGamesLabel.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            hebrewGamesLabel.Location = new Point(5, 198);
+            hebrewGamesLabel.Name = "hebrewGamesLabel";
+            hebrewGamesLabel.Size = new Size(380, 30);
+            hebrewGamesLabel.TabIndex = 1;
+            hebrewGamesLabel.Text = "Hebrew Games";
+            hebrewGamesLabel.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // profileCard
+            // 
+            profileCard.Controls.Add(profileImage);
+            profileCard.Controls.Add(profileLabel);
+            profileCard.Cursor = Cursors.Hand;
+            profileCard.Dock = DockStyle.Fill;
+            profileCard.Location = new Point(409, 251);
+            profileCard.Name = "profileCard";
+            profileCard.Padding = new Padding(5);
+            profileCard.Size = new Size(390, 233);
+            profileCard.TabIndex = 4;
+            profileCard.Click += ProfileCard_Click;
+            // 
+            // profileImage
+            // 
+            profileImage.Dock = DockStyle.Fill;
+            profileImage.Image = Properties.Resources.profile_icon;
+            profileImage.Location = new Point(5, 5);
+            profileImage.Name = "profileImage";
+            profileImage.Size = new Size(380, 193);
+            profileImage.SizeMode = PictureBoxSizeMode.Zoom;
+            profileImage.TabIndex = 0;
+            profileImage.TabStop = false;
+            profileImage.Click += profileImage_Click;
+            // 
+            // profileLabel
+            // 
+            profileLabel.Dock = DockStyle.Bottom;
+            profileLabel.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            profileLabel.Location = new Point(5, 198);
+            profileLabel.Name = "profileLabel";
+            profileLabel.Size = new Size(380, 30);
+            profileLabel.TabIndex = 1;
+            profileLabel.Text = "Show Profile";
+            profileLabel.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // HomePage
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(784, 561);
-            Controls.Add(EnglishPoppingGame);
-            Controls.Add(debugButton);
-            Controls.Add(ProfilePicture);
-            Controls.Add(coinsPictureBox);
-            Controls.Add(logoName);
-            Controls.Add(profileButton);
-            Controls.Add(storeButton);
-            Controls.Add(englishMatching);
-            Controls.Add(hebrewGameButton);
-            Controls.Add(mathGameButton);
-            Controls.Add(logoutButton);
-            Controls.Add(coinsLabel);
-            Controls.Add(usernameLabel);
+            ClientSize = new Size(1213, 685);
+            Controls.Add(mainPanel);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "HomePage";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "HomePage";
             Load += HomePage_Load;
-            ((System.ComponentModel.ISupportInitialize)logoName).EndInit();
-            ((System.ComponentModel.ISupportInitialize)coinsPictureBox).EndInit();
-            ((System.ComponentModel.ISupportInitialize)ProfilePicture).EndInit();
+            mainPanel.ResumeLayout(false);
+            headerPanel.ResumeLayout(false);
+            headerPanel.PerformLayout();
+            tableLayoutPanel.ResumeLayout(false);
+            storeCard.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)storeImage).EndInit();
+            englishGamesCard.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)englishGamesImage).EndInit();
+            mathGamesCard.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)mathGamesImage).EndInit();
+            hebrewGamesCard.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)hebrewGamesImage).EndInit();
+            profileCard.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)profileImage).EndInit();
             ResumeLayout(false);
-            PerformLayout();
         }
 
+        private System.Windows.Forms.Panel mainPanel;
+        private System.Windows.Forms.Panel headerPanel;
+        private System.Windows.Forms.Label headerLabel;
+        private System.Windows.Forms.Label subHeaderLabel;
+        private ThinkerToys.RoundedButton coinsLabel;
 
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel;
 
-        #endregion
+        private ThinkerToys.RoundedPanel storeCard;
+        private ThinkerToys.RoundedPanel englishGamesCard;
+        private ThinkerToys.RoundedPanel mathGamesCard;
+        private ThinkerToys.RoundedPanel hebrewGamesCard;
+        private ThinkerToys.RoundedPanel profileCard;
 
-        private System.Windows.Forms.Label usernameLabel;
-        private System.Windows.Forms.Label coinsLabel;
-        private System.Windows.Forms.Button logoutButton;
-        private System.Windows.Forms.Button mathGameButton;
-        private System.Windows.Forms.Button hebrewGameButton;
-        private System.Windows.Forms.Button englishMatching;
-        private System.Windows.Forms.Button storeButton;
-        private System.Windows.Forms.Button profileButton;
-        private PictureBox logoName;
-        private PictureBox coinsPictureBox;
-        private PictureBox ProfilePicture;
-        private Button debugButton;
-        private Button EnglishPoppingGame;
+        private System.Windows.Forms.PictureBox storeImage;
+        private System.Windows.Forms.PictureBox englishGamesImage;
+        private System.Windows.Forms.PictureBox mathGamesImage;
+        private System.Windows.Forms.PictureBox hebrewGamesImage;
+        private System.Windows.Forms.PictureBox profileImage;
+
+        private System.Windows.Forms.Label storeLabel;
+        private System.Windows.Forms.Label englishGamesLabel;
+        private System.Windows.Forms.Label mathGamesLabel;
+        private System.Windows.Forms.Label hebrewGamesLabel;
+        private System.Windows.Forms.Label profileLabel;
+        private Label usernameLabel;
     }
 }

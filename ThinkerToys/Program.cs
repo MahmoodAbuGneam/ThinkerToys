@@ -25,6 +25,14 @@ namespace ThinkerToys
             Application.Run();
 
 
+            //Home page
+            //ApplicationConfiguration.Initialize();
+            //HomePage homepage = new HomePage();
+            //homepage.FormClosed += new FormClosedEventHandler(FormClosed);
+            //homepage.Show();
+            //Application.Run();
+
+
 
             // Store Form
 
@@ -41,10 +49,6 @@ namespace ThinkerToys
             //englishGame1.FormClosed += new FormClosedEventHandler(FormClosed);
             //englishGame1.Show();
             //Application.Run();
-
-
-
-
 
 
             // English Game - Memory 

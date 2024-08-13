@@ -1,11 +1,15 @@
-﻿
-using System;
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
-using Microsoft.Office.Interop.Excel;
+using System;
 using _Excel = Microsoft.Office.Interop.Excel;
 using System.Runtime.InteropServices;
-
 
 namespace ThinkerToys
 {
@@ -15,94 +19,8 @@ namespace ThinkerToys
         {
             InitializeComponent();
             this.FormClosing += new FormClosingEventHandler(HomePage_FormClosing);
-        }
-
-
-        private void HomePage_Load(object sender, EventArgs e)
-        {
-            // Display user information
-            usernameLabel.Text = $"User: {UserSession.Instance.Username}";
-            coinsLabel.Text = $"Coins: {UserSession.Instance.Coins}";
-        }
-
-        private void logoutButton_Click(object sender, EventArgs e)
-        {
-            // Update coins in the document
-            UpdateCoinsInDocument(UserSession.Instance.Username, UserSession.Instance.Coins);
-
-            // Clear the user session
-            UserSession.Instance.Clear();
-
-            // Navigate back to the login form
-            Login loginForm = new Login();
-            this.Hide();
-            loginForm.ShowDialog();
-            this.Close();
-        }
-
-
-        private void mathGameButton_Click(object sender, EventArgs e)
-        {
-            // Navigate to Math Game
-            // MathGameForm mathGameForm = new MathGameForm();
-            // this.Hide();
-            // mathGameForm.ShowDialog();
-            // this.Close();
-        }
-
-        private void hebrewGameButton_Click(object sender, EventArgs e)
-        {
-            // Navigate to Hebrew Game
-            // HebrewGameForm hebrewGameForm = new HebrewGameForm();
-            // this.Hide();
-            // hebrewGameForm.ShowDialog();
-            // this.Close();
-        }
-
-        private void englishMatching_Click(object sender, EventArgs e)
-        {
-            //// Navigate to English Matching Game
-            EnglishMemoryMatching englishGameForm = new EnglishMemoryMatching();
-            this.Hide();
-            englishGameForm.ShowDialog();
-            this.Close();
-        }
-
-        private void storeButton_Click(object sender, EventArgs e)
-        {
-            // Navigate to Store
-            StoreSectForm1 storeForm = new StoreSectForm1();
-            this.Hide();
-            storeForm.ShowDialog();
-            this.Close();
-        }
-
-        private void profileButton_Click(object sender, EventArgs e)
-        {
-            // Navigate to Profile Management
-            // ProfileForm profileForm = new ProfileForm();
-            // this.Hide();
-            // profileForm.ShowDialog();
-            // this.Close();
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
 
         }
-
-        private void usernameLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void debugButton_Click(object sender, EventArgs e)
-        {
-            // Change the value of coins for debugging
-            UserSession.Instance.Coins += 10; // Increase coins by 10 for testing
-            coinsLabel.Text = $"Coins: {UserSession.Instance.Coins}";
-        }
-
 
         private void HomePage_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -110,8 +28,7 @@ namespace ThinkerToys
             UpdateCoinsInDocument(UserSession.Instance.Username, UserSession.Instance.Coins);
         }
 
-
-        public void UpdateCoinsInDocument(string username, int coins)
+        private void UpdateCoinsInDocument(string username, int coins)
         {
             _Excel.Application excelApp = new _Excel.Application();
             if (excelApp == null)
@@ -162,13 +79,96 @@ namespace ThinkerToys
             GC.WaitForPendingFinalizers();
         }
 
-        private void EnglishPoppingGame_Click(object sender, EventArgs e)
+        private void HomePage_Load(object sender, EventArgs e)
         {
-            //// Navigate to English Game
-            EnglishGame1Form englishGameForm = new EnglishGame1Form();
+            // Display user information
+            usernameLabel.Text = $"{UserSession.Instance.Username}";
+            coinsLabel.Text = $"Coins: {UserSession.Instance.Coins}";
+        }
+
+        // Event handler for Store card click
+        private void StoreCard_Click(object sender, EventArgs e)
+        {
+            // Navigate to Store
+            StoreSectForm1 storeForm = new StoreSectForm1();
             this.Hide();
-            englishGameForm.ShowDialog();
+            storeForm.ShowDialog();
             this.Close();
+        }
+
+        // Event handler for English Games card click
+        private void EnglishGamesCard_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        // Event handler for Math Games card click
+        private void MathGamesCard_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        // Event handler for Hebrew Games card click
+        private void HebrewGamesCard_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        // Event handler for Profile card click
+        private void ProfileCard_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void headerLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void storeImage_Click(object sender, EventArgs e)
+        {
+            // Navigate to Store
+            StoreSectForm1 storeForm = new StoreSectForm1();
+            this.Hide();
+            storeForm.ShowDialog();
+            this.Close();
+        }
+
+        private void englishGamesImage_Click(object sender, EventArgs e)
+        {
+            // Navigate to English Games section
+            // Example:
+            MessageBox.Show("Navigating to English Games...");
+            // Add navigation logic here
+        }
+
+        private void mathGamesImage_Click(object sender, EventArgs e)
+        {
+            // Navigate to Math Games section
+            // Example:
+            MessageBox.Show("Navigating to Math Games...");
+            // Add navigation logic here
+        }
+
+        private void hebrewGamesImage_Click(object sender, EventArgs e)
+        {
+            // Navigate to Hebrew Games section
+            // Example:
+            MessageBox.Show("Navigating to Hebrew Games...");
+            // Add navigation logic here
+        }
+
+        private void profileImage_Click(object sender, EventArgs e)
+        {
+            // Show the profile page
+            // Example:
+            MessageBox.Show("Showing Profile...");
+            // Add navigation logic here
         }
     }
 }
