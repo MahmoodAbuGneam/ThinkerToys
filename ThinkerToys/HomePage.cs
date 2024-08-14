@@ -150,9 +150,10 @@ namespace ThinkerToys
         private void mathGamesImage_Click(object sender, EventArgs e)
         {
             // Navigate to Math Games section
-            // Example:
-            MessageBox.Show("Navigating to Math Games...");
-            // Add navigation logic here
+            MathGamesTogether mathGames = new MathGamesTogether();
+            this.Hide();
+            mathGames.ShowDialog();
+            this.Close();
         }
 
         private void hebrewGamesImage_Click(object sender, EventArgs e)

@@ -559,4 +559,73 @@
   <data name="nametheanimals" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\nametheanimals.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="board" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\board.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="cartoon-wild-animal-with-blank-board-in-the-jungle-vector" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cartoon-wild-animal-with-blank-board-in-the-jungle-vector.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="cartoon-wild-animal-with-blank-board-in-the-jungle-vector1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cartoon-wild-animal-with-blank-board-in-the-jungle-vector1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="cartoon-wild-animal-with-blank-board-in-the-jungle-vector2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cartoon-wild-animal-with-blank-board-in-the-jungle-vector2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="cartoon-wild-animal-with-blank-board-in-the-jungle-vector3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cartoon-wild-animal-with-blank-board-in-the-jungle-vector3.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="kids" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\kids.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="kindergarten-preschool-colorful-banner-with-empty-copy-space-background_800563-2789" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\kindergarten-preschool-colorful-banner-with-empty-copy-space-background_800563-2789.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="petya-hadjieva-ragerabbit-pink-spring" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\petya-hadjieva-ragerabbit-pink-spring.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="blackground black" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\blackground black.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="arrow3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\arrow3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="blackground black1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\blackground black1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="goast" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\goast.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8-home-48 (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-home-48 (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8-home-50" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-home-50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pngtree-home-icon-png-png-image_4513200" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pngtree-home-icon-png-png-image_4513200.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Screenshot 2024-08-04 103444" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Screenshot 2024-08-04 103444.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Screenshot 2024-08-04 1034441" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Screenshot 2024-08-04 1034441.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Screenshot 2024-08-04 103606" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Screenshot 2024-08-04 103606.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Screenshot 2024-08-04 103617" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Screenshot 2024-08-04 103617.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="set-cute-cartoon-alien-character-showing-piece-sign-running-sitting-flying-saucer" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\set-cute-cartoon-alien-character-showing-piece-sign-running-sitting-flying-saucer.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="spiritalian" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\spiritalian.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="alienmath_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\alienmath_icon.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="compare_pairs_math" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\compare_pairs_math.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

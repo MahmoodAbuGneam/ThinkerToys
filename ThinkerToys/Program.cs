@@ -38,6 +38,8 @@ namespace ThinkerToys
             //Application.Run();
 
             // Level selection form for Hebrew game 1 
+
+
             //ApplicationConfiguration.Initialize();
             //LevelSelectionForm hebrew1 = new LevelSelectionForm();
             //hebrew1.FormClosed += new FormClosedEventHandler(FormClosed);
@@ -108,6 +110,43 @@ namespace ThinkerToys
 
 
             // English Games Together
+            //ApplicationConfiguration.Initialize();
+            //EnglishGamesTogether englishTogether = new EnglishGamesTogether();
+            //englishTogether.FormClosed += new FormClosedEventHandler(FormClosed);
+            //englishTogether.Show();
+            //Application.Run();
+
+
+
+            // ---------------------------------------------------
+
+            // Math Game 1
+
+            //ApplicationConfiguration.Initialize();
+            //MathGameForm mathGame1 = new MathGameForm();
+            //mathGame1.FormClosed += new FormClosedEventHandler(FormClosed);
+            //mathGame1.Show();
+            //Application.Run();
+
+
+            // Math Game 2
+
+            //ApplicationConfiguration.Initialize();
+            //BiggerSmallerEqualsGame biggerSmaller = new BiggerSmallerEqualsGame();
+            //biggerSmaller.FormClosed += new FormClosedEventHandler(FormClosed);
+            //biggerSmaller.Show();
+            //Application.Run();
+
+
+
+            // Math Games Together
+
+            //ApplicationConfiguration.Initialize();
+            //MathGamesTogether mathTogether = new MathGamesTogether();
+            //mathTogether.FormClosed += new FormClosedEventHandler(FormClosed);
+            //mathTogether.Show();
+            //Application.Run();
+
 
 
         }
