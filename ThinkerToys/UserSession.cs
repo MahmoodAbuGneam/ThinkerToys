@@ -3,16 +3,15 @@
     private static UserSession _instance;
 
     public string Username { get; private set; }
-    public int Coins { get; set; } // Changed setter to public
-
-
-    // hashtable for the purchases (string,int = name, quantity )
+    public int Coins { get; set; }
+    public string Email { get; private set; }
+    public string ID { get; private set; }
+    public DateTime SignupDate { get; private set; }
+    public string Gender { get; private set; }
     public Dictionary<string, int> Purchases { get; set; } = new Dictionary<string, int>();
 
-    // Private constructor to prevent direct instantiation
     private UserSession() { }
 
-    // Get the singleton instance
     public static UserSession Instance
     {
         get
@@ -25,17 +24,24 @@
         }
     }
 
-    // Method to initialize the session
-    public void Initialize(string username, int coins)
+    public void Initialize(string username, int coins, string email, string id, DateTime signupDate, string gender)
     {
         Username = username;
         Coins = coins;
+        Email = email;
+        ID = id;
+        SignupDate = signupDate;
+        Gender = gender;
     }
 
-    // Method to clear the session
     public void Clear()
     {
         Username = null;
         Coins = 0;
+        Email = null;
+        ID = null;
+        SignupDate = DateTime.MinValue;
+        Gender = null;
+        Purchases.Clear();
     }
 }

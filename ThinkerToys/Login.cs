@@ -13,6 +13,9 @@ namespace ThinkerToys
         private string currentUsername;
         private int currentUserCoins;
         private string currentUserEmail;
+        private string currentUserID;
+        private DateTime currentUserSignupDate;
+        private string currentUserGender;
 
 
         public Login()
@@ -54,7 +57,7 @@ namespace ThinkerToys
                 if (isConfirmed)
                 {
                     // Account is confirmed, proceed with login
-                    UserSession.Instance.Initialize(currentUsername, currentUserCoins);
+                    UserSession.Instance.Initialize(currentUsername, currentUserCoins, currentUserEmail, currentUserID, currentUserSignupDate, currentUserGender);
                     MessageBox.Show($"Login successful!\nUsername: {currentUsername}\nCoins: {currentUserCoins}", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     // Navigate to the homepage
@@ -103,6 +106,88 @@ namespace ThinkerToys
         }
 
         // Excel authentication
+        //private bool AuthenticateUser(string username, string encryptedPassword, out bool isConfirmed)
+        //{
+        //    isConfirmed = false;
+        //    _Excel.Application excelApp = new _Excel.Application();
+        //    if (excelApp == null)
+        //    {
+        //        MessageBox.Show("Excel is not properly installed!");
+        //        return false;
+        //    }
+
+        //    string filePath = System.IO.Path.Combine(System.IO.Directory.GetCurrentDirectory(), "SignupData.xlsx");
+
+        //    _Excel.Workbook workbook = null;
+        //    _Excel.Worksheet worksheet = null;
+
+        //    try
+        //    {
+        //        workbook = excelApp.Workbooks.Open(filePath);
+        //        worksheet = (_Excel.Worksheet)workbook.Sheets[1];
+        //        int row = 2;
+
+        //        while (worksheet.Cells[row, 2].Value2 != null)
+        //        {
+        //            string storedUsername = worksheet.Cells[row, 2].Value2.ToString();
+        //            string storedPassword = worksheet.Cells[row, 3].Value2.ToString();
+        //            int storedCoins = int.Parse(worksheet.Cells[row, 6].Value2.ToString());
+        //            bool accountConfirmed = Convert.ToBoolean(worksheet.Cells[row, 7].Value2);
+
+        //            if (storedUsername == username && storedPassword == encryptedPassword)
+        //            {
+        //                string userID = worksheet.Cells[row, 1].Value2.ToString();
+        //                string userEmail = worksheet.Cells[row, 4].Value2.ToString();
+        //                DateTime signupDate = DateTime.Parse(worksheet.Cells[row, 10].Value2.ToString());
+        //                string gender = worksheet.Cells[row, 5].Value2.ToString(); // Assuming gender is in column 5
+        //                isConfirmed = accountConfirmed;
+
+        //                // Initialize UserSession with all the data
+        //                UserSession.Instance.Initialize(storedUsername, storedCoins, userEmail, userID, signupDate, gender);
+
+        //                // Find and load purchases (if any)
+        //                int purchasesColumn = FindPurchasesColumn(worksheet);
+        //                if (purchasesColumn > 0)
+        //                {
+        //                    string purchasesString = worksheet.Cells[row, purchasesColumn].Value2?.ToString();
+        //                    if (!string.IsNullOrEmpty(purchasesString))
+        //                    {
+        //                        UserSession.Instance.Purchases = purchasesString
+        //                            .Split(';')
+        //                            .Select(s => s.Split(':'))
+        //                            .ToDictionary(s => s[0], s => int.Parse(s[1]));
+        //                    }
+        //                }
+
+        //                return true;
+        //            }
+        //            row++;
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show("Error authenticating user: " + ex.Message);
+        //    }
+        //    finally
+        //    {
+        //        if (worksheet != null) Marshal.ReleaseComObject(worksheet);
+        //        if (workbook != null)
+        //        {
+        //            workbook.Close(false);
+        //            Marshal.ReleaseComObject(workbook);
+        //        }
+        //        excelApp.Quit();
+        //        Marshal.ReleaseComObject(excelApp);
+        //        GC.Collect();
+        //        GC.WaitForPendingFinalizers();
+        //    }
+        //    return false;
+        //}
+
+
+
+
+
         private bool AuthenticateUser(string username, string encryptedPassword, out bool isConfirmed)
         {
             isConfirmed = false;
@@ -136,6 +221,23 @@ namespace ThinkerToys
                         currentUsername = storedUsername;
                         currentUserCoins = storedCoins;
                         currentUserEmail = worksheet.Cells[row, 4].Value2.ToString();
+                        currentUserID = worksheet.Cells[row, 1].Value2.ToString();
+
+                        // Handle SignupDate
+                        currentUserSignupDate = DateTime.Now; // Default to current date
+                        if (worksheet.Cells[row, 10].Value2 != null)
+                        {
+                            if (worksheet.Cells[row, 10].Value2 is DateTime dateValue)
+                            {
+                                currentUserSignupDate = dateValue;
+                            }
+                            else if (double.TryParse(worksheet.Cells[row, 10].Value2.ToString(), out double excelDate))
+                            {
+                                currentUserSignupDate = DateTime.FromOADate(excelDate);
+                            }
+                        }
+
+                        currentUserGender = worksheet.Cells[row, 5].Value2.ToString();
                         isConfirmed = accountConfirmed;
 
                         // Find and load purchases (if any)

@@ -29,232 +29,233 @@ namespace ThinkerToys
 
         private void InitializeComponent()
         {
-            this.lblNum1 = new System.Windows.Forms.Label();
-            this.lblOperator = new System.Windows.Forms.Label();
-            this.lblNum2 = new System.Windows.Forms.Label();
-            this.lblEquals = new System.Windows.Forms.Label();
-            this.lblTime = new System.Windows.Forms.Label();
-            this.lblScore = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.spritePictureBox = new System.Windows.Forms.PictureBox();
-            this.lblCorrectMessage = new System.Windows.Forms.Label();
-            this.buttonNewGame = new System.Windows.Forms.Button();
-            this.buttonHome = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.spritePictureBox)).BeginInit();
-            this.SuspendLayout();
+            lblNum1 = new Label();
+            lblOperator = new Label();
+            lblNum2 = new Label();
+            lblEquals = new Label();
+            lblTime = new Label();
+            lblScore = new Label();
+            button1 = new Button();
+            button2 = new Button();
+            button3 = new Button();
+            button4 = new Button();
+            spritePictureBox = new PictureBox();
+            lblCorrectMessage = new Label();
+            buttonNewGame = new Button();
+            buttonHome = new Button();
+            ((System.ComponentModel.ISupportInitialize)spritePictureBox).BeginInit();
+            SuspendLayout();
             // 
             // lblNum1
             // 
-            this.lblNum1.AutoSize = true;
-            this.lblNum1.BackColor = System.Drawing.Color.Black;
-            this.lblNum1.Font = new System.Drawing.Font("Arial", 30F, System.Drawing.FontStyle.Bold);
-            this.lblNum1.ForeColor = System.Drawing.Color.White;
-            this.lblNum1.Location = new System.Drawing.Point(71, 100);
-            this.lblNum1.Name = "lblNum1";
-            this.lblNum1.Size = new System.Drawing.Size(163, 59);
-            this.lblNum1.TabIndex = 1;
-            this.lblNum1.Text = "Num1";
+            lblNum1.AutoSize = true;
+            lblNum1.BackColor = Color.Black;
+            lblNum1.Font = new Font("Arial", 30F, FontStyle.Bold);
+            lblNum1.ForeColor = Color.White;
+            lblNum1.Location = new Point(71, 100);
+            lblNum1.Name = "lblNum1";
+            lblNum1.Size = new Size(130, 46);
+            lblNum1.TabIndex = 1;
+            lblNum1.Text = "Num1";
             // 
             // lblOperator
             // 
-            this.lblOperator.AutoSize = true;
-            this.lblOperator.BackColor = System.Drawing.Color.Transparent;
-            this.lblOperator.Font = new System.Drawing.Font("Arial", 30F, System.Drawing.FontStyle.Bold);
-            this.lblOperator.ForeColor = System.Drawing.Color.White;
-            this.lblOperator.Location = new System.Drawing.Point(157, 100);
-            this.lblOperator.Name = "lblOperator";
-            this.lblOperator.Size = new System.Drawing.Size(54, 59);
-            this.lblOperator.TabIndex = 2;
-            this.lblOperator.Text = "+";
+            lblOperator.AutoSize = true;
+            lblOperator.BackColor = Color.Transparent;
+            lblOperator.Font = new Font("Arial", 30F, FontStyle.Bold);
+            lblOperator.ForeColor = Color.White;
+            lblOperator.Location = new Point(157, 100);
+            lblOperator.Name = "lblOperator";
+            lblOperator.Size = new Size(43, 46);
+            lblOperator.TabIndex = 2;
+            lblOperator.Text = "+";
             // 
             // lblNum2
             // 
-            this.lblNum2.AutoSize = true;
-            this.lblNum2.BackColor = System.Drawing.Color.Black;
-            this.lblNum2.Font = new System.Drawing.Font("Arial", 30F, System.Drawing.FontStyle.Bold);
-            this.lblNum2.ForeColor = System.Drawing.Color.White;
-            this.lblNum2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblNum2.Location = new System.Drawing.Point(230, 100);
-            this.lblNum2.Name = "lblNum2";
-            this.lblNum2.Size = new System.Drawing.Size(163, 59);
-            this.lblNum2.TabIndex = 3;
-            this.lblNum2.Text = "Num2";
+            lblNum2.AutoSize = true;
+            lblNum2.BackColor = Color.Black;
+            lblNum2.Font = new Font("Arial", 30F, FontStyle.Bold);
+            lblNum2.ForeColor = Color.White;
+            lblNum2.ImageAlign = ContentAlignment.MiddleLeft;
+            lblNum2.Location = new Point(230, 100);
+            lblNum2.Name = "lblNum2";
+            lblNum2.Size = new Size(130, 46);
+            lblNum2.TabIndex = 3;
+            lblNum2.Text = "Num2";
             // 
             // lblEquals
             // 
-            this.lblEquals.AutoSize = true;
-            this.lblEquals.BackColor = System.Drawing.Color.Black;
-            this.lblEquals.Font = new System.Drawing.Font("Arial", 30F, System.Drawing.FontStyle.Bold);
-            this.lblEquals.ForeColor = System.Drawing.Color.White;
-            this.lblEquals.Location = new System.Drawing.Point(339, 100);
-            this.lblEquals.Name = "lblEquals";
-            this.lblEquals.Size = new System.Drawing.Size(54, 59);
-            this.lblEquals.TabIndex = 4;
-            this.lblEquals.Text = "=";
-            this.lblEquals.Click += new System.EventHandler(this.lblEquals_Click);
+            lblEquals.AutoSize = true;
+            lblEquals.BackColor = Color.Black;
+            lblEquals.Font = new Font("Arial", 30F, FontStyle.Bold);
+            lblEquals.ForeColor = Color.White;
+            lblEquals.Location = new Point(339, 100);
+            lblEquals.Name = "lblEquals";
+            lblEquals.Size = new Size(43, 46);
+            lblEquals.TabIndex = 4;
+            lblEquals.Text = "=";
+            lblEquals.Click += lblEquals_Click;
             // 
             // lblTime
             // 
-            this.lblTime.AutoSize = true;
-            this.lblTime.BackColor = System.Drawing.Color.Black;
-            this.lblTime.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold);
-            this.lblTime.ForeColor = System.Drawing.Color.White;
-            this.lblTime.Location = new System.Drawing.Point(243, 9);
-            this.lblTime.Name = "lblTime";
-            this.lblTime.Size = new System.Drawing.Size(93, 35);
-            this.lblTime.TabIndex = 5;
-            this.lblTime.Text = "Time:";
+            lblTime.AutoSize = true;
+            lblTime.BackColor = Color.Black;
+            lblTime.Font = new Font("Arial", 18F, FontStyle.Bold);
+            lblTime.ForeColor = Color.White;
+            lblTime.Location = new Point(243, 9);
+            lblTime.Name = "lblTime";
+            lblTime.Size = new Size(76, 29);
+            lblTime.TabIndex = 5;
+            lblTime.Text = "Time:";
             // 
             // lblScore
             // 
-            this.lblScore.AutoSize = true;
-            this.lblScore.BackColor = System.Drawing.Color.Black;
-            this.lblScore.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold);
-            this.lblScore.ForeColor = System.Drawing.Color.White;
-            this.lblScore.Location = new System.Drawing.Point(452, 9);
-            this.lblScore.Name = "lblScore";
-            this.lblScore.Size = new System.Drawing.Size(134, 35);
-            this.lblScore.TabIndex = 6;
-            this.lblScore.Text = "Score: 0";
+            lblScore.AutoSize = true;
+            lblScore.BackColor = Color.Black;
+            lblScore.Font = new Font("Arial", 18F, FontStyle.Bold);
+            lblScore.ForeColor = Color.White;
+            lblScore.Location = new Point(452, 9);
+            lblScore.Name = "lblScore";
+            lblScore.Size = new Size(106, 29);
+            lblScore.TabIndex = 6;
+            lblScore.Text = "Score: 0";
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.White;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Arial", 20F, System.Drawing.FontStyle.Bold);
-            this.button1.ForeColor = System.Drawing.Color.Orange;
-            this.button1.Location = new System.Drawing.Point(595, 79);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(80, 80);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Option1";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.AnswerButton_Click);
+            button1.BackColor = Color.White;
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("Arial", 20F, FontStyle.Bold);
+            button1.ForeColor = Color.Orange;
+            button1.Location = new Point(595, 79);
+            button1.Name = "button1";
+            button1.Size = new Size(80, 80);
+            button1.TabIndex = 8;
+            button1.Text = "Option1";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += AnswerButton_Click;
             // 
             // button2
             // 
-            this.button2.BackColor = System.Drawing.Color.White;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Arial", 20F, System.Drawing.FontStyle.Bold);
-            this.button2.ForeColor = System.Drawing.Color.Orange;
-            this.button2.Location = new System.Drawing.Point(692, 79);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(80, 80);
-            this.button2.TabIndex = 9;
-            this.button2.Text = "Option2";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.AnswerButton_Click);
+            button2.BackColor = Color.White;
+            button2.FlatAppearance.BorderSize = 0;
+            button2.FlatStyle = FlatStyle.Flat;
+            button2.Font = new Font("Arial", 20F, FontStyle.Bold);
+            button2.ForeColor = Color.Orange;
+            button2.Location = new Point(692, 79);
+            button2.Name = "button2";
+            button2.Size = new Size(80, 80);
+            button2.TabIndex = 9;
+            button2.Text = "Option2";
+            button2.UseVisualStyleBackColor = false;
+            button2.Click += AnswerButton_Click;
             // 
             // button3
             // 
-            this.button3.BackColor = System.Drawing.Color.White;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Arial", 20F, System.Drawing.FontStyle.Bold);
-            this.button3.ForeColor = System.Drawing.Color.Orange;
-            this.button3.Location = new System.Drawing.Point(595, 183);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(80, 80);
-            this.button3.TabIndex = 10;
-            this.button3.Text = "Option3";
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.AnswerButton_Click);
+            button3.BackColor = Color.White;
+            button3.FlatAppearance.BorderSize = 0;
+            button3.FlatStyle = FlatStyle.Flat;
+            button3.Font = new Font("Arial", 20F, FontStyle.Bold);
+            button3.ForeColor = Color.Orange;
+            button3.Location = new Point(595, 183);
+            button3.Name = "button3";
+            button3.Size = new Size(80, 80);
+            button3.TabIndex = 10;
+            button3.Text = "Option3";
+            button3.UseVisualStyleBackColor = false;
+            button3.Click += AnswerButton_Click;
             // 
             // button4
             // 
-            this.button4.BackColor = System.Drawing.Color.White;
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Arial", 20F, System.Drawing.FontStyle.Bold);
-            this.button4.ForeColor = System.Drawing.Color.Orange;
-            this.button4.Location = new System.Drawing.Point(692, 183);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(80, 80);
-            this.button4.TabIndex = 11;
-            this.button4.Text = "Option4";
-            this.button4.UseVisualStyleBackColor = false;
-            this.button4.Click += new System.EventHandler(this.AnswerButton_Click);
+            button4.BackColor = Color.White;
+            button4.FlatAppearance.BorderSize = 0;
+            button4.FlatStyle = FlatStyle.Flat;
+            button4.Font = new Font("Arial", 20F, FontStyle.Bold);
+            button4.ForeColor = Color.Orange;
+            button4.Location = new Point(692, 183);
+            button4.Name = "button4";
+            button4.Size = new Size(80, 80);
+            button4.TabIndex = 11;
+            button4.Text = "Option4";
+            button4.UseVisualStyleBackColor = false;
+            button4.Click += AnswerButton_Click;
             // 
             // spritePictureBox
             // 
-            this.spritePictureBox.BackColor = System.Drawing.Color.Black;
-            this.spritePictureBox.Location = new System.Drawing.Point(12, 325);
-            this.spritePictureBox.Name = "spritePictureBox";
-            this.spritePictureBox.Size = new System.Drawing.Size(130, 113);
-            this.spritePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.spritePictureBox.TabIndex = 7;
-            this.spritePictureBox.TabStop = false;
-            this.spritePictureBox.Paint += new System.Windows.Forms.PaintEventHandler(this.Homebt_Paint);
+            spritePictureBox.BackColor = Color.Black;
+            spritePictureBox.Location = new Point(12, 325);
+            spritePictureBox.Name = "spritePictureBox";
+            spritePictureBox.Size = new Size(130, 113);
+            spritePictureBox.SizeMode = PictureBoxSizeMode.Zoom;
+            spritePictureBox.TabIndex = 7;
+            spritePictureBox.TabStop = false;
+            spritePictureBox.Paint += Homebt_Paint;
             // 
             // lblCorrectMessage
             // 
-            this.lblCorrectMessage.AutoSize = true;
-            this.lblCorrectMessage.BackColor = System.Drawing.Color.Black;
-            this.lblCorrectMessage.ForeColor = System.Drawing.Color.White;
-            this.lblCorrectMessage.Location = new System.Drawing.Point(211, 183);
-            this.lblCorrectMessage.Name = "lblCorrectMessage";
-            this.lblCorrectMessage.Size = new System.Drawing.Size(0, 16);
-            this.lblCorrectMessage.TabIndex = 14;
+            lblCorrectMessage.AutoSize = true;
+            lblCorrectMessage.BackColor = Color.Black;
+            lblCorrectMessage.ForeColor = Color.White;
+            lblCorrectMessage.Location = new Point(211, 183);
+            lblCorrectMessage.Name = "lblCorrectMessage";
+            lblCorrectMessage.Size = new Size(0, 15);
+            lblCorrectMessage.TabIndex = 14;
             // 
             // buttonNewGame
             // 
-            this.buttonNewGame.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.buttonNewGame.Location = new System.Drawing.Point(12, 5);
-            this.buttonNewGame.Margin = new System.Windows.Forms.Padding(4);
-            this.buttonNewGame.Name = "buttonNewGame";
-            this.buttonNewGame.Size = new System.Drawing.Size(152, 49);
-            this.buttonNewGame.TabIndex = 6;
-            this.buttonNewGame.Text = "New Game";
-            this.buttonNewGame.UseVisualStyleBackColor = true;
-            this.buttonNewGame.Click += new System.EventHandler(this.buttonNewGame_Click);
+            buttonNewGame.Font = new Font("Microsoft Sans Serif", 12F);
+            buttonNewGame.Location = new Point(12, 5);
+            buttonNewGame.Margin = new Padding(4);
+            buttonNewGame.Name = "buttonNewGame";
+            buttonNewGame.Size = new Size(152, 49);
+            buttonNewGame.TabIndex = 6;
+            buttonNewGame.Text = "New Game";
+            buttonNewGame.UseVisualStyleBackColor = true;
+            buttonNewGame.Click += buttonNewGame_Click;
             // 
             // buttonHome
             // 
-            this.buttonHome.AllowDrop = true;
-            this.buttonHome.BackColor = System.Drawing.Color.DarkOrange;
-            this.buttonHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonHome.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold);
-            this.buttonHome.ForeColor = System.Drawing.Color.Black;
-            this.buttonHome.Location = new System.Drawing.Point(691, 18);
-            this.buttonHome.Name = "buttonHome";
-            this.buttonHome.Size = new System.Drawing.Size(120, 37);
-            this.buttonHome.TabIndex = 9;
-            this.buttonHome.Text = "Home";
-            this.buttonHome.UseVisualStyleBackColor = true;
-            this.buttonHome.Click += new System.EventHandler(this.homebt_Click);
+            buttonHome.AllowDrop = true;
+            buttonHome.BackColor = Color.DarkOrange;
+            buttonHome.FlatStyle = FlatStyle.Flat;
+            buttonHome.Font = new Font("Comic Sans MS", 12F, FontStyle.Bold);
+            buttonHome.ForeColor = Color.Black;
+            buttonHome.Location = new Point(691, 18);
+            buttonHome.Name = "buttonHome";
+            buttonHome.Size = new Size(120, 37);
+            buttonHome.TabIndex = 9;
+            buttonHome.Text = "Home";
+            buttonHome.UseVisualStyleBackColor = true;
+            buttonHome.Click += homebt_Click;
             // 
             // MathGameForm
             // 
-            this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
-            this.BackgroundImage = global::ThinkerToys.Properties.Resources.blackground_black;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.buttonHome);
-            this.Controls.Add(this.buttonNewGame);
-            this.Controls.Add(this.lblCorrectMessage);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.spritePictureBox);
-            this.Controls.Add(this.lblScore);
-            this.Controls.Add(this.lblTime);
-            this.Controls.Add(this.lblEquals);
-            this.Controls.Add(this.lblNum2);
-            this.Controls.Add(this.lblOperator);
-            this.Controls.Add(this.lblNum1);
-            this.DoubleBuffered = true;
-            this.Name = "MathGameForm";
-            this.Text = "MathSpeedGame";
-            ((System.ComponentModel.ISupportInitialize)(this.spritePictureBox)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoValidate = AutoValidate.EnableAllowFocusChange;
+            BackgroundImage = Properties.Resources.blackground_black;
+            ClientSize = new Size(800, 450);
+            Controls.Add(buttonHome);
+            Controls.Add(buttonNewGame);
+            Controls.Add(lblCorrectMessage);
+            Controls.Add(button4);
+            Controls.Add(button3);
+            Controls.Add(button2);
+            Controls.Add(button1);
+            Controls.Add(spritePictureBox);
+            Controls.Add(lblScore);
+            Controls.Add(lblTime);
+            Controls.Add(lblEquals);
+            Controls.Add(lblNum2);
+            Controls.Add(lblOperator);
+            Controls.Add(lblNum1);
+            DoubleBuffered = true;
+            Name = "MathGameForm";
+            Text = "MathSpeedGame";
+            Load += MathGameForm_Load;
+            ((System.ComponentModel.ISupportInitialize)spritePictureBox).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
+
         private System.Windows.Forms.Label lblCorrectMessage;
         private System.Windows.Forms.Button buttonNewGame;
         private System.Windows.Forms.Button buttonHome;

@@ -2,9 +2,12 @@
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.IO;
+using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using Timer = System.Windows.Forms.Timer;
-//using Vlc.DotNet.Forms;
+
+using _Excel = Microsoft.Office.Interop.Excel;
+using System.Runtime.InteropServices;
 
 namespace ThinkerToys
 {
@@ -45,6 +48,17 @@ namespace ThinkerToys
         }
 
 
+
+        private void StopAllTimers()
+        {
+            timer.Stop();
+            moveTimer.Stop();
+            jumpTimer.Stop();
+            isGameActive = false;
+        }
+
+
+
         private void buttonNewGame_Click(object sender, EventArgs e)
         {
             ResetGame();
@@ -52,7 +66,7 @@ namespace ThinkerToys
 
         private void CustomizeControls()
         {
-           
+
             button3.BackColor = Color.LightPink;
             button3.FlatStyle = FlatStyle.Flat;
             button3.Font = new Font("Comic Sans MS", 14, FontStyle.Bold);
@@ -89,7 +103,7 @@ namespace ThinkerToys
             buttonHome.Location = new Point(this.ClientSize.Width - buttonHome.Width - 10, 10);
             buttonHome.Anchor = AnchorStyles.Top | AnchorStyles.Right;
         }
-            private void InitializeJumpTimer()
+        private void InitializeJumpTimer()
         {
             moveTimer = new Timer();
             moveTimer.Interval = 50; // Move the fox every 50 ms
@@ -209,6 +223,7 @@ namespace ThinkerToys
             (sender as Button).Invalidate(); // Trigger a repaint
         }
 
+
         private void Timer_Tick(object sender, EventArgs e)
         {
             if (!isGameActive) return;
@@ -217,14 +232,14 @@ namespace ThinkerToys
             lblTime.Text = "Time: " + timeLeft;
             if (timeLeft <= 0)
             {
-                timer.Stop();
-                isGameActive = false; // Set the game as inactive
-                moveTimer.Stop();
-                jumpTimer.Stop();
+                StopAllTimers();
+                UpdateUserCoins();
                 MessageBox.Show("Time's up! Your score is: " + score);
                 this.Close();
             }
         }
+
+
         private void Button_Paint(object sender, PaintEventArgs e)
         {
             Button btn = sender as Button;
@@ -275,7 +290,7 @@ namespace ThinkerToys
             }
         }
 
-       
+
 
 
         private void GenerateQuestion()
@@ -297,8 +312,8 @@ namespace ThinkerToys
             }
             else // selectedOperator == "-"
             {
-                num1 = random.Next(5, 10); 
-                num2 = random.Next(1, num1); 
+                num1 = random.Next(5, 10);
+                num2 = random.Next(1, num1);
                 correctAnswer = num1 - num2;
             }
 
@@ -322,7 +337,7 @@ namespace ThinkerToys
                     do
                     {
                         wrongAnswer = random.Next(1, 20);
-                    } while (wrongAnswer == correctAnswer); 
+                    } while (wrongAnswer == correctAnswer);
                     btn.Text = wrongAnswer.ToString();
                 }
             }
@@ -337,6 +352,8 @@ namespace ThinkerToys
 
             if (result == DialogResult.Yes)
             {
+                StopAllTimers();
+                UpdateUserCoins();
                 this.Hide();
                 HomePage stHomePage = new HomePage();
                 stHomePage.ShowDialog();
@@ -344,6 +361,67 @@ namespace ThinkerToys
             }
         }
 
+
+        private void UpdateUserCoins()
+        {
+            int currentCoins = UserSession.Instance.Coins;
+            int newCoins = currentCoins + score;
+            UserSession.Instance.Coins = newCoins;
+
+            // Update the coins in the database
+            string username = UserSession.Instance.Username;
+            UpdateCoinsInDatabase(username, newCoins);
+        }
+
+        private void UpdateCoinsInDatabase(string username, int newCoins)
+        {
+            string filePath = System.IO.Path.Combine(System.IO.Directory.GetCurrentDirectory(), "SignupData.xlsx");
+            _Excel.Application excelApp = new _Excel.Application();
+            _Excel.Workbook workbook = null;
+            _Excel.Worksheet worksheet = null;
+
+            try
+            {
+                workbook = excelApp.Workbooks.Open(filePath);
+                worksheet = workbook.Sheets[1];
+
+                int rowCount = worksheet.UsedRange.Rows.Count;
+                for (int i = 2; i <= rowCount; i++)
+                {
+                    if ((string)(worksheet.Cells[i, 2] as _Excel.Range).Value == username)
+                    {
+                        worksheet.Cells[i, 6] = newCoins;
+                        break;
+                    }
+                }
+
+                workbook.Save();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error updating coins in database: " + ex.Message);
+            }
+            finally
+            {
+                if (worksheet != null) Marshal.ReleaseComObject(worksheet);
+                if (workbook != null)
+                {
+                    workbook.Close(true);
+                    Marshal.ReleaseComObject(workbook);
+                }
+                excelApp.Quit();
+                Marshal.ReleaseComObject(excelApp);
+                GC.Collect();
+                GC.WaitForPendingFinalizers();
+            }
+        }
+
+        protected override void OnFormClosing(FormClosingEventArgs e)
+        {
+            base.OnFormClosing(e);
+            StopAllTimers();
+            UpdateUserCoins();
+        }
 
 
         private void AnswerButton_Click(object sender, EventArgs e)
@@ -408,6 +486,19 @@ namespace ThinkerToys
                     jumpTimer.Start();
                 }
             }
+
+
+            if (questionCount >= totalQuestions)
+            {
+                StopAllTimers();
+                MessageBox.Show("Game over! Your score is: " + score);
+                UpdateUserCoins();
+                this.Close();
+            }
+            else
+            {
+                GenerateQuestion();
+            }
         }
 
         protected override void OnPaint(PaintEventArgs e)
@@ -420,6 +511,11 @@ namespace ThinkerToys
         }
 
         private void lblEquals_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MathGameForm_Load(object sender, EventArgs e)
         {
 
         }

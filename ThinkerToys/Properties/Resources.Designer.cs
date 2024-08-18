@@ -403,6 +403,26 @@ namespace ThinkerToys.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap coins_icon {
+            get {
+                object obj = ResourceManager.GetObject("coins_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap coins_icon1 {
+            get {
+                object obj = ResourceManager.GetObject("coins_icon1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap coins_stack {
             get {
                 object obj = ResourceManager.GetObject("coins-stack", resourceCulture);
@@ -463,6 +483,26 @@ namespace ThinkerToys.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap date_icon {
+            get {
+                object obj = ResourceManager.GetObject("date_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap date_icon1 {
+            get {
+                object obj = ResourceManager.GetObject("date_icon1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap dog {
             get {
                 object obj = ResourceManager.GetObject("dog", resourceCulture);
@@ -506,6 +546,16 @@ namespace ThinkerToys.Properties {
         internal static System.Drawing.Bitmap E_10 {
             get {
                 object obj = ResourceManager.GetObject("E_10", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap edit_icon {
+            get {
+                object obj = ResourceManager.GetObject("edit_icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -576,6 +626,26 @@ namespace ThinkerToys.Properties {
         internal static System.Drawing.Bitmap funny_stickers_collection {
             get {
                 object obj = ResourceManager.GetObject("funny-stickers-collection", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap gender_icon {
+            get {
+                object obj = ResourceManager.GetObject("gender_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap gender_icon1 {
+            get {
+                object obj = ResourceManager.GetObject("gender_icon1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1035,6 +1105,16 @@ namespace ThinkerToys.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap notification_icon {
+            get {
+                object obj = ResourceManager.GetObject("notification_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap open {
             get {
                 object obj = ResourceManager.GetObject("open", resourceCulture);
@@ -1211,6 +1291,16 @@ namespace ThinkerToys.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap profile_image {
+            get {
+                object obj = ResourceManager.GetObject("profile_image", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap puppy {
             get {
                 object obj = ResourceManager.GetObject("puppy", resourceCulture);
@@ -1335,6 +1425,16 @@ namespace ThinkerToys.Properties {
             get {
                 object obj = ResourceManager.GetObject("set-cute-cartoon-alien-character-showing-piece-sign-running-sitting-flying-saucer" +
                         "", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap settings_icon {
+            get {
+                object obj = ResourceManager.GetObject("settings_icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1585,6 +1685,16 @@ namespace ThinkerToys.Properties {
         internal static System.Drawing.Bitmap teddy_bear__1_ {
             get {
                 object obj = ResourceManager.GetObject("teddy-bear (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap texture_image {
+            get {
+                object obj = ResourceManager.GetObject("texture_image", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

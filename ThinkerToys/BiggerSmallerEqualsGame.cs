@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Drawing;
+using System.Runtime.InteropServices;
 using System.Windows.Forms;
+using _Excel = Microsoft.Office.Interop.Excel;
+using System.Runtime.InteropServices;
 
 namespace ThinkerToys
 {
@@ -18,7 +21,26 @@ namespace ThinkerToys
 
             CustomizeControls();
             GenerateNumbers();
+            StartGame();
+
+            this.FormClosing += BiggerSmallerEqualsGame_FormClosing;
+
+        }
+
+        private void BiggerSmallerEqualsGame_FormClosing(object? sender, FormClosingEventArgs e)
+        {
+            StopGame();
+
+        }
+
+        private void StartGame()
+        {
+            score = 0;
+            timeLeft = 30;
+            labelScore.Text = "Score: " + score;
+            labelTime.Text = "Time: " + timeLeft;
             timer1.Start();
+            Console.WriteLine("Game started, timer running"); 
         }
 
         private void CustomizeControls()
@@ -127,6 +149,7 @@ namespace ThinkerToys
 
         private void timer1_Tick(object sender, EventArgs e)
         {
+            Console.WriteLine("Timer tick"); // Debug line
             if (timeLeft > 0)
             {
                 timeLeft--;
@@ -136,15 +159,78 @@ namespace ThinkerToys
             {
                 timer1.Stop();
                 MessageBox.Show("Time's up! Your final score is: " + score, "Game Over");
+                UpdateUserCoins();
                 ResetGame();
             }
         }
+
+        private void UpdateUserCoins()
+        {
+            // Only update coins if the score is positive
+            if (score > 0)
+            {
+                int currentCoins = UserSession.Instance.Coins;
+                int newCoins = currentCoins + score;
+                UserSession.Instance.Coins = newCoins;
+
+                // Update the coins in the database
+                string username = UserSession.Instance.Username;
+                UpdateCoinsInDatabase(username, newCoins);
+
+            }
+        }
+
+        private void UpdateCoinsInDatabase(string username, int newCoins)
+        {
+            string filePath = System.IO.Path.Combine(System.IO.Directory.GetCurrentDirectory(), "SignupData.xlsx");
+            _Excel.Application excelApp = new _Excel.Application();
+            _Excel.Workbook workbook = null;
+            _Excel.Worksheet worksheet = null;
+
+            try
+            {
+                workbook = excelApp.Workbooks.Open(filePath);
+                worksheet = workbook.Sheets[1];
+
+                int rowCount = worksheet.UsedRange.Rows.Count;
+                for (int i = 2; i <= rowCount; i++)
+                {
+                    if ((string)(worksheet.Cells[i, 2] as _Excel.Range).Value == username)
+                    {
+                        worksheet.Cells[i, 6] = newCoins;
+                        break;
+                    }
+                }
+
+                workbook.Save();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error updating coins in database: " + ex.Message);
+            }
+            finally
+            {
+                if (worksheet != null) Marshal.ReleaseComObject(worksheet);
+                if (workbook != null)
+                {
+                    workbook.Close(true);
+                    Marshal.ReleaseComObject(workbook);
+                }
+                excelApp.Quit();
+                Marshal.ReleaseComObject(excelApp);
+                GC.Collect();
+                GC.WaitForPendingFinalizers();
+            }
+        
+    }
+
         private void buttonTopRightHome_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Are you sure you want to go to the home page?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult result = MessageBox.Show("Are you sure you want to go to the home page? Your progress will be lost.", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (result == DialogResult.Yes)
             {
+                StopGame();
                 this.Hide();
                 HomePage stHomePage = new HomePage();
                 stHomePage.ShowDialog();
@@ -152,14 +238,15 @@ namespace ThinkerToys
             }
         }
 
+        private void StopGame()
+        {
+            timer1.Stop();
+            UpdateUserCoins(); // Save the current score before leaving
+        }
+
         private void ResetGame()
         {
-            score = 0;
-            timeLeft = 30;
-            labelScore.Text = "Score: " + score;
-            labelTime.Text = "Time: " + timeLeft;
-            GenerateNumbers();
-            timer1.Start();
+            StartGame();
         }
 
         private void BiggerSmallerEqualsGame_Load(object sender, EventArgs e)

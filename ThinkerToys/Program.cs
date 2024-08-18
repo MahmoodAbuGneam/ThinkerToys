@@ -149,6 +149,18 @@ namespace ThinkerToys
 
 
 
+            // ---------------------------------------------------
+
+            // Profile Form
+
+            //ApplicationConfiguration.Initialize();
+            //ProfileForm Profile = new ProfileForm();
+            //Profile.FormClosed += new FormClosedEventHandler(FormClosed);
+            //Profile.Show();
+            //Application.Run();
+
+
+
         }
 
         private static void FormClosed(object sender, FormClosedEventArgs e)

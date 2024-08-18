@@ -166,10 +166,10 @@ namespace ThinkerToys
 
         private void profileImage_Click(object sender, EventArgs e)
         {
-            // Show the profile page
-            // Example:
-            MessageBox.Show("Showing Profile...");
-            // Add navigation logic here
+            ProfileForm profile = new ProfileForm();
+            this.Hide();
+            profile.ShowDialog();
+            this.Close();
         }
     }
 }

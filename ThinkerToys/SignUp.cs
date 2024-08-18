@@ -276,6 +276,90 @@ namespace ThinkerToys
         }
 
 
+        //private void SaveDataToExcel(string idNumber, string username, string password, string Email, string gender, string otp)
+        //{
+        //    string filePath = System.IO.Path.Combine(System.IO.Directory.GetCurrentDirectory(), "SignupData.xlsx");
+        //    bool fileExists = System.IO.File.Exists(filePath);
+
+        //    _Excel.Application excelApp = new _Excel.Application();
+        //    _Excel.Workbook workbook = null;
+        //    _Excel.Worksheet worksheet = null;
+
+        //    try
+        //    {
+        //        excelApp.Visible = false;
+
+        //        if (fileExists)
+        //        {
+        //            workbook = excelApp.Workbooks.Open(filePath);
+        //            worksheet = workbook.Sheets[1];
+        //        }
+        //        else
+        //        {
+        //            workbook = excelApp.Workbooks.Add();
+        //            worksheet = workbook.ActiveSheet;
+
+        //            // Create headers
+        //            worksheet.Cells[1, 1] = "ID Number";
+        //            worksheet.Cells[1, 2] = "Username";
+        //            worksheet.Cells[1, 3] = "Password";
+        //            worksheet.Cells[1, 4] = "Email Address";
+        //            worksheet.Cells[1, 5] = "Gender";
+        //            worksheet.Cells[1, 6] = "Coins";
+        //            worksheet.Cells[1, 7] = "IsConfirmed";
+        //            worksheet.Cells[1, 8] = "OTP";
+        //            worksheet.Cells[1, 9] = "OTPExpiryTime";
+        //            worksheet.Cells[1, 10] = "SignupDate";
+        //        }
+
+        //        // Find the first empty row
+        //        int newRow = 2;
+        //        while (worksheet.Cells[newRow, 1].Value != null)
+        //        {
+        //            newRow++;
+        //        }
+
+        //        // Write data
+        //        worksheet.Cells[newRow, 1] = idNumber;
+        //        worksheet.Cells[newRow, 2] = username;
+        //        worksheet.Cells[newRow, 3] = password;
+        //        worksheet.Cells[newRow, 4] = Email;
+        //        worksheet.Cells[newRow, 5] = gender;
+        //        worksheet.Cells[newRow, 6] = 0; // Initialize coins to 0
+        //        worksheet.Cells[newRow, 7] = false; // IsConfirmed
+        //        worksheet.Cells[newRow, 8] = otp; // OTP
+        //        worksheet.Cells[newRow, 9] = DateTime.Now.AddMinutes(10); // OTPExpiryTime
+        //        worksheet.Cells[newRow, 10] = DateTime.Now; // SignupDate
+
+        //        if (fileExists)
+        //        {
+        //            workbook.Save();
+        //        }
+        //        else
+        //        {
+        //            workbook.SaveAs(filePath);
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show("Error in SaveDataToExcel: " + ex.Message);
+        //    }
+        //    finally
+        //    {
+        //        if (worksheet != null) Marshal.ReleaseComObject(worksheet);
+        //        if (workbook != null)
+        //        {
+        //            workbook.Close(true);
+        //            Marshal.ReleaseComObject(workbook);
+        //        }
+        //        excelApp.Quit();
+        //        Marshal.ReleaseComObject(excelApp);
+        //        GC.Collect();
+        //        GC.WaitForPendingFinalizers();
+        //    }
+        //}
+
+
         private void SaveDataToExcel(string idNumber, string username, string password, string Email, string gender, string otp)
         {
             string filePath = System.IO.Path.Combine(System.IO.Directory.GetCurrentDirectory(), "SignupData.xlsx");
@@ -309,10 +393,11 @@ namespace ThinkerToys
                     worksheet.Cells[1, 7] = "IsConfirmed";
                     worksheet.Cells[1, 8] = "OTP";
                     worksheet.Cells[1, 9] = "OTPExpiryTime";
+                    worksheet.Cells[1, 10] = "SignupDate";
                 }
 
                 // Find the first empty row
-                int newRow = 2; // Start from the second row (after headers)
+                int newRow = 2;
                 while (worksheet.Cells[newRow, 1].Value != null)
                 {
                     newRow++;
@@ -328,6 +413,7 @@ namespace ThinkerToys
                 worksheet.Cells[newRow, 7] = false; // IsConfirmed
                 worksheet.Cells[newRow, 8] = otp; // OTP
                 worksheet.Cells[newRow, 9] = DateTime.Now.AddMinutes(10); // OTPExpiryTime
+                worksheet.Cells[newRow, 10] = DateTime.Now; // SignupDate
 
                 if (fileExists)
                 {
@@ -356,6 +442,7 @@ namespace ThinkerToys
                 GC.WaitForPendingFinalizers();
             }
         }
+
         private dynamic GenerateOTP()
         {
             Random random = new Random();
