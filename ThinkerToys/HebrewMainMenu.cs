@@ -107,6 +107,7 @@ namespace ThinkerToys
 
         private void HebrewMainMenu_Load(object sender, EventArgs e)
         {
+
         }
 
         private void InitializeComponent()
@@ -115,6 +116,13 @@ namespace ThinkerToys
             // 
             // HebrewMainMenu
             // 
+            btnBackToHome = new Button();
+            btnBackToHome.Text = "Home Page";
+            btnBackToHome.BackColor = Color.White;
+            btnBackToHome.Size = new Size(100, 50); // Set size according to your preference
+            btnBackToHome.Location = new Point(10, 10); // Set location according to your layout
+            btnBackToHome.Click += BtnBackToHome_Click; // Event handler for click event
+            this.Controls.Add(btnBackToHome);
             ClientSize = new Size(800, 679);
             Name = "HebrewMainMenu";
             Load += HebrewMainMenu_Load;

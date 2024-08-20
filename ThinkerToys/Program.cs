@@ -21,11 +21,11 @@ namespace ThinkerToys
 
             //Login page 
 
-            ApplicationConfiguration.Initialize();
-            Login loginForm = new Login();
-            loginForm.FormClosed += new FormClosedEventHandler(FormClosed);
-            loginForm.Show();
-            Application.Run();
+            //ApplicationConfiguration.Initialize();
+            //Login loginForm = new Login();
+            //loginForm.FormClosed += new FormClosedEventHandler(FormClosed);
+            //loginForm.Show();
+            //Application.Run();
 
             // ---------------------------------------------------
 
@@ -48,11 +48,11 @@ namespace ThinkerToys
 
 
             // Hebrew Game 2 
-            //ApplicationConfiguration.Initialize();
-            //HebrewMainMenu hebrew2 = new HebrewMainMenu();
-            //hebrew2.FormClosed += new FormClosedEventHandler(FormClosed);
-            //hebrew2.Show();
-            //Application.Run();
+            ApplicationConfiguration.Initialize();
+            HebrewMainMenu hebrew2 = new HebrewMainMenu();
+            hebrew2.FormClosed += new FormClosedEventHandler(FormClosed);
+            hebrew2.Show();
+            Application.Run();
 
 
 

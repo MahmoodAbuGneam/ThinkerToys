@@ -85,22 +85,25 @@ namespace ThinkerToys
                 }
             }
 
-            // Add correct letters
-            CreateLetterPictureBoxes(level.CorrectLetter, "RightLetter");
+            // Add one correct letter
+            CreateLetterPictureBoxes(level.CorrectLetter, "RightLetter", 1);
 
-            // Add incorrect letters
-            foreach (var incorrectLetter in level.IncorrectLetters)
+            // Randomly choose fewer incorrect letters to display
+            Random rand = new Random();
+            List<char> selectedIncorrectLetters = level.IncorrectLetters.OrderBy(x => rand.Next()).Take(2).ToList(); // Reduce number and randomize
+
+            foreach (var incorrectLetter in selectedIncorrectLetters)
             {
-                CreateLetterPictureBoxes(incorrectLetter, "WrongLetter");
+                CreateLetterPictureBoxes(incorrectLetter, "WrongLetter", 1); // Assuming each incorrect letter appears once
             }
         }
 
-        private void CreateLetterPictureBoxes(char letter, string tag)
+        private void CreateLetterPictureBoxes(char letter, string tag, int count)
         {
             Random rand = new Random();
-            const int minDistance = 60; // Minimum distance between PictureBox controls
+            const int minDistance = 99; // Assuming you've increased the minDistance for less overlap
 
-            for (int i = 0; i < 1; i++)
+            for (int i = 0; i < count; i++)
             {
                 PictureBox pb = new PictureBox
                 {
@@ -114,7 +117,7 @@ namespace ThinkerToys
                 while (!positionFound)
                 {
                     int x = rand.Next(0, this.ClientSize.Width - pb.Width);
-                    int y = rand.Next(0, this.ClientSize.Height - pb.Height);
+                    int y = rand.Next(-100, 0); // Start positions off-screen above
 
                     pb.Location = new Point(x, y);
                     positionFound = !IsTooClose(pb, minDistance);
@@ -124,6 +127,7 @@ namespace ThinkerToys
             }
         }
 
+
         private bool IsTooClose(PictureBox newBox, int minDistance)
         {
             foreach (Control control in this.Controls)
@@ -132,9 +136,11 @@ namespace ThinkerToys
                 {
                     int dx = Math.Abs(existingBox.Left - newBox.Left);
                     int dy = Math.Abs(existingBox.Top - newBox.Top);
-                    if (Math.Sqrt(dx * dx + dy * dy) < minDistance)
+
+                    // Enhanced overlap check: considers both x and y axis
+                    if (dx < minDistance && dy < minDistance)
                     {
-                        return true; // Too close
+                        return true; // Too close if within a square box of side minDistance
                     }
                 }
             }
@@ -180,7 +186,7 @@ namespace ThinkerToys
                 {
                     if (pictureBox.Top > 450)
                     {
-                        pictureBox.Top = 0;
+                        pictureBox.Top = -pictureBox.Height;
                         Random r = new Random();
                         int y = r.Next(100, 400);
                         pictureBox.Location = new Point(y, 10);

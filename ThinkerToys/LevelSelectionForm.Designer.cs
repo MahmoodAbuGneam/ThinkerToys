@@ -1,4 +1,5 @@
-﻿namespace ThinkerToys
+﻿
+namespace ThinkerToys
 {
     partial class LevelSelectionForm
     {
@@ -26,8 +27,19 @@
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
+        /// 
+        private Button btnBackToHome;
+
         private void InitializeComponent()
         {
+
+            btnBackToHome = new Button();
+            btnBackToHome.Text = "Home Page";
+            btnBackToHome.BackColor = Color.White;
+            btnBackToHome.Size = new Size(100, 50); // Set size according to your preference
+            btnBackToHome.Location = new Point(10, 10); // Set location according to your layout
+            btnBackToHome.Click += BtnBackToHome_Click; // Event handler for click event
+            this.Controls.Add(btnBackToHome);
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LevelSelectionForm));
             אButton = new PictureBox();
             בButton = new PictureBox();
@@ -413,6 +425,20 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
+        }
+
+        private void BtnBackToHome_Click(object sender, EventArgs e)
+        {
+            OpenHomePage();
+        }
+
+        private void OpenHomePage()
+        {
+            this.Hide(); 
+            HomePage homePage = new HomePage();
+            homePage.Show();
+            this.Close();
+            
         }
 
         #endregion

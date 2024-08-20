@@ -1,4 +1,5 @@
-﻿namespace ThinkerToys
+﻿
+namespace ThinkerToys
 {
     partial class LevelForm
     {
@@ -13,12 +14,14 @@
             base.Dispose(disposing);
         }
 
+
         private void InitializeComponent()
         {
             SuspendLayout();
             // 
             // LevelForm
             // 
+            
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(604, 544);
@@ -27,5 +30,7 @@
             Load += LevelForm_Load;
             ResumeLayout(false);
         }
+
+
     }
 }
