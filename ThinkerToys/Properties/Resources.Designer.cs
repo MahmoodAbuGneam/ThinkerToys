@@ -1155,6 +1155,16 @@ namespace ThinkerToys.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap pencil_icon {
+            get {
+                object obj = ResourceManager.GetObject("pencil_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap petya_hadjieva_ragerabbit_pink_spring {
             get {
                 object obj = ResourceManager.GetObject("petya-hadjieva-ragerabbit-pink-spring", resourceCulture);
