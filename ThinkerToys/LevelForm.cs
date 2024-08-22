@@ -240,7 +240,8 @@ namespace ThinkerToys
         private void AddScore(int points)
         {
             currentScore += points;
-            mainMenuForm.UpdateScore(currentScore);
+            mainMenuForm.UpdateScore(points); // Update score on the main menu
+            UserSession.Instance.Coins += points; // Update coins in the user session
         }
 
         private void ShowLevelCompletionOptions()

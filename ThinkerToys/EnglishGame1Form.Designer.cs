@@ -1,4 +1,6 @@
-﻿namespace ThinkerToys
+﻿using System.Drawing.Text;
+
+namespace ThinkerToys
 {
     partial class EnglishGame1Form
     {
@@ -103,6 +105,39 @@
             pictureBox2.TabStop = false;
             pictureBox2.Tag = "balloon";
             pictureBox2.Click += PopLetter;
+
+            //
+            // Pause Button
+            //
+
+            Button btnPause = new Button();
+            btnPause.Text = "Pause";
+            btnPause.Location = new Point(750, 50); // Example position
+            btnPause.Click += new EventHandler(btnPause_Click);
+            Controls.Add(btnPause);
+
+            //
+            // Pause Button
+            //
+
+            Button btnRestart = new Button();
+            btnRestart.Text = "Restart";
+            btnRestart.Location = new Point(750, 100);
+            btnRestart.Click += new EventHandler(btnRestart_Click);
+            Controls.Add(btnRestart);
+
+            //
+            // Pause Button
+            //
+
+            Button btnHomepage = new Button();
+            btnHomepage.Text = "Homepage";
+            btnHomepage.Location = new Point(750, 150);
+            btnHomepage.Click += new EventHandler(btnHomepage_Click);
+            Controls.Add(btnHomepage);
+
+
+
             // 
             // pictureBox1
             // 
@@ -123,7 +158,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ButtonFace;
-            ClientSize = new Size(739, 637);
+            ClientSize = new Size(900, 637);
             Controls.Add(txtScore);
             Controls.Add(bomb);
             Controls.Add(pictureBox4);
@@ -142,10 +177,12 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
+
+
+
         }
 
         #endregion
-
         private System.Windows.Forms.Label txtScore;
         private System.Windows.Forms.Timer gameTimer;
         private System.Windows.Forms.PictureBox bomb;

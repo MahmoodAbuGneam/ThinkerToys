@@ -83,7 +83,6 @@ namespace ThinkerToys
         public void UpdateScore(int points)
         {
             currentScore += points;
-            // Implement any additional logic you need for updating the score here
         }
 
         public void ResetGame()

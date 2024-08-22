@@ -48,11 +48,11 @@ namespace ThinkerToys
 
 
             // Hebrew Game 2 
-            ApplicationConfiguration.Initialize();
-            HebrewMainMenu hebrew2 = new HebrewMainMenu();
-            hebrew2.FormClosed += new FormClosedEventHandler(FormClosed);
-            hebrew2.Show();
-            Application.Run();
+            //ApplicationConfiguration.Initialize();
+            //HebrewMainMenu hebrew2 = new HebrewMainMenu();
+            //hebrew2.FormClosed += new FormClosedEventHandler(FormClosed);
+            //hebrew2.Show();
+            //Application.Run();
 
 
 
@@ -141,11 +141,11 @@ namespace ThinkerToys
 
             // Math Games Together
 
-            //ApplicationConfiguration.Initialize();
-            //MathGamesTogether mathTogether = new MathGamesTogether();
-            //mathTogether.FormClosed += new FormClosedEventHandler(FormClosed);
-            //mathTogether.Show();
-            //Application.Run();
+            ApplicationConfiguration.Initialize();
+            MathGamesTogether mathTogether = new MathGamesTogether();
+            mathTogether.FormClosed += new FormClosedEventHandler(FormClosed);
+            mathTogether.Show();
+            Application.Run();
 
 
 

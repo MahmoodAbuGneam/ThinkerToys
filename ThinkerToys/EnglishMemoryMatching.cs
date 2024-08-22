@@ -264,6 +264,7 @@ namespace ThinkerToys
 
         private void btnHome_Click(object sender, EventArgs e)
         {
+            GameTimer.Stop();
             this.Hide();
             HomePage stHomePage = new HomePage();
             stHomePage.ShowDialog();

@@ -375,7 +375,7 @@ namespace ThinkerToys
 
         private void IncrementScore()
         {
-            score += 1; // Increase score by 1
+            score += 5; // Increase score by 1
             scoreLabel.Text = "Score: " + score; // Update score label
             coinCounter += 5; // Increase coins by 5 for each correct letter
 

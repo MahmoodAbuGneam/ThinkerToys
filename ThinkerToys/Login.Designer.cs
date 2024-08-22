@@ -151,10 +151,9 @@
             PasswordTextBox.ForeColor = Color.Navy;
             PasswordTextBox.Location = new Point(67, 190);
             PasswordTextBox.Margin = new Padding(3, 2, 3, 2);
-            PasswordTextBox.Multiline = true;
             PasswordTextBox.Name = "PasswordTextBox";
             PasswordTextBox.PasswordChar = '•';
-            PasswordTextBox.Size = new Size(213, 21);
+            PasswordTextBox.Size = new Size(213, 23);
             PasswordTextBox.TabIndex = 33;
             PasswordTextBox.TextChanged += PasswordTextBox_TextChanged;
             // 
@@ -164,9 +163,8 @@
             UsernameTextBox.ForeColor = Color.Navy;
             UsernameTextBox.Location = new Point(67, 116);
             UsernameTextBox.Margin = new Padding(3, 2, 3, 2);
-            UsernameTextBox.Multiline = true;
             UsernameTextBox.Name = "UsernameTextBox";
-            UsernameTextBox.Size = new Size(213, 21);
+            UsernameTextBox.Size = new Size(213, 23);
             UsernameTextBox.TabIndex = 30;
             UsernameTextBox.TextChanged += UsernameTextBox_TextChanged;
             // 

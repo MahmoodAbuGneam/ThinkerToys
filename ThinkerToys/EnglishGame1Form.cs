@@ -22,17 +22,22 @@ namespace ThinkerToys
 
             this.KeyPreview = true;
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.KeyIsUp);
-
-            MessageBox.Show("Welcome to the game! Press 'P' at any time to pause or exit the game.", "Game Instructions", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void LoadAndSetImages()
         {
-            pictureBox1.Image = MakeImageTransparent(Properties.Resources.A);
-            pictureBox2.Image = MakeImageTransparent(Properties.Resources.B);
-            pictureBox3.Image = MakeImageTransparent(Properties.Resources.C);
-            pictureBox4.Image = MakeImageTransparent(Properties.Resources.D);
-            bomb.Image = MakeImageTransparent(Properties.Resources.bomb);   
+            try
+            {
+                pictureBox1.Image = MakeImageTransparent(Properties.Resources.A);
+                pictureBox2.Image = MakeImageTransparent(Properties.Resources.B);
+                pictureBox3.Image = MakeImageTransparent(Properties.Resources.C);
+                pictureBox4.Image = MakeImageTransparent(Properties.Resources.D);
+                bomb.Image = MakeImageTransparent(Properties.Resources.bomb);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Failed to load images: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private Bitmap MakeImageTransparent(Bitmap bitmap)
@@ -46,13 +51,14 @@ namespace ThinkerToys
         {
             txtScore.Text = "Score: " + score;
 
-            if (gameOver == true)
+            if (gameOver)
             {
+                if (!gameTimer.Enabled) return;  // Prevent multiple executions after game over
+
                 UserSession.Instance.Coins += score;
                 gameTimer.Stop();
-                txtScore.Text = "Score: " + score;
-                MessageBox.Show("The game has finished. Press OK, then ESC to return to the homepage or Enter to restart the game.", "Game Over", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                MessageBox.Show("The game has finished. Press OK to return to the homepage or restart the game.", "Game Over", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return; // Stop further execution
             }
 
             foreach (Control x in this.Controls)
@@ -100,6 +106,10 @@ namespace ThinkerToys
 
         }
 
+
+
+
+
         private void updateCionsEng1()
         {
             //UserSession.Instance.Coins += score;
@@ -129,42 +139,8 @@ namespace ThinkerToys
 
         private void KeyIsUp(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter && gameOver == true)
+            if (e.KeyCode == Keys.Escape)
             {
-                RestartGame();
-            }
-
-            else if (e.KeyCode == Keys.P)
-            {
-                if (!gameOver)
-                {
-                    gamePaused = !gamePaused;
-                    if (gamePaused)
-                    {
-                        gameTimer.Stop();
-                        DialogResult result = MessageBox.Show("Game paused. Do you want to return to the homepage?\nNote: Your current score will not be added to your coins.", "Pause", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                        if (result == DialogResult.Yes)
-                        {
-                            ReturnToHomepage();
-                        }
-                        else
-                        {
-                            gamePaused = false;
-                            gameTimer.Start();
-                        }
-                    }
-                    else
-                    {
-                        gameTimer.Start();
-                    }
-                }
-            }
-
-            else if (e.KeyCode == Keys.Escape)
-            {
-
-                // go the return page
-
                 ReturnToHomepage();
             }
         }
@@ -202,6 +178,25 @@ namespace ThinkerToys
 
         private void EnglishGame1Form_Load(object sender, EventArgs e)
         {
+        }
+
+
+        private void btnPause_Click(object sender, EventArgs e)
+        {
+            // Implement pause functionality
+            gameTimer.Stop();
+            MessageBox.Show("Game is paused. Press OK to continue.");
+            gameTimer.Start();
+        }
+
+        private void btnRestart_Click(object sender, EventArgs e)
+        {
+            RestartGame();
+        }
+
+        private void btnHomepage_Click(object sender, EventArgs e)
+        {
+            ReturnToHomepage();
         }
     }
 }
