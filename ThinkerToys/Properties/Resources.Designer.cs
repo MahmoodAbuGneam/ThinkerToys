@@ -985,6 +985,25 @@ namespace ThinkerToys.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap logout {
+            get {
+                object obj = ResourceManager.GetObject("logout", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to logout.png.
+        /// </summary>
+        internal static string logout_picture {
+            get {
+                return ResourceManager.GetString("logout_picture", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap M_13 {
             get {
                 object obj = ResourceManager.GetObject("M_13", resourceCulture);

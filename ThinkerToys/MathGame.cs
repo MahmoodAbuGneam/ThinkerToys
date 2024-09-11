@@ -62,6 +62,28 @@ namespace ThinkerToys
         private void buttonNewGame_Click(object sender, EventArgs e)
         {
             ResetGame();
+            isGameActive = true;
+            if (!timer.Enabled)
+            {
+                timer.Start();
+            }
+
+            // Reset and start the move timer if it's used for other animations or movements
+            if (!moveTimer.Enabled)
+            {
+                moveTimer.Start();
+            }
+
+            // Make sure jumping mechanics are reset if applicable
+            isJumping = false;
+            jumpHeight = 20;  // Initial jump height value if it's used in the game
+            if (!jumpTimer.Enabled)
+            {
+                jumpTimer.Start();
+            }
+
+            // Refresh the UI or game field if necessary
+            Refresh();  // Call this if your form needs to redraw any elements
         }
 
         private void CustomizeControls()
@@ -216,6 +238,7 @@ namespace ThinkerToys
             lblTime.Text = "Time: " + timeLeft;
             GenerateQuestion();
             timer.Start();
+
         }
         private void Button_MouseUp(object sender, MouseEventArgs e)
         {
@@ -235,7 +258,7 @@ namespace ThinkerToys
                 StopAllTimers();
                 UpdateUserCoins();
                 MessageBox.Show("Time's up! Your score is: " + score);
-                this.Close();
+                ResetGame();
             }
         }
 
@@ -352,8 +375,12 @@ namespace ThinkerToys
 
             if (result == DialogResult.Yes)
             {
+                if (!isGameActive)
+                {
+                    UpdateUserCoins();
+                }
+
                 StopAllTimers();
-                UpdateUserCoins();
                 this.Hide();
                 HomePage stHomePage = new HomePage();
                 stHomePage.ShowDialog();
@@ -455,7 +482,6 @@ namespace ThinkerToys
                     moveTimer.Stop();
                     jumpTimer.Stop();
                     MessageBox.Show("Game over! Your score is: " + score);
-                    this.Close();
                 }
                 else
                 {
@@ -478,7 +504,7 @@ namespace ThinkerToys
                 };
                 hideMessageTimer.Start();
 
-                // Trigger the fox to jump
+                // Trigger the alien to jump
                 if (!isJumping)
                 {
                     isJumping = true;
@@ -493,7 +519,6 @@ namespace ThinkerToys
                 StopAllTimers();
                 MessageBox.Show("Game over! Your score is: " + score);
                 UpdateUserCoins();
-                this.Close();
             }
             else
             {

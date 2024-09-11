@@ -25,6 +25,9 @@ namespace ThinkerToys
             subHeaderLabel = new Label();
             coinsLabel = new RoundedButton();
             tableLayoutPanel = new TableLayoutPanel();
+            roundedPanel1 = new RoundedPanel();
+            pictureBox1 = new PictureBox();
+            label1 = new Label();
             storeCard = new RoundedPanel();
             storeImage = new PictureBox();
             storeLabel = new Label();
@@ -43,6 +46,8 @@ namespace ThinkerToys
             mainPanel.SuspendLayout();
             headerPanel.SuspendLayout();
             tableLayoutPanel.SuspendLayout();
+            roundedPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             storeCard.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)storeImage).BeginInit();
             englishGamesCard.SuspendLayout();
@@ -132,6 +137,7 @@ namespace ThinkerToys
             tableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.33F));
             tableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.33F));
             tableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.33F));
+            tableLayoutPanel.Controls.Add(roundedPanel1, 2, 1);
             tableLayoutPanel.Controls.Add(storeCard, 0, 0);
             tableLayoutPanel.Controls.Add(englishGamesCard, 1, 0);
             tableLayoutPanel.Controls.Add(mathGamesCard, 2, 0);
@@ -145,6 +151,42 @@ namespace ThinkerToys
             tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
             tableLayoutPanel.Size = new Size(1208, 497);
             tableLayoutPanel.TabIndex = 1;
+            // 
+            // roundedPanel1
+            // 
+            roundedPanel1.Controls.Add(pictureBox1);
+            roundedPanel1.Controls.Add(label1);
+            roundedPanel1.Cursor = Cursors.Hand;
+            roundedPanel1.Dock = DockStyle.Fill;
+            roundedPanel1.Location = new Point(805, 251);
+            roundedPanel1.Name = "roundedPanel1";
+            roundedPanel1.Padding = new Padding(5);
+            roundedPanel1.Size = new Size(390, 233);
+            roundedPanel1.TabIndex = 5;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Dock = DockStyle.Fill;
+            pictureBox1.Image = Properties.Resources.logout;
+            pictureBox1.Location = new Point(5, 5);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(380, 193);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 0;
+            pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
+            // 
+            // label1
+            // 
+            label1.Dock = DockStyle.Bottom;
+            label1.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            label1.Location = new Point(5, 198);
+            label1.Name = "label1";
+            label1.Size = new Size(380, 30);
+            label1.TabIndex = 1;
+            label1.Text = "Log Out";
+            label1.TextAlign = ContentAlignment.MiddleCenter;
+            label1.Click += label1_Click_1;
             // 
             // storeCard
             // 
@@ -325,6 +367,7 @@ namespace ThinkerToys
             profileLabel.TabIndex = 1;
             profileLabel.Text = "Show Profile";
             profileLabel.TextAlign = ContentAlignment.MiddleCenter;
+            profileLabel.Click += profileLabel_Click;
             // 
             // HomePage
             // 
@@ -341,6 +384,8 @@ namespace ThinkerToys
             headerPanel.ResumeLayout(false);
             headerPanel.PerformLayout();
             tableLayoutPanel.ResumeLayout(false);
+            roundedPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             storeCard.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)storeImage).EndInit();
             englishGamesCard.ResumeLayout(false);
@@ -380,5 +425,8 @@ namespace ThinkerToys
         private System.Windows.Forms.Label hebrewGamesLabel;
         private System.Windows.Forms.Label profileLabel;
         private Label usernameLabel;
+        private RoundedPanel roundedPanel1;
+        private PictureBox pictureBox1;
+        private Label label1;
     }
 }

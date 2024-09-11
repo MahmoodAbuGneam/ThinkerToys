@@ -171,5 +171,44 @@ namespace ThinkerToys
             profile.ShowDialog();
             this.Close();
         }
+
+        private void profileLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+        private void label1_Click_1(object sender, EventArgs e) // log out label 
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e) // logout picture box 
+        {
+            DialogResult result = MessageBox.Show("Are you sure you want to log out?", "Logout Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                // Perform logout actions
+                LogoutUser();
+
+                // Navigate back to the Login form
+                Login loginForm = new Login();
+                this.Hide();
+                loginForm.ShowDialog();
+                this.Close();
+            }
+        }
+
+        private void LogoutUser()
+        {
+            // Clear the current user session
+            UserSession.Instance.Clear();
+
+            // Update coins in the document before logging out
+            UpdateCoinsInDocument(UserSession.Instance.Username, UserSession.Instance.Coins);
+        }
+
+
     }
 }

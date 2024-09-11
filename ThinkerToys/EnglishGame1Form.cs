@@ -57,7 +57,6 @@ namespace ThinkerToys
 
                 UserSession.Instance.Coins += score;
                 gameTimer.Stop();
-                MessageBox.Show("The game has finished. Press OK to return to the homepage or restart the game.", "Game Over", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return; // Stop further execution
             }
 
@@ -150,6 +149,7 @@ namespace ThinkerToys
         private void ReturnToHomepage()
         {
             // Create and show the HomePage form without updating coins
+            gameTimer.Stop();
             HomePage homePage = new HomePage();
             this.Hide();
             homePage.ShowDialog();

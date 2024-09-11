@@ -281,6 +281,8 @@ namespace ThinkerToys
 
         private void stHomeBtn_Click(object sender, EventArgs e)
         {
+            SavePurchasesToExcel();
+
             this.Hide();
             HomePage stHomePage = new HomePage();
             stHomePage.ShowDialog();

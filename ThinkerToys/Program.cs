@@ -21,11 +21,11 @@ namespace ThinkerToys
 
             //Login page 
 
-            //ApplicationConfiguration.Initialize();
-            //Login loginForm = new Login();
-            //loginForm.FormClosed += new FormClosedEventHandler(FormClosed);
-            //loginForm.Show();
-            //Application.Run();
+            ApplicationConfiguration.Initialize();
+            Login loginForm = new Login();
+            loginForm.FormClosed += new FormClosedEventHandler(FormClosed);
+            loginForm.Show();
+            Application.Run();
 
             // ---------------------------------------------------
 
@@ -141,11 +141,11 @@ namespace ThinkerToys
 
             // Math Games Together
 
-            ApplicationConfiguration.Initialize();
-            MathGamesTogether mathTogether = new MathGamesTogether();
-            mathTogether.FormClosed += new FormClosedEventHandler(FormClosed);
-            mathTogether.Show();
-            Application.Run();
+            //ApplicationConfiguration.Initialize();
+            //MathGamesTogether mathTogether = new MathGamesTogether();
+            //mathTogether.FormClosed += new FormClosedEventHandler(FormClosed);
+            //mathTogether.Show();
+            //Application.Run();
 
 
 

@@ -216,7 +216,7 @@ namespace ThinkerToys
                     int storedCoins = int.Parse(worksheet.Cells[row, 6].Value2.ToString());
                     bool accountConfirmed = Convert.ToBoolean(worksheet.Cells[row, 7].Value2);
 
-                    if (storedUsername == username && storedPassword == encryptedPassword)
+                    if (storedUsername.ToLower() == username.ToLower() && storedPassword == encryptedPassword)
                     {
                         currentUsername = storedUsername;
                         currentUserCoins = storedCoins;
